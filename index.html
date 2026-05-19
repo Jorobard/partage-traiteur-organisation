@@ -3,374 +3,208 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Chef à domicile — Pièces cocktails</title>
+<title>Partage — Gestion des pièces cocktails</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;background:#f5f5f0;color:#1a1a1a;min-height:100vh}
-.app{max-width:720px;margin:0 auto;padding:1rem}
-header{background:#1F4E79;color:white;padding:1rem 1.25rem;border-radius:12px;margin-bottom:1.25rem;display:flex;align-items:center;gap:12px}
-header h1{font-size:17px;font-weight:600}
-header p{font-size:12px;opacity:.75;margin-top:2px}
-.tabs{display:flex;gap:0;background:white;border-radius:10px;padding:4px;margin-bottom:1.25rem;border:1px solid #e5e5e5}
-.tab{flex:1;padding:9px 8px;cursor:pointer;border:none;background:none;font-size:13px;color:#666;border-radius:7px;font-family:inherit;transition:.15s}
-.tab.active{background:#1F4E79;color:white;font-weight:500}
-.tab:hover:not(.active){background:#f0f0f0}
+:root{
+  --brand:#E8394A;
+  --brand-dark:#c22e3d;
+  --brand-light:#fdeef0;
+  --cream:#F0EDE6;
+  --cream-dark:#e5e0d8;
+  --text:#1a1410;
+  --text-mid:#6b6259;
+  --text-light:#a09488;
+  --border:#ddd8d0;
+  --white:#ffffff;
+  --green:#1d9e75;
+  --green-light:#e8f8f1;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;background:var(--cream);color:var(--text);min-height:100vh}
+.app{max-width:740px;margin:0 auto;padding:1rem}
+header{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.4rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:14px}
+.logo-circle{width:48px;height:48px;border-radius:50%;background:var(--cream);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-text{font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.02em;text-align:center;line-height:1.1}
+header h1{font-size:16px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+header p{font-size:12px;color:var(--text-mid);margin-top:2px}
+.tabs{display:flex;gap:0;background:var(--white);border-radius:10px;padding:4px;margin-bottom:1.25rem;border:1px solid var(--border)}
+.tab{flex:1;padding:9px 6px;cursor:pointer;border:none;background:none;font-size:12px;color:var(--text-mid);border-radius:7px;font-family:inherit;transition:.15s;font-weight:500}
+.tab.active{background:var(--brand);color:white}
+.tab:hover:not(.active){background:var(--cream)}
 .page{display:none}.page.active{display:block}
-.card{background:white;border:1px solid #e8e8e8;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem}
-.card-title{font-size:15px;font-weight:600;margin-bottom:.75rem}
-input[type=text],input[type=number],select,textarea{width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:7px;font-size:13px;font-family:inherit;background:white;color:#1a1a1a;outline:none;transition:.15s}
-input:focus,select:focus{border-color:#1F4E79;box-shadow:0 0 0 3px rgba(31,78,121,.1)}
-.btn{cursor:pointer;font-family:inherit;font-size:13px;padding:7px 14px;border:1px solid #ddd;border-radius:7px;background:white;color:#1a1a1a;transition:.15s}
-.btn:hover{background:#f5f5f5}
-.btn-primary{background:#1F4E79;color:white;border-color:#1F4E79}
-.btn-primary:hover{background:#17406a}
-.btn-danger{color:#c0392b;border-color:#f5c6c2}
-.btn-danger:hover{background:#fdf0ef}
+.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem}
+.card-title{font-size:15px;font-weight:700;margin-bottom:.75rem;color:var(--text)}
+input[type=text],input[type=number],input[type=url],select,textarea{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:7px;font-size:13px;font-family:inherit;background:var(--white);color:var(--text);outline:none;transition:.15s}
+input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(232,57,74,.1)}
+label.label{font-size:12px;color:var(--text-mid);margin-bottom:4px;display:block;font-weight:500}
+.btn{cursor:pointer;font-family:inherit;font-size:13px;padding:7px 14px;border:1px solid var(--border);border-radius:7px;background:var(--white);color:var(--text);transition:.15s;font-weight:500}
+.btn:hover{background:var(--cream)}
+.btn-primary{background:var(--brand);color:white;border-color:var(--brand)}
+.btn-primary:hover{background:var(--brand-dark)}
+.btn-danger{color:var(--brand);border-color:#f5c6c2}
+.btn-danger:hover{background:var(--brand-light)}
 .btn-sm{padding:5px 10px;font-size:12px}
-.label{font-size:12px;color:#666;margin-bottom:4px;font-weight:500}
-.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500}
-.badge-green{background:#e8f8f1;color:#0f6e56}
-.badge-gray{background:#f0f0f0;color:#666}
-.cat-header{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#888;padding:8px 0 4px;border-bottom:1px solid #f0f0f0;margin-bottom:6px}
-.ing-grid{display:grid;grid-template-columns:1fr 80px 70px 28px;gap:6px;align-items:center;padding:4px 0;border-bottom:1px solid #f7f7f7}
-.ing-grid:last-child{border:none}
-.piece-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #f5f5f5}
-.piece-row:last-child{border:none}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:600}
+.badge-green{background:var(--green-light);color:#0f6e56}
+.badge-gray{background:var(--cream);color:var(--text-mid)}
 .toggle{position:relative;display:inline-block;width:38px;height:22px;flex-shrink:0}
 .toggle input{opacity:0;width:0;height:0}
 .tog-slider{position:absolute;cursor:pointer;inset:0;background:#ddd;border-radius:22px;transition:.2s}
 .tog-slider:before{content:'';position:absolute;width:16px;height:16px;left:3px;bottom:3px;background:white;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
-input:checked+.tog-slider{background:#1d9e75}
+input:checked+.tog-slider{background:var(--green)}
 input:checked+.tog-slider:before{transform:translateX(16px)}
-.shop-row{display:grid;grid-template-columns:1fr 90px 70px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid #f7f7f7}
-.shop-row:last-child{border:none}
-.qty-val{font-weight:700;color:#1F4E79;font-size:15px}
-.unit-val{color:#999;font-size:12px}
-.piece-label{font-size:11px;color:#aaa;margin-top:1px}
-.empty{text-align:center;padding:2.5rem 1rem;color:#aaa;font-size:13px}
-.empty-icon{font-size:36px;margin-bottom:.5rem}
-.alert{padding:10px 14px;border-radius:8px;font-size:12px;margin-top:.75rem;background:#e8f1fb;color:#185fa5;border:1px solid #b8d4f0}
-.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-.form-section{margin-bottom:1rem}
-.ing-form-grid{display:grid;grid-template-columns:1fr 105px 75px 75px 30px;gap:5px;margin-bottom:4px;align-items:center}
 .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
-.summary-bar{background:#eef4fb;border:1px solid #c5daf5;border-radius:8px;padding:8px 12px;font-size:12px;color:#185fa5;margin-bottom:1rem;display:flex;gap:1rem;flex-wrap:wrap}
-.summary-item{display:flex;align-items:center;gap:4px}
-@media print{
-  body{background:white}
-  .tabs,.top-bar button,header button,.no-print{display:none!important}
-  .card{box-shadow:none;border:1px solid #ddd}
-  .app{max-width:100%;padding:0}
-  header{border-radius:0;margin-bottom:1rem}
-  .page{display:block!important}
-  #page-catalogue,#page-presta{display:none!important}
-  #page-courses{display:block!important}
-}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.cat-header{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-light);padding:8px 0 4px;border-bottom:1px solid var(--cream-dark);margin-bottom:6px}
+.piece-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--cream-dark)}
+.piece-row:last-child{border:none}
+.shop-row{display:grid;grid-template-columns:1fr 90px 65px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid var(--cream-dark)}
+.shop-row:last-child{border:none}
+.qty-val{font-weight:700;color:var(--brand);font-size:15px}
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--text-light);font-size:13px}
+.alert-info{padding:10px 14px;border-radius:8px;font-size:12px;margin-top:.75rem;background:var(--brand-light);color:var(--brand-dark);border:1px solid #f5c0c6}
+.piece-photo{width:56px;height:56px;border-radius:8px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.piece-photo-placeholder{width:56px;height:56px;border-radius:8px;border:1px dashed var(--border);background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;cursor:pointer}
+.photo-upload-area{border:2px dashed var(--border);border-radius:10px;padding:1.5rem;text-align:center;cursor:pointer;transition:.15s;background:var(--cream)}
+.photo-upload-area:hover{border-color:var(--brand);background:var(--brand-light)}
+.ing-form-grid{display:grid;grid-template-columns:1fr 105px 72px 72px 30px;gap:5px;margin-bottom:4px;align-items:center}
+.share-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:.75rem}
+.share-btn{padding:10px 8px;border-radius:9px;border:1px solid var(--border);background:var(--white);cursor:pointer;text-align:center;font-size:12px;font-weight:600;color:var(--text);transition:.15s;font-family:inherit}
+.share-btn:hover{border-color:var(--brand);color:var(--brand)}
+.share-btn .share-icon{font-size:20px;display:block;margin-bottom:4px}
+@media(max-width:500px){.form-grid-2{grid-template-columns:1fr}.ing-form-grid{grid-template-columns:1fr 90px 60px 28px}.share-grid{grid-template-columns:1fr 1fr}}
+@media print{body{background:white}.tabs,.top-bar button,.no-print,header .btn{display:none!important}.page{display:block!important}#page-catalogue,#page-presta{display:none!important}#page-courses{display:block!important}.card{box-shadow:none;border:1px solid #ddd;break-inside:avoid}.app{max-width:100%;padding:0}}
 </style>
 </head>
 <body>
 <div class="app">
-  <header>
-    <div style="font-size:28px">🍽️</div>
-    <div>
-      <h1>Chef à domicile — Pièces cocktails</h1>
-      <p>Gestion des recettes et liste de courses automatique</p>
-    </div>
-  </header>
-
-  <div class="tabs">
-    <button class="tab active" onclick="showTab('catalogue')">📖 Catalogue</button>
-    <button class="tab" onclick="showTab('presta')">🎯 Presta client</button>
-    <button class="tab" onclick="showTab('courses')">🛒 Liste de courses</button>
+<header>
+  <div class="logo-circle"><div class="logo-text">Par<br>tage</div></div>
+  <div>
+    <h1>Partage — Pièces cocktails</h1>
+    <p>« Partagez un moment entre vous avec nous »</p>
   </div>
-
-  <!-- CATALOGUE -->
-  <div id="page-catalogue" class="page active">
-    <div class="top-bar">
-      <div style="font-weight:600;font-size:15px">Mes pièces cocktails</div>
-      <button class="btn btn-primary" onclick="openAddPiece()">+ Nouvelle pièce</button>
-    </div>
-    <div id="pieces-list"></div>
-    <div id="form-piece" style="display:none">
-      <div class="card" style="border-color:#b8d4f0">
-        <div class="card-title" id="form-title">Nouvelle pièce cocktail</div>
-        <div class="form-section">
-          <div class="label">Nom de la pièce cocktail</div>
-          <input type="text" id="inp-name" placeholder="Ex : Tartelettes feuilles de bricks…"/>
-        </div>
-        <div class="form-grid-2">
-          <div>
-            <div class="label">Nombre de personnes de référence</div>
-            <div style="display:flex;align-items:center;gap:8px">
-              <input type="number" id="inp-ref" value="50" min="1" style="width:90px"/>
-              <span style="font-size:12px;color:#666">personnes</span>
-            </div>
-          </div>
-        </div>
-        <div style="font-weight:600;font-size:14px;margin-bottom:.75rem">Ingrédients</div>
-        <div style="display:grid;grid-template-columns:1fr 105px 75px 75px 30px;gap:5px;margin-bottom:6px">
-          <div class="label">Ingrédient</div>
-          <div class="label">Catégorie</div>
-          <div class="label">Quantité</div>
-          <div class="label">Unité</div>
-          <div></div>
-        </div>
-        <div id="ing-rows"></div>
-        <button class="btn" onclick="addIngRow()" style="width:100%;margin-top:8px">+ Ajouter un ingrédient</button>
-        <div style="display:flex;gap:8px;margin-top:1rem">
-          <button class="btn btn-primary" onclick="savePiece()">✓ Enregistrer</button>
-          <button class="btn" onclick="cancelForm()">Annuler</button>
-        </div>
+</header>
+<div class="tabs">
+  <button class="tab active" onclick="showTab('catalogue',this)">📖 Catalogue</button>
+  <button class="tab" onclick="showTab('presta',this)">🎯 Presta</button>
+  <button class="tab" onclick="showTab('courses',this)">🛒 Courses</button>
+</div>
+<div id="page-catalogue" class="page active">
+  <div class="top-bar">
+    <div style="font-weight:700;font-size:15px">Mes pièces cocktails</div>
+    <button class="btn btn-primary" onclick="openAddPiece()">+ Nouvelle pièce</button>
+  </div>
+  <div id="pieces-list"></div>
+  <div id="form-piece" style="display:none">
+    <div class="card" style="border-color:#f5c0c6">
+      <div class="card-title" id="form-title">Nouvelle pièce cocktail</div>
+      <div style="margin-bottom:12px">
+        <label class="label">Nom de la pièce</label>
+        <input type="text" id="inp-name" placeholder="Ex : Tartelettes feuilles de bricks…"/>
       </div>
-    </div>
-  </div>
-
-  <!-- PRESTA -->
-  <div id="page-presta" class="page">
-    <div class="card">
-      <div class="card-title">Informations de la prestation</div>
       <div class="form-grid-2">
         <div>
-          <div class="label">Nom du client</div>
-          <input type="text" id="client-name" placeholder="Ex : Dupont — Mariage" oninput="savePresta()"/>
+          <label class="label">Référence (nb de personnes)</label>
+          <div style="display:flex;align-items:center;gap:8px">
+            <input type="number" id="inp-ref" value="50" min="1" style="width:90px"/>
+            <span style="font-size:12px;color:var(--text-mid)">pers.</span>
+          </div>
         </div>
         <div>
-          <div class="label">Nombre de convives</div>
-          <input type="number" id="nb-convives" value="50" min="1" style="width:120px" oninput="savePresta()"/>
+          <label class="label">Photo de la pièce (optionnel)</label>
+          <div class="photo-upload-area" onclick="document.getElementById('photo-input').click()">
+            <div id="photo-preview-wrap">
+              <div style="font-size:24px">📷</div>
+              <div style="font-size:12px;color:var(--text-mid);margin-top:4px">Cliquer pour ajouter</div>
+            </div>
+          </div>
+          <input type="file" id="photo-input" accept="image/*" style="display:none" onchange="previewPhoto(this)"/>
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Sélection des pièces cocktails</div>
-      <div id="presta-pieces"></div>
-    </div>
-  </div>
-
-  <!-- COURSES -->
-  <div id="page-courses" class="page">
-    <div class="top-bar no-print">
-      <div>
-        <div style="font-weight:600;font-size:15px" id="courses-title">Liste de courses</div>
-        <div style="font-size:12px;color:#888;margin-top:2px" id="courses-sub"></div>
+      <div style="font-weight:700;font-size:14px;margin-bottom:.75rem">Ingrédients</div>
+      <div style="display:grid;grid-template-columns:1fr 105px 72px 72px 30px;gap:5px;margin-bottom:6px">
+        <label class="label" style="margin:0">Ingrédient</label>
+        <label class="label" style="margin:0">Catégorie</label>
+        <label class="label" style="margin:0">Quantité</label>
+        <label class="label" style="margin:0">Unité</label>
+        <div></div>
       </div>
-      <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer</button>
+      <div id="ing-rows"></div>
+      <button class="btn" onclick="addIngRow()" style="width:100%;margin-top:8px">+ Ajouter un ingrédient</button>
+      <div style="display:flex;gap:8px;margin-top:1rem">
+        <button class="btn btn-primary" onclick="savePiece()">✓ Enregistrer</button>
+        <button class="btn" onclick="cancelForm()">Annuler</button>
+      </div>
     </div>
-    <div id="courses-content"></div>
   </div>
 </div>
-
+<div id="page-presta" class="page">
+  <div class="card">
+    <div class="card-title">Informations de la prestation</div>
+    <div class="form-grid-2">
+      <div>
+        <label class="label">Nom du client</label>
+        <input type="text" id="client-name" placeholder="Ex : Dupont — Mariage" oninput="savePresta()"/>
+      </div>
+      <div>
+        <label class="label">Nombre de convives</label>
+        <input type="number" id="nb-convives" value="50" min="1" style="width:120px" oninput="savePresta()"/>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Sélection des pièces cocktails</div>
+    <div id="presta-pieces"></div>
+  </div>
+</div>
+<div id="page-courses" class="page">
+  <div class="top-bar no-print">
+    <div>
+      <div style="font-weight:700;font-size:15px" id="courses-title">Liste de courses</div>
+      <div style="font-size:12px;color:var(--text-mid);margin-top:2px" id="courses-sub"></div>
+    </div>
+    <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer</button>
+  </div>
+  <div id="courses-content"></div>
+  <div id="share-section" class="card no-print" style="display:none">
+    <div class="card-title">Partager la liste</div>
+    <div class="share-grid">
+      <button class="share-btn" onclick="shareWhatsApp()"><span class="share-icon">💬</span>WhatsApp</button>
+      <button class="share-btn" onclick="shareSMS()"><span class="share-icon">📱</span>SMS</button>
+      <button class="share-btn" onclick="copyText()"><span class="share-icon">📋</span>Copier</button>
+    </div>
+    <div id="copy-confirm" style="display:none;text-align:center;font-size:12px;color:var(--green);margin-top:8px;font-weight:600">✓ Copié !</div>
+  </div>
+</div>
+</div>
 <script>
 const CATS=["Légumes","Viandes / Poissons","Économats","Ovoproduits / Lait"];
-let data={pieces:[
-  {id:1,name:"Tartelettes feuilles de bricks, tartare de betterave aux sésames",ref:50,ingredients:[
-    {name:"Betteraves",cat:"Légumes",qty:1,unit:"pcs"},
-    {name:"Echalotes",cat:"Légumes",qty:23,unit:"g"},
-    {name:"Citrons verts",cat:"Légumes",qty:12,unit:"pcs"},
-    {name:"Ciboulettes",cat:"Légumes",qty:45,unit:"g"},
-    {name:"Feuilles de bricks",cat:"Économats",qty:16,unit:"feuilles"},
-    {name:"Sésames",cat:"Économats",qty:27,unit:"g"},
-    {name:"Sauce soja",cat:"Économats",qty:4,unit:"cl"},
-    {name:"Huile de sésame",cat:"Économats",qty:"",unit:""},
-    {name:"Gochujang",cat:"Économats",qty:"",unit:""}
-  ]},
-  {id:2,name:"Focaccia, cream cheese, gravlax concombre aneth et baie rose",ref:50,ingredients:[
-    {name:"Concombre",cat:"Légumes",qty:"",unit:"pcs"},
-    {name:"Aneth",cat:"Légumes",qty:"",unit:"botte"},
-    {name:"Citron",cat:"Légumes",qty:"",unit:"pcs"},
-    {name:"Focaccia",cat:"Économats",qty:"",unit:"pcs"},
-    {name:"Gros sel",cat:"Économats",qty:"",unit:"g"},
-    {name:"Sucre",cat:"Économats",qty:"",unit:"g"},
-    {name:"Baie rose",cat:"Économats",qty:"",unit:"g"},
-    {name:"Philadelphia",cat:"Ovoproduits / Lait",qty:"",unit:"g"}
-  ]},
-  {id:3,name:"Croque monsieur",ref:50,ingredients:[
-    {name:"Jambon blanc",cat:"Viandes / Poissons",qty:"",unit:"tranches"},
-    {name:"Pain blanc",cat:"Économats",qty:"",unit:"tranches"},
-    {name:"Comté",cat:"Ovoproduits / Lait",qty:"",unit:"g"},
-    {name:"Lait",cat:"Ovoproduits / Lait",qty:"",unit:"cl"}
-  ]}
-],selected:{},client:"",convives:50,nextId:4};
-
-function save(){try{localStorage.setItem('chef_v1',JSON.stringify(data))}catch(e){}}
-function load(){try{const d=localStorage.getItem('chef_v1');if(d){const p=JSON.parse(d);Object.assign(data,p)}}catch(e){}}
+let data={pieces:[{id:1,name:"Tartelettes feuilles de bricks, tartare de betterave aux sésames",ref:50,photo:"",ingredients:[{name:"Betteraves",cat:"Légumes",qty:1,unit:"pcs"},{name:"Echalotes",cat:"Légumes",qty:23,unit:"g"},{name:"Citrons verts",cat:"Légumes",qty:12,unit:"pcs"},{name:"Ciboulettes",cat:"Légumes",qty:45,unit:"g"},{name:"Feuilles de bricks",cat:"Économats",qty:16,unit:"feuilles"},{name:"Sésames",cat:"Économats",qty:27,unit:"g"},{name:"Sauce soja",cat:"Économats",qty:4,unit:"cl"},{name:"Huile de sésame",cat:"Économats",qty:"",unit:""},{name:"Gochujang",cat:"Économats",qty:"",unit:""}]},{id:2,name:"Focaccia, cream cheese, gravlax concombre aneth et baie rose",ref:50,photo:"",ingredients:[{name:"Concombre",cat:"Légumes",qty:"",unit:"pcs"},{name:"Aneth",cat:"Légumes",qty:"",unit:"botte"},{name:"Citron",cat:"Légumes",qty:"",unit:"pcs"},{name:"Focaccia",cat:"Économats",qty:"",unit:"pcs"},{name:"Gros sel",cat:"Économats",qty:"",unit:"g"},{name:"Sucre",cat:"Économats",qty:"",unit:"g"},{name:"Baie rose",cat:"Économats",qty:"",unit:"g"},{name:"Philadelphia",cat:"Ovoproduits / Lait",qty:"",unit:"g"}]},{id:3,name:"Croque monsieur",ref:50,photo:"",ingredients:[{name:"Jambon blanc",cat:"Viandes / Poissons",qty:"",unit:"tranches"},{name:"Pain blanc",cat:"Économats",qty:"",unit:"tranches"},{name:"Comté",cat:"Ovoproduits / Lait",qty:"",unit:"g"},{name:"Lait",cat:"Ovoproduits / Lait",qty:"",unit:"cl"}]}],selected:{},client:"",convives:50,nextId:4};
+let editingId=null,currentPhotoB64="";
+function save(){try{localStorage.setItem('partage_v2',JSON.stringify(data))}catch(e){}}
+function load(){try{const d=localStorage.getItem('partage_v2');if(d)Object.assign(data,JSON.parse(d))}catch(e){}}
 load();
-
-function showTab(t){
-  document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
-  document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
-  event.target.classList.add('active');
-  document.getElementById('page-'+t).classList.add('active');
-  if(t==='catalogue')renderCatalogue();
-  if(t==='presta')renderPresta();
-  if(t==='courses')renderCourses();
-}
-
-function renderCatalogue(){
-  const el=document.getElementById('pieces-list');
-  if(!data.pieces.length){el.innerHTML='<div class="card empty"><div class="empty-icon">📋</div><div>Aucune pièce cocktail.<br>Cliquez sur "Nouvelle pièce" pour commencer.</div></div>';return}
-  el.innerHTML=data.pieces.map(p=>`
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem">
-        <div style="flex:1;padding-right:8px">
-          <div style="font-weight:600;font-size:14px">${p.name}</div>
-          <div style="font-size:11px;color:#999;margin-top:2px">${p.ingredients.length} ingrédient(s) · référence ${p.ref} pers.</div>
-        </div>
-        <div style="display:flex;gap:5px;flex-shrink:0">
-          <button class="btn btn-sm" onclick="editPiece(${p.id})">✏️</button>
-          <button class="btn btn-sm btn-danger" onclick="deletePiece(${p.id})">🗑️</button>
-        </div>
-      </div>
-      ${CATS.map(cat=>{
-        const ings=p.ingredients.filter(i=>i.cat===cat);
-        if(!ings.length)return'';
-        return`<div style="margin-bottom:8px"><div class="cat-header">${cat}</div>${ings.map(i=>`
-          <div class="ing-grid">
-            <span style="font-size:13px">${i.name}</span>
-            <span style="text-align:right;font-size:13px;color:#555">${i.qty!==''?i.qty:'—'}</span>
-            <span style="font-size:12px;color:#999">${i.unit||''}</span>
-            <span></span>
-          </div>`).join('')}</div>`;
-      }).join('')}
-    </div>`).join('');
-}
-
-function openAddPiece(){
-  editingId=null;
-  document.getElementById('form-title').textContent='Nouvelle pièce cocktail';
-  document.getElementById('inp-name').value='';
-  document.getElementById('inp-ref').value=50;
-  document.getElementById('ing-rows').innerHTML='';
-  addIngRow();
-  document.getElementById('form-piece').style.display='block';
-  document.getElementById('form-piece').scrollIntoView({behavior:'smooth'});
-}
-
-let editingId=null;
-function editPiece(id){
-  editingId=id;
-  const p=data.pieces.find(x=>x.id===id);
-  document.getElementById('form-title').textContent='Modifier la pièce';
-  document.getElementById('inp-name').value=p.name;
-  document.getElementById('inp-ref').value=p.ref;
-  document.getElementById('ing-rows').innerHTML='';
-  p.ingredients.forEach(i=>addIngRow(i));
-  document.getElementById('form-piece').style.display='block';
-  document.getElementById('form-piece').scrollIntoView({behavior:'smooth'});
-}
-
-function deletePiece(id){
-  if(!confirm('Supprimer cette pièce cocktail ?'))return;
-  data.pieces=data.pieces.filter(p=>p.id!==id);
-  delete data.selected[id];
-  save();renderCatalogue();
-}
-
-function addIngRow(ing=null){
-  const d=document.createElement('div');
-  d.className='ing-form-grid';
-  d.innerHTML=`
-    <input type="text" placeholder="Ingrédient" value="${ing?escHtml(ing.name):''}" class="ing-name"/>
-    <select class="ing-cat">${CATS.map(c=>`<option${ing&&ing.cat===c?' selected':''}>${c}</option>`).join('')}</select>
-    <input type="text" placeholder="Qté" value="${ing&&ing.qty!==''?ing.qty:''}" class="ing-qty"/>
-    <input type="text" placeholder="Unité" value="${ing?escHtml(ing.unit||''):''}" class="ing-unit"/>
-    <button class="btn btn-sm btn-danger" onclick="this.parentNode.remove()" style="padding:5px 7px">✕</button>`;
-  document.getElementById('ing-rows').appendChild(d);
-}
-
-function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-
-function savePiece(){
-  const name=document.getElementById('inp-name').value.trim();
-  const ref=parseInt(document.getElementById('inp-ref').value)||50;
-  if(!name){alert('Merci de saisir un nom.');return}
-  const rows=document.getElementById('ing-rows').querySelectorAll('.ing-form-grid');
-  const ingredients=[];
-  rows.forEach(r=>{
-    const n=r.querySelector('.ing-name').value.trim();
-    if(!n)return;
-    const qv=r.querySelector('.ing-qty').value.trim();
-    const qty=qv===''?'':(!isNaN(parseFloat(qv))?parseFloat(qv):qv);
-    ingredients.push({name:n,cat:r.querySelector('.ing-cat').value,qty,unit:r.querySelector('.ing-unit').value.trim()});
-  });
-  if(editingId){const p=data.pieces.find(x=>x.id===editingId);p.name=name;p.ref=ref;p.ingredients=ingredients;}
-  else{data.pieces.push({id:data.nextId++,name,ref,ingredients});}
-  save();cancelForm();renderCatalogue();
-}
-
+function showTab(t,btn){document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));btn.classList.add('active');document.getElementById('page-'+t).classList.add('active');if(t==='catalogue')renderCatalogue();if(t==='presta')renderPresta();if(t==='courses')renderCourses();}
+function renderCatalogue(){const el=document.getElementById('pieces-list');if(!data.pieces.length){el.innerHTML='<div class="card empty"><div style="font-size:32px;margin-bottom:.5rem">📋</div><div>Aucune pièce cocktail encore.</div></div>';return;}el.innerHTML=data.pieces.map(p=>`<div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:.75rem"><div style="display:flex;gap:12px;align-items:center;flex:1">${p.photo?`<img src="${p.photo}" class="piece-photo" alt=""/>`:`<div class="piece-photo-placeholder" onclick="quickAddPhoto(${p.id})">📷</div>`}<div><div style="font-weight:700;font-size:14px">${escHtml(p.name)}</div><div style="font-size:11px;color:var(--text-light);margin-top:2px">${p.ingredients.length} ingrédient(s) · ref. ${p.ref} pers.</div></div></div><div style="display:flex;gap:5px;flex-shrink:0"><button class="btn btn-sm" onclick="editPiece(${p.id})">✏️</button><button class="btn btn-sm btn-danger" onclick="deletePiece(${p.id})">🗑️</button></div></div>${CATS.map(cat=>{const ings=p.ingredients.filter(i=>i.cat===cat);if(!ings.length)return'';return`<div style="margin-bottom:8px"><div class="cat-header">${cat}</div>${ings.map(i=>`<div style="display:grid;grid-template-columns:1fr 80px 65px;gap:6px;padding:4px 0;border-bottom:1px solid var(--cream-dark)"><span style="font-size:13px">${escHtml(i.name)}</span><span style="text-align:right;font-size:13px;color:var(--text-mid)">${i.qty!==''?i.qty:'—'}</span><span style="font-size:12px;color:var(--text-light)">${escHtml(i.unit||'')}</span></div>`).join('')}</div>`;}).join('')}</div>`).join('');}
+function openAddPiece(){editingId=null;currentPhotoB64="";document.getElementById('form-title').textContent='Nouvelle pièce cocktail';document.getElementById('inp-name').value='';document.getElementById('inp-ref').value=50;document.getElementById('ing-rows').innerHTML='';document.getElementById('photo-preview-wrap').innerHTML='<div style="font-size:24px">📷</div><div style="font-size:12px;color:var(--text-mid);margin-top:4px">Cliquer pour ajouter</div>';addIngRow();document.getElementById('form-piece').style.display='block';setTimeout(()=>document.getElementById('form-piece').scrollIntoView({behavior:'smooth'}),50);}
+function editPiece(id){editingId=id;const p=data.pieces.find(x=>x.id===id);currentPhotoB64=p.photo||"";document.getElementById('form-title').textContent='Modifier la pièce';document.getElementById('inp-name').value=p.name;document.getElementById('inp-ref').value=p.ref;document.getElementById('ing-rows').innerHTML='';p.ingredients.forEach(i=>addIngRow(i));document.getElementById('photo-preview-wrap').innerHTML=p.photo?`<img src="${p.photo}" style="width:80px;height:60px;object-fit:cover;border-radius:6px"/>`:'<div style="font-size:24px">📷</div><div style="font-size:12px;color:var(--text-mid);margin-top:4px">Cliquer pour ajouter</div>';document.getElementById('form-piece').style.display='block';setTimeout(()=>document.getElementById('form-piece').scrollIntoView({behavior:'smooth'}),50);}
+function quickAddPhoto(id){const inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.onchange=function(){const f=this.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{data.pieces.find(x=>x.id===id).photo=e.target.result;save();renderCatalogue();};r.readAsDataURL(f);};inp.click();}
+function previewPhoto(inp){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{currentPhotoB64=e.target.result;document.getElementById('photo-preview-wrap').innerHTML=`<img src="${currentPhotoB64}" style="width:80px;height:60px;object-fit:cover;border-radius:6px"/>`;};r.readAsDataURL(f);}
+function deletePiece(id){if(!confirm('Supprimer cette pièce ?'))return;data.pieces=data.pieces.filter(p=>p.id!==id);delete data.selected[id];save();renderCatalogue();}
+function addIngRow(ing=null){const d=document.createElement('div');d.className='ing-form-grid';d.innerHTML=`<input type="text" placeholder="Ingrédient" value="${ing?escHtml(ing.name):''}" class="ing-name"/><select class="ing-cat">${CATS.map(c=>`<option${ing&&ing.cat===c?' selected':''}>${c}</option>`).join('')}</select><input type="text" placeholder="Qté" value="${ing&&ing.qty!==''?ing.qty:''}" class="ing-qty"/><input type="text" placeholder="Unité" value="${ing?escHtml(ing.unit||''):''}" class="ing-unit"/><button class="btn btn-sm btn-danger" onclick="this.parentNode.remove()" style="padding:5px 7px">✕</button>`;document.getElementById('ing-rows').appendChild(d);}
+function savePiece(){const name=document.getElementById('inp-name').value.trim();const ref=parseInt(document.getElementById('inp-ref').value)||50;if(!name){alert('Merci de saisir un nom.');return}const rows=document.getElementById('ing-rows').querySelectorAll('.ing-form-grid');const ingredients=[];rows.forEach(r=>{const n=r.querySelector('.ing-name').value.trim();if(!n)return;const qv=r.querySelector('.ing-qty').value.trim();ingredients.push({name:n,cat:r.querySelector('.ing-cat').value,qty:qv===''?'':(!isNaN(parseFloat(qv))?parseFloat(qv):qv),unit:r.querySelector('.ing-unit').value.trim()});});if(editingId){const p=data.pieces.find(x=>x.id===editingId);p.name=name;p.ref=ref;p.ingredients=ingredients;p.photo=currentPhotoB64;}else{data.pieces.push({id:data.nextId++,name,ref,photo:currentPhotoB64,ingredients});}save();cancelForm();renderCatalogue();}
 function cancelForm(){document.getElementById('form-piece').style.display='none';editingId=null;}
-
-function savePresta(){
-  data.client=document.getElementById('client-name').value;
-  data.convives=parseFloat(document.getElementById('nb-convives').value)||50;
-  save();
-}
-
-function renderPresta(){
-  document.getElementById('client-name').value=data.client||'';
-  document.getElementById('nb-convives').value=data.convives||50;
-  const el=document.getElementById('presta-pieces');
-  if(!data.pieces.length){el.innerHTML='<div class="empty">Ajoutez des pièces dans le catalogue d\'abord.</div>';return}
-  el.innerHTML=data.pieces.map(p=>`
-    <div class="piece-row">
-      <label class="toggle">
-        <input type="checkbox" ${data.selected[p.id]?'checked':''} onchange="togglePiece(${p.id},this.checked)"/>
-        <span class="tog-slider"></span>
-      </label>
-      <div style="flex:1">
-        <div style="font-size:13px;font-weight:500">${p.name}</div>
-        <div style="font-size:11px;color:#aaa">${p.ingredients.length} ingrédient(s)</div>
-      </div>
-      <span class="badge ${data.selected[p.id]?'badge-green':'badge-gray'}">${data.selected[p.id]?'✓ Incluse':'Non incluse'}</span>
-    </div>`).join('');
-}
-
+function savePresta(){data.client=document.getElementById('client-name').value;data.convives=parseFloat(document.getElementById('nb-convives').value)||50;save();}
+function renderPresta(){document.getElementById('client-name').value=data.client||'';document.getElementById('nb-convives').value=data.convives||50;const el=document.getElementById('presta-pieces');if(!data.pieces.length){el.innerHTML='<div class="empty">Ajoutez des pièces dans le catalogue d\'abord.</div>';return}el.innerHTML=data.pieces.map(p=>`<div class="piece-row"><label class="toggle"><input type="checkbox" ${data.selected[p.id]?'checked':''} onchange="togglePiece(${p.id},this.checked)"/><span class="tog-slider"></span></label>${p.photo?`<img src="${p.photo}" style="width:36px;height:36px;border-radius:6px;object-fit:cover;flex-shrink:0" alt=""/>`:`<div style="width:36px;height:36px;border-radius:6px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">🍽️</div>`}<div style="flex:1"><div style="font-size:13px;font-weight:600">${escHtml(p.name)}</div><div style="font-size:11px;color:var(--text-light)">${p.ingredients.length} ingrédient(s)</div></div><span class="badge ${data.selected[p.id]?'badge-green':'badge-gray'}">${data.selected[p.id]?'✓ Incluse':'Non incluse'}</span></div>`).join('');}
 function togglePiece(id,val){data.selected[id]=val;save();renderPresta();}
-
-function renderCourses(){
-  const client=data.client||'';
-  const nb=data.convives||50;
-  const selected=data.pieces.filter(p=>data.selected[p.id]);
-  document.getElementById('courses-title').textContent='Liste de courses'+(client?' — '+client:'');
-  document.getElementById('courses-sub').textContent=selected.length+' pièce(s) · '+nb+' convives · '+new Date().toLocaleDateString('fr-FR');
-  const el=document.getElementById('courses-content');
-  if(!selected.length){
-    el.innerHTML='<div class="card empty"><div class="empty-icon">🛒</div><div>Aucune pièce sélectionnée.<br>Allez dans "Presta client" pour choisir les pièces du menu.</div></div>';
-    return;
-  }
-  const agg={};
-  selected.forEach(p=>{
-    p.ingredients.forEach(i=>{
-      const key=i.name+'||'+i.cat;
-      if(!agg[key])agg[key]={name:i.name,cat:i.cat,unit:i.unit,qty:null,hasMissing:false,pieces:[]};
-      if(!agg[key].pieces.includes(p.name))agg[key].pieces.push(p.name);
-      if(i.qty!==''&&i.qty!==null&&!isNaN(parseFloat(i.qty))&&p.ref>0){
-        agg[key].qty=(agg[key].qty||0)+parseFloat(i.qty)*(nb/p.ref);
-      }else{agg[key].hasMissing=true;}
-    });
-  });
-  let html='',hasManual=false;
-  CATS.forEach(cat=>{
-    const items=Object.values(agg).filter(x=>x.cat===cat);
-    if(!items.length)return;
-    html+=`<div class="card"><div class="cat-header" style="margin-bottom:10px">${cat}</div>
-    ${items.map(item=>{
-      if(item.hasMissing&&item.qty===null)hasManual=true;
-      const qtyStr=item.qty!==null?(item.hasMissing?item.qty.toFixed(item.qty<10?1:0)+' + ?':item.qty.toFixed(item.qty<10?1:0)):'—';
-      if(qtyStr==='—')hasManual=true;
-      return`<div class="shop-row">
-        <div>
-          <div style="font-size:13px;font-weight:500">${item.name}</div>
-          <div class="piece-label">${[...new Set(item.pieces)].map(n=>n.length>35?n.slice(0,35)+'…':n).join(' · ')}</div>
-        </div>
-        <div class="qty-val">${qtyStr}</div>
-        <div class="unit-val">${item.unit||''}</div>
-      </div>`;
-    }).join('')}</div>`;
-  });
-  if(hasManual)html+=`<div class="alert">ℹ️ Certains ingrédients affichés "—" n'ont pas de quantité de référence dans le catalogue. Complétez-les pour un calcul automatique complet.</div>`;
-  el.innerHTML=html;
-}
-
+function buildAgg(){const nb=data.convives||50;const selected=data.pieces.filter(p=>data.selected[p.id]);const agg={};selected.forEach(p=>{p.ingredients.forEach(i=>{const key=i.name+'||'+i.cat;if(!agg[key])agg[key]={name:i.name,cat:i.cat,unit:i.unit,qty:null,hasMissing:false,pieces:[]};if(!agg[key].pieces.includes(p.name))agg[key].pieces.push(p.name);if(i.qty!==''&&i.qty!==null&&!isNaN(parseFloat(i.qty))&&p.ref>0){agg[key].qty=(agg[key].qty||0)+parseFloat(i.qty)*(nb/p.ref);}else{agg[key].hasMissing=true;}});});return{agg,selected,nb};}
+function buildTextList(){const{agg,selected,nb}=buildAgg();const client=data.client||'';let txt=`PARTAGE — Liste de courses\n`;if(client)txt+=`Client : ${client}\n`;txt+=`Convives : ${nb} | ${new Date().toLocaleDateString('fr-FR')}\n\n`;CATS.forEach(cat=>{const items=Object.values(agg).filter(x=>x.cat===cat);if(!items.length)return;txt+=`── ${cat.toUpperCase()} ──\n`;items.forEach(item=>{const qStr=item.qty!==null?item.qty.toFixed(item.qty<10?1:0)+(item.hasMissing?' + ?':''):'—';txt+=`• ${item.name} : ${qStr} ${item.unit||''}\n`;});txt+='\n';});return txt;}
+function renderCourses(){const{agg,selected,nb}=buildAgg();const client=data.client||'';document.getElementById('courses-title').textContent='Liste de courses'+(client?' — '+client:'');document.getElementById('courses-sub').textContent=selected.length+' pièce(s) · '+nb+' convives · '+new Date().toLocaleDateString('fr-FR');const el=document.getElementById('courses-content');const shareEl=document.getElementById('share-section');if(!selected.length){el.innerHTML='<div class="card empty"><div style="font-size:32px;margin-bottom:.5rem">🛒</div><div>Aucune pièce sélectionnée.<br>Allez dans "Presta" pour choisir les pièces du menu.</div></div>';shareEl.style.display='none';return;}let html='',hasManual=false;CATS.forEach(cat=>{const items=Object.values(agg).filter(x=>x.cat===cat);if(!items.length)return;html+=`<div class="card"><div class="cat-header" style="margin-bottom:10px">${cat}</div>${items.map(item=>{if(item.hasMissing&&item.qty===null)hasManual=true;const qStr=item.qty!==null?item.qty.toFixed(item.qty<10?1:0)+(item.hasMissing?' + ?':''):'—';if(qStr==='—')hasManual=true;return`<div class="shop-row"><div><div style="font-size:13px;font-weight:600">${escHtml(item.name)}</div><div style="font-size:11px;color:var(--text-light)">${[...new Set(item.pieces)].map(n=>n.length>38?n.slice(0,38)+'…':n).join(' · ')}</div></div><div class="qty-val">${qStr}</div><div style="color:var(--text-light);font-size:12px">${escHtml(item.unit||'')}</div></div>`;}).join('')}</div>`;});if(hasManual)html+=`<div class="alert-info">ℹ️ Certains ingrédients affichés "—" n'ont pas de quantité de référence.</div>`;el.innerHTML=html;shareEl.style.display='block';}
+function shareWhatsApp(){window.open('https://wa.me/?text='+encodeURIComponent(buildTextList()),'_blank');}
+function shareSMS(){window.open('sms:?body='+encodeURIComponent(buildTextList()),'_blank');}
+function copyText(){navigator.clipboard.writeText(buildTextList()).then(()=>{const el=document.getElementById('copy-confirm');el.style.display='block';setTimeout(()=>el.style.display='none',2500);});}
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 renderCatalogue();
 </script>
 </body>
