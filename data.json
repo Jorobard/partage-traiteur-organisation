@@ -66,7 +66,7 @@
     },
     {
       "id": 5,
-      "name": "cassolettes, poisson blanc, sauce lèche de tigre, grenade, oignons rouges",
+      "name": "Cassolettes, poisson blanc, sauce lèche de tigre, grenade, oignons rouges",
       "type": "cocktail",
       "photo": "",
       "ref": 20,
@@ -91,7 +91,7 @@
       "photo": "",
       "ref": 30,
       "ingredients": [
-        {"name": "Thym frais", "cat": "Herbes", "qty": 1, "unit": "botte."},
+        {"name": "Thym frais", "cat": "Herbes", "qty": 1, "unit": "botte"},
         {"name": "Ciboulette", "cat": "Herbes", "qty": 1, "unit": "botte"},
         {"name": "Oignon blanc", "cat": "Légumes", "qty": 2, "unit": "pcs"},
         {"name": "Carotte", "cat": "Légumes", "qty": 2, "unit": "pcs"},
@@ -122,12 +122,32 @@
         {"name": "H.O", "cat": "Économats", "qty": 10, "unit": "cl"},
         {"name": "Moutarde", "cat": "Économats", "qty": 10, "unit": "g"}
       ]
+    },
+    {
+      "id": 8,
+      "name": "Pont Neuf de polenta frites, sauce creamy",
+      "type": "cocktail",
+      "photo": "",
+      "ref": 15,
+      "ingredients": [
+        {"name": "Ciboulette", "cat": "Herbes", "qty": 0.5, "unit": "botte"},
+        {"name": "Ail", "cat": "Herbes", "qty": 1, "unit": "pcs"},
+        {"name": "Huile pépin raisin", "cat": "Herbes", "qty": 20, "unit": "cl"},
+        {"name": "Philadelphia", "cat": "Herbes", "qty": 150, "unit": "g"},
+        {"name": "Echalote", "cat": "Légumes", "qty": 2, "unit": "pcs"},
+        {"name": "Citron vert", "cat": "Fruits", "qty": 1, "unit": "pcs"},
+        {"name": "Lait entier", "cat": "Ovoproduits", "qty": 1, "unit": "L"},
+        {"name": "Parmesan", "cat": "Ovoproduits", "qty": 100, "unit": "g"},
+        {"name": "Jaune", "cat": "Ovoproduits", "qty": 1, "unit": "pcs"},
+        {"name": "Polenta extra fine", "cat": "Économats", "qty": 200, "unit": "g"},
+        {"name": "Moutarde à l'ancienne", "cat": "Économats", "qty": 10, "unit": "g"}
+      ]
     }
   ],
   "selected": {},
   "client": "",
   "prestaDate": "",
   "convives": 50,
-  "nextId": 8,
+  "nextId": 9,
   "history": []
 }
