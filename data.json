@@ -2,7 +2,7 @@
   "pieces": [
     {
       "id": 1,
-      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sésames",
+      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sÃ©sames",
       "type": "cocktail",
       "photo": "",
       "ref": 10,
@@ -38,7 +38,7 @@
           "unit": "feuilles"
         },
         {
-          "name": "SÃ©sames",
+          "name": "Sésames",
           "cat": "Herbes",
           "qty": 10,
           "unit": "g"
@@ -50,7 +50,7 @@
           "unit": "cl"
         },
         {
-          "name": "Huile de sÃ©same",
+          "name": "Huile de sésame",
           "cat": "Herbes",
           "qty": 4,
           "unit": "cl"
@@ -78,7 +78,7 @@
         },
         {
           "name": "Concombre",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 2,
           "unit": "pcs"
         },
@@ -102,19 +102,19 @@
         },
         {
           "name": "Gros sel",
-          "cat": "Ãconomats",
+          "cat": "ÃÂconomats",
           "qty": 40,
           "unit": "g"
         },
         {
           "name": "Sucre",
-          "cat": "Ãconomats",
+          "cat": "ÃÂconomats",
           "qty": 40,
           "unit": "g"
         },
         {
           "name": "Baie rose",
-          "cat": "Ãconomats",
+          "cat": "ÃÂconomats",
           "qty": 5,
           "unit": "g"
         }
@@ -140,7 +140,7 @@
           "unit": "tranches"
         },
         {
-          "name": "ComtÃ©",
+          "name": "ComtÃÂ©",
           "cat": "Ovoproduits",
           "qty": 20,
           "unit": "g"
@@ -167,25 +167,25 @@
           "unit": "bote"
         },
         {
-          "name": "Petits pois surgelÃ©s",
-          "cat": "LÃ©gumes",
+          "name": "Petits pois surgelÃÂ©s",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Citron vert",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 3,
           "unit": "pcs"
         },
         {
           "name": "Oignon blanc",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
-          "name": "Lard fumÃ©",
+          "name": "Lard fumÃÂ©",
           "cat": "Viandes",
           "qty": 2,
           "unit": "tranches"
@@ -197,8 +197,8 @@
           "unit": "cl"
         },
         {
-          "name": "Tartelette prÃªt Ã  garnir 4cm",
-          "cat": "Ãconomats",
+          "name": "Tartelette prÃÂªt ÃÂ  garnir 4cm",
+          "cat": "ÃÂconomats",
           "qty": 30,
           "unit": ""
         }
@@ -206,7 +206,7 @@
     },
     {
       "id": 5,
-      "name": "Cassolettes, poisson blanc, sauce lÃ¨che de tigre, grenade, oignons rouges",
+      "name": "Cassolettes, poisson blanc, sauce lÃÂ¨che de tigre, grenade, oignons rouges",
       "type": "cocktail",
       "photo": "",
       "ref": 20,
@@ -219,37 +219,37 @@
         },
         {
           "name": "Citronnelle",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Piment",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Oignon rouge",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Ail",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Echalote",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Gingembre",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 30,
           "unit": "g"
         },
@@ -273,7 +273,7 @@
         },
         {
           "name": "Lait de coco",
-          "cat": "Ãconomats",
+          "cat": "ÃÂconomats",
           "qty": 20,
           "unit": "cl"
         }
@@ -281,7 +281,7 @@
     },
     {
       "id": 6,
-      "name": "Rolls (bun) d'agneau confit sauce tomate Ã©picÃ©e",
+      "name": "Rolls (bun) d'agneau confit sauce tomate ÃÂ©picÃÂ©e",
       "type": "cocktail",
       "photo": "",
       "ref": 30,
@@ -300,25 +300,25 @@
         },
         {
           "name": "Oignon blanc",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Carotte",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Celeri branche",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Ail",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 1,
           "unit": "pcs"
         },
@@ -342,13 +342,13 @@
         },
         {
           "name": "Sauce tomate",
-          "cat": "Ãconomats",
+          "cat": "ÃÂconomats",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Oignon crispy",
-          "cat": "Ãconomats",
+          "cat": "ÃÂconomats",
           "qty": 2,
           "unit": "g"
         }
@@ -356,7 +356,7 @@
     },
     {
       "id": 7,
-      "name": "Lettuces cup, salade césar, sarrasin",
+      "name": "Lettuces cup, salade cÃ©sar, sarrasin",
       "type": "cocktail",
       "photo": "",
       "ref": 5,
@@ -443,7 +443,7 @@
           "unit": "pcs"
         },
         {
-          "name": "Huile pÃ©pin raisin",
+          "name": "Huile pÃÂ©pin raisin",
           "cat": "Herbes",
           "qty": 20,
           "unit": "cl"
@@ -456,7 +456,7 @@
         },
         {
           "name": "Echalote",
-          "cat": "LÃ©gumes",
+          "cat": "LÃÂ©gumes",
           "qty": 2,
           "unit": "pcs"
         },
@@ -486,20 +486,25 @@
         },
         {
           "name": "Polenta extra fine",
-          "cat": "Ãconomats",
+          "cat": "ÃÂconomats",
           "qty": 200,
           "unit": "g"
         },
         {
-          "name": "Moutarde Ã  l'ancienne",
-          "cat": "Ãconomats",
+          "name": "Moutarde ÃÂ  l'ancienne",
+          "cat": "ÃÂconomats",
           "qty": 10,
           "unit": "g"
         }
       ]
     }
   ],
-  "selected": {},
+  "selected": {
+    "1": {
+      "active": true,
+      "ratio": 1
+    }
+  },
   "client": "",
   "prestaDate": "",
   "convives": 50,
