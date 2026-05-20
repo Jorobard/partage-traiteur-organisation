@@ -438,25 +438,25 @@
         },
         {
           "name": "Ail",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Huile pépin raisin",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 20,
           "unit": "cl"
         },
         {
           "name": "Philadelphia",
-          "cat": "Herbes",
+          "cat": "Ovoproduits",
           "qty": 150,
           "unit": "g"
         },
         {
           "name": "Echalote",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 2,
           "unit": "pcs"
         },
@@ -486,13 +486,13 @@
         },
         {
           "name": "Polenta extra fine",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 200,
           "unit": "g"
         },
         {
           "name": "Moutarde à l'ancienne",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 10,
           "unit": "g"
         }
