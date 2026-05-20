@@ -2,7 +2,7 @@
   "pieces": [
     {
       "id": 1,
-      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sÃÂÃÂ©sames",
+      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sésames",
       "type": "cocktail",
       "photo": "",
       "ref": 5,
@@ -499,19 +499,10 @@
       ]
     }
   ],
-  "selected": {
-    "1": {
-      "active": true,
-      "ratio": 1
-    },
-    "2": {
-      "active": false,
-      "ratio": 1
-    }
-  },
-  "client": "test",
+  "selected": {},
+  "client": "",
   "prestaDate": "",
-  "convives": 40,
+  "convives": 50,
   "nextId": 9,
   "history": []
 }
