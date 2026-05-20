@@ -168,19 +168,19 @@
         },
         {
           "name": "Petits pois surgelés",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Citron vert",
-          "cat": "Herbes",
+          "cat": "Fruits",
           "qty": 3,
           "unit": "pcs"
         },
         {
           "name": "Oignon blanc",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
@@ -198,7 +198,7 @@
         },
         {
           "name": "Tartelette prêt à garnir 4cm",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 30,
           "unit": ""
         }
