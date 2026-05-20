@@ -2,7 +2,7 @@
   "pieces": [
     {
       "id": 1,
-      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sÃ©sames",
+      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sésames",
       "type": "cocktail",
       "photo": "",
       "ref": 10,
@@ -15,19 +15,19 @@
         },
         {
           "name": "Betteraves",
-          "cat": "LÃ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Echalotes",
-          "cat": "LÃ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Citrons verts",
-          "cat": "LÃ©gumes",
+          "cat": "Herbes",
           "qty": 0.5,
           "unit": "pcs"
         },
@@ -39,25 +39,25 @@
         },
         {
           "name": "SÃ©sames",
-          "cat": "Ãconomats",
+          "cat": "Herbes",
           "qty": 10,
           "unit": "g"
         },
         {
           "name": "Sauce soja",
-          "cat": "Ãconomats",
+          "cat": "Herbes",
           "qty": 4,
           "unit": "cl"
         },
         {
           "name": "Huile de sÃ©same",
-          "cat": "Ãconomats",
+          "cat": "Herbes",
           "qty": 4,
           "unit": "cl"
         },
         {
           "name": "Gochujang",
-          "cat": "Ãconomats",
+          "cat": "Herbes",
           "qty": 2,
           "unit": "g"
         }
