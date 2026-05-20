@@ -225,31 +225,31 @@
         },
         {
           "name": "Piment",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Oignon rouge",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Ail",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Echalote",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Gingembre",
-          "cat": "Herbes",
+          "cat": "Fruits",
           "qty": 30,
           "unit": "g"
         },
@@ -273,7 +273,7 @@
         },
         {
           "name": "Lait de coco",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 20,
           "unit": "cl"
         }
