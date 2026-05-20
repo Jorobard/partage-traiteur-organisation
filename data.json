@@ -276,6 +276,18 @@
           "cat": "Économats",
           "qty": 20,
           "unit": "cl"
+        },
+        {
+          "name": "Cuillères jetables",
+          "cat": "Ustensiles",
+          "qty": 20,
+          "unit": ""
+        },
+        {
+          "name": "Bols jetables",
+          "cat": "Ustensiles",
+          "qty": 20,
+          "unit": ""
         }
       ]
     },
@@ -499,43 +511,10 @@
       ]
     }
   ],
-  "selected": {
-    "1": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "2": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "3": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "4": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "5": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "6": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "7": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "8": {
-      "active": true,
-      "ratio": 1.5
-    }
-  },
-  "client": "Mariage Tom & Daphné",
-  "prestaDate": "2026-05-23",
-  "convives": 40,
+  "selected": {},
+  "client": "",
+  "prestaDate": "",
+  "convives": 50,
   "nextId": 9,
   "history": []
 }
