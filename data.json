@@ -281,7 +281,7 @@
     },
     {
       "id": 6,
-      "name": "Rolls (bun) d'agneau confit sauce tomate ÃÂÃÂÃÂÃÂ©picÃÂÃÂÃÂÃÂ©e",
+      "name": "Rolls (bun) d'agneau confit sauce tomate épicé",
       "type": "cocktail",
       "photo": "",
       "ref": 30,
@@ -300,25 +300,25 @@
         },
         {
           "name": "Oignon blanc",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Carotte",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Celeri branche",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Ail",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
@@ -342,13 +342,13 @@
         },
         {
           "name": "Sauce tomate",
-          "cat": "ÃÂÃÂÃÂÃÂconomats",
+          "cat": "Herbes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Oignon crispy",
-          "cat": "ÃÂÃÂÃÂÃÂconomats",
+          "cat": "Herbes",
           "qty": 2,
           "unit": "g"
         }
