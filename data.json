@@ -363,13 +363,13 @@
       "ingredients": [
         {
           "name": "Romaine",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Ail",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
@@ -405,19 +405,19 @@
         },
         {
           "name": "Sarrasin",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 10,
           "unit": "g"
         },
         {
           "name": "H.O",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 10,
           "unit": "cl"
         },
         {
           "name": "Moutarde",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 10,
           "unit": "g"
         }
