@@ -2,20 +2,65 @@
   "pieces": [
     {
       "id": 1,
-      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sésames",
+      "name": "Tartelettes feuilles de bricks, tartare de betterave aux sÃ©sames",
       "type": "cocktail",
       "photo": "",
       "ref": 10,
       "ingredients": [
-        {"name": "Ciboulettes", "cat": "Herbes", "qty": 0.2, "unit": "botte"},
-        {"name": "Betteraves", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Echalotes", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Citrons verts", "cat": "Légumes", "qty": 0.5, "unit": "pcs"},
-        {"name": "Feuilles de bricks", "cat": "Boulangerie", "qty": 3, "unit": "feuilles"},
-        {"name": "Sésames", "cat": "Économats", "qty": 10, "unit": "g"},
-        {"name": "Sauce soja", "cat": "Économats", "qty": 4, "unit": "cl"},
-        {"name": "Huile de sésame", "cat": "Économats", "qty": 4, "unit": "cl"},
-        {"name": "Gochujang", "cat": "Économats", "qty": 2, "unit": "g"}
+        {
+          "name": "Ciboulettes",
+          "cat": "Herbes",
+          "qty": 0.2,
+          "unit": "botte"
+        },
+        {
+          "name": "Betteraves",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Echalotes",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citrons verts",
+          "cat": "LÃ©gumes",
+          "qty": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "name": "Feuilles de bricks",
+          "cat": "Boulangerie",
+          "qty": 3,
+          "unit": "feuilles"
+        },
+        {
+          "name": "SÃ©sames",
+          "cat": "Ãconomats",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Sauce soja",
+          "cat": "Ãconomats",
+          "qty": 4,
+          "unit": "cl"
+        },
+        {
+          "name": "Huile de sÃ©same",
+          "cat": "Ãconomats",
+          "qty": 4,
+          "unit": "cl"
+        },
+        {
+          "name": "Gochujang",
+          "cat": "Ãconomats",
+          "qty": 2,
+          "unit": "g"
+        }
       ]
     },
     {
@@ -25,14 +70,54 @@
       "photo": "",
       "ref": 15,
       "ingredients": [
-        {"name": "Aneth", "cat": "Herbes", "qty": 1, "unit": "botte"},
-        {"name": "Concombre", "cat": "Légumes", "qty": 2, "unit": "pcs"},
-        {"name": "Citron", "cat": "Fruits", "qty": 2, "unit": "pcs"},
-        {"name": "Focaccia", "cat": "Boulangerie", "qty": 1, "unit": "pcs"},
-        {"name": "Philadelphia", "cat": "Ovoproduits", "qty": 250, "unit": "g"},
-        {"name": "Gros sel", "cat": "Économats", "qty": 40, "unit": "g"},
-        {"name": "Sucre", "cat": "Économats", "qty": 40, "unit": "g"},
-        {"name": "Baie rose", "cat": "Économats", "qty": 5, "unit": "g"}
+        {
+          "name": "Aneth",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "botte"
+        },
+        {
+          "name": "Concombre",
+          "cat": "LÃ©gumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron",
+          "cat": "Fruits",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Focaccia",
+          "cat": "Boulangerie",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Philadelphia",
+          "cat": "Ovoproduits",
+          "qty": 250,
+          "unit": "g"
+        },
+        {
+          "name": "Gros sel",
+          "cat": "Ãconomats",
+          "qty": 40,
+          "unit": "g"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Ãconomats",
+          "qty": 40,
+          "unit": "g"
+        },
+        {
+          "name": "Baie rose",
+          "cat": "Ãconomats",
+          "qty": 5,
+          "unit": "g"
+        }
       ]
     },
     {
@@ -42,10 +127,30 @@
       "photo": "",
       "ref": 4,
       "ingredients": [
-        {"name": "Jambon blanc", "cat": "Viandes", "qty": 1, "unit": "tranches"},
-        {"name": "Pain blanc", "cat": "Boulangerie", "qty": 2, "unit": "tranches"},
-        {"name": "Comté", "cat": "Ovoproduits", "qty": 20, "unit": "g"},
-        {"name": "Lait", "cat": "Ovoproduits", "qty": 20, "unit": "cl"}
+        {
+          "name": "Jambon blanc",
+          "cat": "Viandes",
+          "qty": 1,
+          "unit": "tranches"
+        },
+        {
+          "name": "Pain blanc",
+          "cat": "Boulangerie",
+          "qty": 2,
+          "unit": "tranches"
+        },
+        {
+          "name": "ComtÃ©",
+          "cat": "Ovoproduits",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Lait",
+          "cat": "Ovoproduits",
+          "qty": 20,
+          "unit": "cl"
+        }
       ]
     },
     {
@@ -55,53 +160,198 @@
       "photo": "",
       "ref": 30,
       "ingredients": [
-        {"name": "Menthe", "cat": "Herbes", "qty": 1, "unit": "bote"},
-        {"name": "Petits pois surgelés", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Citron vert", "cat": "Légumes", "qty": 3, "unit": "pcs"},
-        {"name": "Oignon blanc", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Lard fumé", "cat": "Viandes", "qty": 2, "unit": "tranches"},
-        {"name": "Lait entier", "cat": "Ovoproduits", "qty": 1000, "unit": "cl"},
-        {"name": "Tartelette prêt à garnir 4cm", "cat": "Économats", "qty": 30, "unit": ""}
+        {
+          "name": "Menthe",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "bote"
+        },
+        {
+          "name": "Petits pois surgelÃ©s",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron vert",
+          "cat": "LÃ©gumes",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "name": "Oignon blanc",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Lard fumÃ©",
+          "cat": "Viandes",
+          "qty": 2,
+          "unit": "tranches"
+        },
+        {
+          "name": "Lait entier",
+          "cat": "Ovoproduits",
+          "qty": 1000,
+          "unit": "cl"
+        },
+        {
+          "name": "Tartelette prÃªt Ã  garnir 4cm",
+          "cat": "Ãconomats",
+          "qty": 30,
+          "unit": ""
+        }
       ]
     },
     {
       "id": 5,
-      "name": "Cassolettes, poisson blanc, sauce lèche de tigre, grenade, oignons rouges",
+      "name": "Cassolettes, poisson blanc, sauce lÃ¨che de tigre, grenade, oignons rouges",
       "type": "cocktail",
       "photo": "",
       "ref": 20,
       "ingredients": [
-        {"name": "Coriandre", "cat": "Herbes", "qty": 1, "unit": "pcs"},
-        {"name": "Citronnelle", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Piment", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Oignon rouge", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Ail", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Echalote", "cat": "Légumes", "qty": 2, "unit": "pcs"},
-        {"name": "Gingembre", "cat": "Légumes", "qty": 30, "unit": "g"},
-        {"name": "Grenade", "cat": "Fruits", "qty": 1, "unit": "pcs"},
-        {"name": "Citron vert", "cat": "Fruits", "qty": 4, "unit": "pcs"},
-        {"name": "Poisson blanc (daurade)", "cat": "Poissons", "qty": 400, "unit": "g"},
-        {"name": "Lait de coco", "cat": "Économats", "qty": 20, "unit": "cl"}
+        {
+          "name": "Coriandre",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citronnelle",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Piment",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Oignon rouge",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Ail",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Echalote",
+          "cat": "LÃ©gumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Gingembre",
+          "cat": "LÃ©gumes",
+          "qty": 30,
+          "unit": "g"
+        },
+        {
+          "name": "Grenade",
+          "cat": "Fruits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron vert",
+          "cat": "Fruits",
+          "qty": 4,
+          "unit": "pcs"
+        },
+        {
+          "name": "Poisson blanc (daurade)",
+          "cat": "Poissons",
+          "qty": 400,
+          "unit": "g"
+        },
+        {
+          "name": "Lait de coco",
+          "cat": "Ãconomats",
+          "qty": 20,
+          "unit": "cl"
+        }
       ]
     },
     {
       "id": 6,
-      "name": "Rolls (bun) d'agneau confit sauce tomate épicée",
+      "name": "Rolls (bun) d'agneau confit sauce tomate Ã©picÃ©e",
       "type": "cocktail",
       "photo": "",
       "ref": 30,
       "ingredients": [
-        {"name": "Thym frais", "cat": "Herbes", "qty": 1, "unit": "botte"},
-        {"name": "Ciboulette", "cat": "Herbes", "qty": 1, "unit": "botte"},
-        {"name": "Oignon blanc", "cat": "Légumes", "qty": 2, "unit": "pcs"},
-        {"name": "Carotte", "cat": "Légumes", "qty": 2, "unit": "pcs"},
-        {"name": "Celeri branche", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Ail", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Epaule d'agneau", "cat": "Viandes", "qty": 600, "unit": "g"},
-        {"name": "Buns", "cat": "Boulangerie", "qty": 30, "unit": "pcs"},
-        {"name": "Parmesan", "cat": "Ovoproduits", "qty": 200, "unit": "g"},
-        {"name": "Sauce tomate", "cat": "Économats", "qty": 2, "unit": "pcs"},
-        {"name": "Oignon crispy", "cat": "Économats", "qty": 2, "unit": "g"}
+        {
+          "name": "Thym frais",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "botte"
+        },
+        {
+          "name": "Ciboulette",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "botte"
+        },
+        {
+          "name": "Oignon blanc",
+          "cat": "LÃ©gumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Carotte",
+          "cat": "LÃ©gumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Celeri branche",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Ail",
+          "cat": "LÃ©gumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Epaule d'agneau",
+          "cat": "Viandes",
+          "qty": 600,
+          "unit": "g"
+        },
+        {
+          "name": "Buns",
+          "cat": "Boulangerie",
+          "qty": 30,
+          "unit": "pcs"
+        },
+        {
+          "name": "Parmesan",
+          "cat": "Ovoproduits",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Sauce tomate",
+          "cat": "Ãconomats",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Oignon crispy",
+          "cat": "Ãconomats",
+          "qty": 2,
+          "unit": "g"
+        }
       ]
     },
     {
@@ -111,16 +361,66 @@
       "photo": "",
       "ref": 5,
       "ingredients": [
-        {"name": "Romaine", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Ail", "cat": "Légumes", "qty": 1, "unit": "pcs"},
-        {"name": "Blanc de poulet", "cat": "Viandes", "qty": 100, "unit": "g"},
-        {"name": "Anchois", "cat": "Poissons", "qty": 1, "unit": "pcs"},
-        {"name": "Jaune oeuf", "cat": "Ovoproduits", "qty": 1, "unit": "p"},
-        {"name": "Parmesan", "cat": "Ovoproduits", "qty": 50, "unit": "g"},
-        {"name": "Creme", "cat": "Ovoproduits", "qty": 5, "unit": "cl"},
-        {"name": "Sarrasin", "cat": "Économats", "qty": 10, "unit": "g"},
-        {"name": "H.O", "cat": "Économats", "qty": 10, "unit": "cl"},
-        {"name": "Moutarde", "cat": "Économats", "qty": 10, "unit": "g"}
+        {
+          "name": "Romaine",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Ail",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Blanc de poulet",
+          "cat": "Viandes",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "Anchois",
+          "cat": "Poissons",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Jaune oeuf",
+          "cat": "Ovoproduits",
+          "qty": 1,
+          "unit": "p"
+        },
+        {
+          "name": "Parmesan",
+          "cat": "Ovoproduits",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Creme",
+          "cat": "Ovoproduits",
+          "qty": 5,
+          "unit": "cl"
+        },
+        {
+          "name": "Sarrasin",
+          "cat": "Herbes",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "H.O",
+          "cat": "Herbes",
+          "qty": 10,
+          "unit": "cl"
+        },
+        {
+          "name": "Moutarde",
+          "cat": "Herbes",
+          "qty": 10,
+          "unit": "g"
+        }
       ]
     },
     {
@@ -130,17 +430,72 @@
       "photo": "",
       "ref": 15,
       "ingredients": [
-        {"name": "Ciboulette", "cat": "Herbes", "qty": 0.5, "unit": "botte"},
-        {"name": "Ail", "cat": "Herbes", "qty": 1, "unit": "pcs"},
-        {"name": "Huile pépin raisin", "cat": "Herbes", "qty": 20, "unit": "cl"},
-        {"name": "Philadelphia", "cat": "Herbes", "qty": 150, "unit": "g"},
-        {"name": "Echalote", "cat": "Légumes", "qty": 2, "unit": "pcs"},
-        {"name": "Citron vert", "cat": "Fruits", "qty": 1, "unit": "pcs"},
-        {"name": "Lait entier", "cat": "Ovoproduits", "qty": 1, "unit": "L"},
-        {"name": "Parmesan", "cat": "Ovoproduits", "qty": 100, "unit": "g"},
-        {"name": "Jaune", "cat": "Ovoproduits", "qty": 1, "unit": "pcs"},
-        {"name": "Polenta extra fine", "cat": "Économats", "qty": 200, "unit": "g"},
-        {"name": "Moutarde à l'ancienne", "cat": "Économats", "qty": 10, "unit": "g"}
+        {
+          "name": "Ciboulette",
+          "cat": "Herbes",
+          "qty": 0.5,
+          "unit": "botte"
+        },
+        {
+          "name": "Ail",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Huile pÃ©pin raisin",
+          "cat": "Herbes",
+          "qty": 20,
+          "unit": "cl"
+        },
+        {
+          "name": "Philadelphia",
+          "cat": "Herbes",
+          "qty": 150,
+          "unit": "g"
+        },
+        {
+          "name": "Echalote",
+          "cat": "LÃ©gumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron vert",
+          "cat": "Fruits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Lait entier",
+          "cat": "Ovoproduits",
+          "qty": 1,
+          "unit": "L"
+        },
+        {
+          "name": "Parmesan",
+          "cat": "Ovoproduits",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "Jaune",
+          "cat": "Ovoproduits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Polenta extra fine",
+          "cat": "Ãconomats",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Moutarde Ã  l'ancienne",
+          "cat": "Ãconomats",
+          "qty": 10,
+          "unit": "g"
+        }
       ]
     }
   ],
