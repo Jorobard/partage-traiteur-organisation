@@ -206,7 +206,7 @@
     },
     {
       "id": 5,
-      "name": "Cassolettes, poisson blanc, sauce lÃÂÃÂÃÂÃÂ¨che de tigre, grenade, oignons rouges",
+      "name": "Cassolettes, poisson blanc, sauce lèche de tigre, grenade, oignons rouges",
       "type": "cocktail",
       "photo": "",
       "ref": 20,
@@ -219,37 +219,37 @@
         },
         {
           "name": "Citronnelle",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Piment",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Oignon rouge",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Ail",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Echalote",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 2,
           "unit": "pcs"
         },
         {
           "name": "Gingembre",
-          "cat": "LÃÂÃÂÃÂÃÂ©gumes",
+          "cat": "Herbes",
           "qty": 30,
           "unit": "g"
         },
@@ -273,7 +273,7 @@
         },
         {
           "name": "Lait de coco",
-          "cat": "ÃÂÃÂÃÂÃÂconomats",
+          "cat": "Herbes",
           "qty": 20,
           "unit": "cl"
         }
