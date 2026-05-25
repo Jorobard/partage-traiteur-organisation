@@ -469,8 +469,8 @@
         {
           "name": "Lait entier",
           "cat": "Ovoproduits",
-          "qty": 1,
-          "unit": "L"
+          "qty": 100,
+          "unit": "cl"
         },
         {
           "name": "Parmesan",
