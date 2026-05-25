@@ -800,12 +800,63 @@
           "unit": "cl"
         }
       ]
+    },
+    {
+      "id": 14,
+      "name": "Bouché pomme de terre, hareng fumé",
+      "type": "cocktail",
+      "ref": 2,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Pomme de terre chair ferme",
+          "cat": "Légumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Hareng",
+          "cat": "Poissons",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Creme isigny",
+          "cat": "Ovoproduits",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Ciboulette",
+          "cat": "Herbes",
+          "qty": 0.05,
+          "unit": "g"
+        },
+        {
+          "name": "Echalote",
+          "cat": "Légumes",
+          "qty": 0.3,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron vert",
+          "cat": "Fruits",
+          "qty": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "name": "Pomme Granny Smith",
+          "cat": "Fruits",
+          "qty": 0.1,
+          "unit": "pcs"
+        }
+      ]
     }
   ],
   "selected": {},
   "client": "",
   "prestaDate": "",
   "convives": 50,
-  "nextId": 14,
+  "nextId": 15,
   "history": []
 }
