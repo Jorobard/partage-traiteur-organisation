@@ -605,12 +605,63 @@
           "unit": "pcs"
         }
       ]
+    },
+    {
+      "id": 11,
+      "name": "Burrata, crème de petits pois menthe",
+      "type": "entree",
+      "ref": 1,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Burrata de buffle",
+          "cat": "Ovoproduits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Petits pois surgelé",
+          "cat": "Légumes",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "menthe",
+          "cat": "Herbes",
+          "qty": 0.05,
+          "unit": "pcs"
+        },
+        {
+          "name": "Lait entier",
+          "cat": "Ovoproduits",
+          "qty": 3,
+          "unit": "cl"
+        },
+        {
+          "name": "Citron vert",
+          "cat": "Herbes",
+          "qty": 0.2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Petits pois",
+          "cat": "Légumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Fleur de pensée",
+          "cat": "Légumes",
+          "qty": 0.1,
+          "unit": "pcs"
+        }
+      ]
     }
   ],
   "selected": {},
   "client": "",
   "prestaDate": "",
   "convives": 50,
-  "nextId": 11,
+  "nextId": 12,
   "history": []
 }
