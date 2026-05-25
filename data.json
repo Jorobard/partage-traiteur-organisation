@@ -851,12 +851,87 @@
           "unit": "pcs"
         }
       ]
+    },
+    {
+      "id": 15,
+      "name": "Tarte aux fraises",
+      "type": "dessert",
+      "ref": 1,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Fraises",
+          "cat": "Herbes",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre",
+          "cat": "Herbes",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Poudre amande",
+          "cat": "Économats",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Mascarpone",
+          "cat": "Ovoproduits",
+          "qty": 15,
+          "unit": "g"
+        },
+        {
+          "name": "Vanille",
+          "cat": "Économats",
+          "qty": 0.1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Sucre glace",
+          "cat": "Économats",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Farine T55",
+          "cat": "Économats",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "Sucre glace",
+          "cat": "Économats",
+          "qty": 40,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre",
+          "cat": "Ovoproduits",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Oeufs",
+          "cat": "Herbes",
+          "qty": 0.5,
+          "unit": "pcs"
+        }
+      ]
     }
   ],
   "selected": {},
   "client": "",
   "prestaDate": "",
   "convives": 50,
-  "nextId": 15,
+  "nextId": 16,
   "history": []
 }
