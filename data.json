@@ -550,20 +550,14 @@
         {
           "name": "Ketchup",
           "cat": "Économats",
-          "qty": 5,
+          "qty": 2,
           "unit": "g"
         },
         {
-          "name": "Jaune oeuf",
-          "cat": "Ovoproduits",
-          "qty": 0.05,
-          "unit": "pcs"
-        },
-        {
-          "name": "Huile neutre",
-          "cat": "Économats",
-          "qty": 2,
-          "unit": "cl"
+          "name": "Mayonnaise",
+          "cat": "Herbes",
+          "qty": 3,
+          "unit": "g"
         }
       ]
     }
