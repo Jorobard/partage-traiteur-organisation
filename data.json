@@ -622,7 +622,7 @@
         {
           "name": "Petits pois surgelé",
           "cat": "Légumes",
-          "qty": 10,
+          "qty": 20,
           "unit": "g"
         },
         {
@@ -634,7 +634,7 @@
         {
           "name": "Lait entier",
           "cat": "Ovoproduits",
-          "qty": 3,
+          "qty": 6,
           "unit": "cl"
         },
         {
@@ -928,10 +928,43 @@
       ]
     }
   ],
-  "selected": {},
-  "client": "",
-  "prestaDate": "",
-  "convives": 50,
+  "selected": {
+    "8": {
+      "active": true,
+      "ratio": 2
+    },
+    "9": {
+      "active": true,
+      "ratio": 1
+    },
+    "10": {
+      "active": true,
+      "ratio": 1
+    },
+    "11": {
+      "active": true,
+      "ratio": 5.7
+    },
+    "12": {
+      "active": true,
+      "ratio": 4.7
+    },
+    "13": {
+      "active": true,
+      "ratio": 2.35
+    },
+    "14": {
+      "active": true,
+      "ratio": 1
+    },
+    "15": {
+      "active": true,
+      "ratio": 1
+    }
+  },
+  "client": "semaine de fou ",
+  "prestaDate": "2026-05-27",
+  "convives": 9,
   "nextId": 16,
   "history": []
 }
