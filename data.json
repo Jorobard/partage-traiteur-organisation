@@ -719,12 +719,93 @@
           "unit": "g"
         }
       ]
+    },
+    {
+      "id": 13,
+      "name": "Flétan confit, beurre citronné, petits légumes printaniers",
+      "type": "plat",
+      "ref": 1,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Flétan",
+          "cat": "Poissons",
+          "qty": 130,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre",
+          "cat": "Ovoproduits",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Echalote",
+          "cat": "Légumes",
+          "qty": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "name": "Vin blanc",
+          "cat": "Économats",
+          "qty": 2,
+          "unit": "cl"
+        },
+        {
+          "name": "Citron",
+          "cat": "Fruits",
+          "qty": 0.2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Carottes",
+          "cat": "Légumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Oignon nouveau",
+          "cat": "Légumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Ail des ours",
+          "cat": "Herbes",
+          "qty": 5,
+          "unit": "g"
+        },
+        {
+          "name": "Fèves",
+          "cat": "Légumes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Courgette",
+          "cat": "Légumes",
+          "qty": 0.3,
+          "unit": "pcs"
+        },
+        {
+          "name": "Courgette jaune",
+          "cat": "Légumes",
+          "qty": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "name": "Creme",
+          "cat": "Herbes",
+          "qty": 2,
+          "unit": "cl"
+        }
+      ]
     }
   ],
   "selected": {},
   "client": "",
   "prestaDate": "",
   "convives": 50,
-  "nextId": 13,
+  "nextId": 14,
   "history": []
 }
