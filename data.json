@@ -560,12 +560,57 @@
           "unit": "g"
         }
       ]
+    },
+    {
+      "id": 10,
+      "name": "Cylindre de bricks mimosa truffé",
+      "type": "cocktail",
+      "ref": 3,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Oeuf",
+          "cat": "Ovoproduits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Feuille de brick",
+          "cat": "Économats",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Mayonnaise",
+          "cat": "Ovoproduits",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Huile de truffe",
+          "cat": "Économats",
+          "qty": 2,
+          "unit": "cl"
+        },
+        {
+          "name": "Ciboulette",
+          "cat": "Herbes",
+          "qty": 0.1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Echalote",
+          "cat": "Herbes",
+          "qty": 0.5,
+          "unit": "pcs"
+        }
+      ]
     }
   ],
   "selected": {},
   "client": "",
   "prestaDate": "",
   "convives": 50,
-  "nextId": 10,
+  "nextId": 11,
   "history": []
 }
