@@ -656,12 +656,75 @@
           "unit": "pcs"
         }
       ]
+    },
+    {
+      "id": 12,
+      "name": "Tartare de rhubarbe à la cardamome, glace au yaourt, sablé breton",
+      "type": "dessert",
+      "ref": 3,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Rhubarbe",
+          "cat": "Fruits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Cardamome",
+          "cat": "Économats",
+          "qty": 2,
+          "unit": "g"
+        },
+        {
+          "name": "Glace yaourt",
+          "cat": "Ovoproduits",
+          "qty": 135,
+          "unit": "ml"
+        },
+        {
+          "name": "Jaune oeuf",
+          "cat": "Ovoproduits",
+          "qty": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 60,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre demi sel",
+          "cat": "Ovoproduits",
+          "qty": 67,
+          "unit": "g"
+        },
+        {
+          "name": "Farine T55",
+          "cat": "Économats",
+          "qty": 95,
+          "unit": "g"
+        },
+        {
+          "name": "Levure chimique",
+          "cat": "Économats",
+          "qty": 3.5,
+          "unit": "g"
+        }
+      ]
     }
   ],
   "selected": {},
   "client": "",
   "prestaDate": "",
   "convives": 50,
-  "nextId": 12,
+  "nextId": 13,
   "history": []
 }
