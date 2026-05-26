@@ -50,6 +50,7 @@ label.label{font-size:12px;color:var(--text-mid);margin-bottom:3px;display:block
 .badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600}
 .badge-green{background:var(--green-light);color:#0f6e56}
 .badge-gray{background:var(--cream);color:var(--text-mid)}
+.badge-blue{background:var(--blue-light);color:var(--blue)}
 .toggle{position:relative;display:inline-block;width:36px;height:20px;flex-shrink:0}
 .toggle input{opacity:0;width:0;height:0}
 .tog-slider{position:absolute;cursor:pointer;inset:0;background:#ddd;border-radius:20px;transition:.2s}
@@ -66,6 +67,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
 .qty-val{font-weight:700;color:var(--brand);font-size:14px}
 .empty{text-align:center;padding:2rem 1rem;color:var(--text-light);font-size:13px}
 .alert-info{padding:9px 12px;border-radius:8px;font-size:12px;margin-top:.5rem;background:var(--brand-light);color:var(--brand-dark);border:1px solid #f5c0c6}
+.alert-ok{padding:9px 12px;border-radius:8px;font-size:12px;margin-top:.5rem;background:var(--green-light);color:#0f6e56;border:1px solid #a7f3d0}
 .piece-photo{width:48px;height:48px;border-radius:7px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
 .piece-photo-placeholder{width:48px;height:48px;border-radius:7px;border:1px dashed var(--border);background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;cursor:pointer}
 .photo-upload-area{border:2px dashed var(--border);border-radius:9px;padding:1.25rem;text-align:center;cursor:pointer;transition:.15s;background:var(--cream)}
@@ -80,6 +82,10 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
 .filter-btn.active{background:var(--brand);color:white;border-color:var(--brand)}
 .type-section{margin-bottom:1.25rem}
 .type-section-title{font-size:13px;font-weight:700;color:var(--text-mid);margin-bottom:.5rem;padding-bottom:5px;border-bottom:2px solid var(--cream-dark)}
+.qty-mode-toggle{display:flex;gap:0;border:1px solid var(--border);border-radius:7px;overflow:hidden;margin-bottom:8px}
+.qty-mode-btn{flex:1;padding:6px;border:none;background:var(--cream);cursor:pointer;font-family:inherit;font-size:11px;font-weight:500;color:var(--text-mid);transition:.15s}
+.qty-mode-btn.active{background:var(--brand);color:white}
+/* Setup screen */
 .setup-screen{position:fixed;inset:0;background:var(--cream);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem}
 .setup-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem;max-width:420px;width:100%}
 .setup-logo{width:56px;height:56px;border-radius:50%;background:var(--cream);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;text-align:center;line-height:1.1}
@@ -89,13 +95,14 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
 </head>
 <body>
 
+<!-- SETUP SCREEN -->
 <div class="setup-screen" id="setup-screen" style="display:none">
   <div class="setup-card">
     <div class="setup-logo">Par<br>tage</div>
     <h2 style="text-align:center;font-size:17px;margin-bottom:.25rem">Connexion GitHub</h2>
     <p style="text-align:center;font-size:12px;color:var(--text-mid);margin-bottom:1.5rem">Pour synchroniser les données entre tous les appareils</p>
     <div style="margin-bottom:12px">
-      <label class="label">Ton prénom</label>
+      <label class="label">Ton prénom (pour identifier qui modifie)</label>
       <input type="text" id="setup-name" placeholder="Ex : Jules ou Joséphine"/>
     </div>
     <div style="margin-bottom:16px">
@@ -104,7 +111,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
       <div style="font-size:11px;color:var(--text-light);margin-top:4px">GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → cocher "repo"</div>
     </div>
     <button class="btn btn-primary" style="width:100%" onclick="connectGitHub()">Se connecter</button>
-    <div id="setup-error" style="display:none;margin-top:10px;padding:9px 12px;border-radius:8px;font-size:12px;background:var(--brand-light);color:var(--brand-dark)"></div>
+    <div id="setup-error" style="display:none;margin-top:10px" class="alert-info"></div>
   </div>
 </div>
 
@@ -129,6 +136,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   <button class="tab" onclick="showTab('config',this)">⚙️</button>
 </div>
 
+<!-- CATALOGUE -->
 <div id="page-catalogue" class="page active">
   <div class="top-bar">
     <div style="font-weight:700;font-size:15px">Mes recettes</div>
@@ -162,12 +170,12 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
         </div>
       </div>
       <div style="margin-bottom:12px">
-        <label class="label">Ces quantités sont pour combien de pièces ?</label>
+        <label class="label">Quantités de référence pour</label>
         <div style="display:flex;align-items:center;gap:8px">
-          <input type="number" id="inp-ref" value="10" min="1" style="width:80px"/>
-          <span style="font-size:12px;color:var(--text-mid)">pièces de référence</span>
+          <input type="number" id="inp-ref" value="50" min="1" style="width:80px"/>
+          <span style="font-size:12px;color:var(--text-mid)">personnes</span>
         </div>
-        <div style="font-size:11px;color:var(--text-light);margin-top:4px">Ex: si les quantités sont pour faire 30 buns, indiquer 30</div>
+        <div style="font-size:11px;color:var(--text-light);margin-top:4px">Les quantités d'ingrédients ci-dessous correspondent à ce nombre de personnes</div>
       </div>
       <div style="font-weight:700;font-size:13px;margin-bottom:.6rem">Ingrédients</div>
       <div style="display:grid;grid-template-columns:1fr 110px 65px 65px 28px;gap:4px;margin-bottom:5px">
@@ -187,6 +195,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   </div>
 </div>
 
+<!-- PRESTA -->
 <div id="page-presta" class="page">
   <div class="card">
     <div class="card-title">Informations de la prestation</div>
@@ -216,26 +225,70 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   </div>
 </div>
 
+<!-- COURSES -->
 <div id="page-courses" class="page">
-  <div class="top-bar no-print">
-    <div>
-      <div style="font-weight:700;font-size:15px" id="courses-title">Liste de courses</div>
-      <div style="font-size:11px;color:var(--text-mid);margin-top:2px" id="courses-sub"></div>
+  <div id="courses-normal-view">
+    <div class="top-bar no-print">
+      <div>
+        <div style="font-weight:700;font-size:15px" id="courses-title">Liste de courses</div>
+        <div style="font-size:11px;color:var(--text-mid);margin-top:2px" id="courses-sub"></div>
+      </div>
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer</button>
     </div>
-    <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer</button>
+    <div id="courses-content"></div>
+    <div id="start-shopping-bar" style="display:none;margin-bottom:1rem">
+      <button class="btn btn-green" style="width:100%;padding:12px;font-size:14px" onclick="startShopping()">🛒 Démarrer les courses</button>
+    </div>
+    <div id="active-shopping-bar" style="display:none;margin-bottom:1rem">
+      <div class="card" style="background:#e8f8f1;border-color:#a7f3d0">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:700;font-size:13px;color:#0f6e56">🛒 Courses en cours</div>
+            <div style="font-size:11px;color:#0f6e56;margin-top:2px" id="shopping-progress"></div>
+          </div>
+          <button class="btn btn-green btn-sm" onclick="showShoppingMode()">Reprendre →</button>
+        </div>
+      </div>
+    </div>
+    <div id="share-section" class="card no-print" style="display:none">
+      <div class="card-title">Partager la liste</div>
+      <div class="share-grid">
+        <button class="share-btn" onclick="shareWhatsApp()"><span class="share-icon">💬</span>WhatsApp</button>
+        <button class="share-btn" onclick="shareSMS()"><span class="share-icon">📱</span>SMS</button>
+        <button class="share-btn" onclick="copyText()"><span class="share-icon">📋</span>Copier</button>
+      </div>
+      <div id="copy-confirm" style="display:none;text-align:center;font-size:12px;color:var(--green);margin-top:8px;font-weight:600">✓ Copié !</div>
+    </div>
   </div>
-  <div id="courses-content"></div>
-  <div id="share-section" class="card no-print" style="display:none">
-    <div class="card-title">Partager la liste</div>
-    <div class="share-grid">
-      <button class="share-btn" onclick="shareWhatsApp()"><span class="share-icon">💬</span>WhatsApp</button>
-      <button class="share-btn" onclick="shareSMS()"><span class="share-icon">📱</span>SMS</button>
-      <button class="share-btn" onclick="copyText()"><span class="share-icon">📋</span>Copier</button>
+  <div id="courses-shopping-view" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;gap:8px">
+      <div>
+        <div style="font-weight:700;font-size:15px" id="shopping-title">Courses en cours</div>
+        <div style="font-size:11px;color:var(--text-mid);margin-top:2px" id="shopping-sub"></div>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-sm" onclick="hideShoppingMode()">← Retour</button>
+        <button class="btn btn-sm btn-danger" onclick="finishShopping()">✅ Terminé</button>
+      </div>
     </div>
-    <div id="copy-confirm" style="display:none;text-align:center;font-size:12px;color:var(--green);margin-top:8px;font-weight:600">✓ Copié !</div>
+    <div class="card" style="margin-bottom:1rem;padding:.75rem 1rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;font-weight:600" id="progress-label">0 / 0 articles</span>
+        <span style="font-size:12px;color:var(--text-mid)" id="progress-pct">0%</span>
+      </div>
+      <div style="background:var(--cream-dark);border-radius:10px;height:8px;overflow:hidden">
+        <div id="progress-bar" style="background:var(--green);height:100%;border-radius:10px;transition:.3s;width:0%"></div>
+      </div>
+    </div>
+    <div id="shopping-todo"></div>
+    <div id="shopping-done-section" style="display:none">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-light);margin:1rem 0 .5rem">✅ Dans le panier</div>
+      <div id="shopping-done"></div>
+    </div>
   </div>
 </div>
 
+<!-- HISTORIQUE -->
 <div id="page-histo" class="page">
   <div class="top-bar">
     <div style="font-weight:700;font-size:15px">Historique des prestas</div>
@@ -243,6 +296,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   <div id="histo-list"></div>
 </div>
 
+<!-- CONFIG -->
 <div id="page-config" class="page">
   <div class="card">
     <div class="card-title">⚙️ Connexion & Synchronisation</div>
@@ -251,36 +305,68 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
       <div style="font-size:13px;font-weight:600" id="config-name"></div>
     </div>
     <div style="margin-bottom:14px">
-      <label class="label">Statut</label>
+      <label class="label">Statut de la synchronisation</label>
       <div id="config-status" style="font-size:13px"></div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <button class="btn btn-primary" onclick="syncNow()">↻ Synchroniser</button>
+      <button class="btn btn-primary" onclick="syncNow()">↻ Synchroniser maintenant</button>
       <button class="btn btn-danger" onclick="disconnect()">Se déconnecter</button>
     </div>
   </div>
   <div class="card">
     <div class="card-title">ℹ️ Comment ça marche</div>
-    <p style="font-size:12px;color:var(--text-mid);line-height:1.6">Les données sont stockées dans le repo GitHub <strong>partage-traiteur-organisation</strong>. Chaque modification est synchronisée automatiquement. Ton frère doit se connecter avec son propre token GitHub pour voir les mêmes données.</p>
+    <p style="font-size:12px;color:var(--text-mid);line-height:1.6">Les données sont stockées dans le repo GitHub <strong>partage-traiteur-organisation</strong>. Chaque modification est automatiquement synchronisée. Ton frère doit se connecter avec son propre token GitHub (accès au même repo) pour voir les mêmes données.</p>
   </div>
 </div>
-</div>
+
+</div><!-- end .app -->
 
 <script>
 const GITHUB_OWNER='Jorobard';
 const GITHUB_REPO='partage-traiteur-organisation';
 const GITHUB_FILE='data.json';
 const GITHUB_BRANCH='main';
+
 const TYPES={cocktail:'🍢 Pièces cocktails',entree:'🥗 Entrées',plat:'🍽️ Plats',dessert:'🍰 Desserts'};
 const TYPE_KEYS=['cocktail','entree','plat','dessert'];
 const ING_CATS=['Herbes','Légumes','Fruits','Viandes','Poissons','Boulangerie','Ovoproduits','Économats','Hygiène','Ustensiles'];
 
 let ghToken='',ghUser='',ghFileSha='';
-let data={pieces:[],selected:{},client:"",prestaDate:"",convives:50,nextId:1,history:[]};
+let data={pieces:[
+  {id:1,name:"Tartelettes feuilles de bricks, tartare de betterave aux sésames",type:'cocktail',photo:'',ref:50,ingredients:[
+    {name:"Betteraves",cat:"Légumes",qty:1,unit:"pcs"},
+    {name:"Echalotes",cat:"Légumes",qty:23,unit:"g"},
+    {name:"Citrons verts",cat:"Légumes",qty:12,unit:"pcs"},
+    {name:"Ciboulettes",cat:"Herbes",qty:45,unit:"g"},
+    {name:"Feuilles de bricks",cat:"Boulangerie",qty:16,unit:"feuilles"},
+    {name:"Sésames",cat:"Économats",qty:27,unit:"g"},
+    {name:"Sauce soja",cat:"Économats",qty:4,unit:"cl"},
+    {name:"Huile de sésame",cat:"Économats",qty:"",unit:""},
+    {name:"Gochujang",cat:"Économats",qty:"",unit:""}
+  ]},
+  {id:2,name:"Focaccia, cream cheese, gravlax concombre aneth et baie rose",type:'cocktail',photo:'',ref:50,ingredients:[
+    {name:"Concombre",cat:"Légumes",qty:"",unit:"pcs"},
+    {name:"Aneth",cat:"Herbes",qty:"",unit:"botte"},
+    {name:"Citron",cat:"Fruits",qty:"",unit:"pcs"},
+    {name:"Focaccia",cat:"Boulangerie",qty:"",unit:"pcs"},
+    {name:"Gros sel",cat:"Économats",qty:"",unit:"g"},
+    {name:"Sucre",cat:"Économats",qty:"",unit:"g"},
+    {name:"Baie rose",cat:"Économats",qty:"",unit:"g"},
+    {name:"Philadelphia",cat:"Ovoproduits",qty:"",unit:"g"}
+  ]},
+  {id:3,name:"Croque monsieur",type:'cocktail',photo:'',ref:50,ingredients:[
+    {name:"Jambon blanc",cat:"Viandes",qty:"",unit:"tranches"},
+    {name:"Pain blanc",cat:"Boulangerie",qty:"",unit:"tranches"},
+    {name:"Comté",cat:"Ovoproduits",qty:"",unit:"g"},
+    {name:"Lait",cat:"Ovoproduits",qty:"",unit:"cl"}
+  ]}
+],selected:{},client:"",prestaDate:"",convives:50,nextId:4,history:[]};
+
 let editingId=null,currentPhotoB64="";
 let catalogFilter='all',prestaFilter='all';
-let syncTimer=null;
+let lastSync=null,syncTimer=null;
 
+/* ── GITHUB SYNC ── */
 function getApiUrl(){return`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;}
 
 async function ghFetch(method,body=null){
@@ -293,28 +379,97 @@ async function loadFromGitHub(){
   setSyncStatus('loading','Synchronisation…');
   try{
     const r=await ghFetch('GET');
-    if(r.status===404){await pushToGitHub('Initialisation');return;}
+    if(r.status===404){
+      await pushToGitHub('Initialisation des données');
+      setSyncStatus('ok','Initialisé');
+      return;
+    }
     if(!r.ok)throw new Error('Erreur '+r.status);
     const json=await r.json();
     ghFileSha=json.sha;
+    // Safe UTF-8 decode
     const binary=atob(json.content.replace(/\n/g,''));
     const bytes=new Uint8Array(binary.length);
     for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
-    const decoded=JSON.parse(new TextDecoder().decode(bytes));
-    data.pieces=decoded.pieces||[];
+    const text=new TextDecoder().decode(bytes);
+    // Safety check: never load empty or invalid data
+    if(!text||text.trim().length<10)throw new Error('Fichier distant vide ou corrompu');
+    const decoded=JSON.parse(text);
+    if(!decoded.pieces||!Array.isArray(decoded.pieces))throw new Error('Format de données invalide');
+    if(decoded.pieces.length===0&&data.pieces.length>0){
+      // Remote is empty but we have local data — don't overwrite!
+      setSyncStatus('err','⚠️ Données distantes vides — locales conservées');
+      return;
+    }
+    data.pieces=decoded.pieces;
     data.history=decoded.history||[];
     data.nextId=decoded.nextId||1;
-    setSyncStatus('ok','Sync '+new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}));
-  }catch(e){setSyncStatus('err','Hors ligne');}
+    // Save local backup
+    localStorage.setItem('partage_backup',JSON.stringify({pieces:data.pieces,history:data.history,nextId:data.nextId,savedAt:new Date().toISOString()}));
+    lastSync=new Date();
+    setSyncStatus('ok','Sync '+lastSync.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}));
+  }catch(e){
+    setSyncStatus('err','Hors ligne — données locales utilisées');
+    // Try to restore from local backup
+    try{
+      const backup=localStorage.getItem('partage_backup');
+      if(backup){
+        const b=JSON.parse(backup);
+        if(b.pieces&&b.pieces.length>0){
+          data.pieces=b.pieces;
+          data.history=b.history||[];
+          data.nextId=b.nextId||1;
+          setSyncStatus('err','Hors ligne — backup local du '+new Date(b.savedAt).toLocaleDateString('fr-FR'));
+        }
+      }
+    }catch(e2){}
+  }
+}
+
+async function compressPhoto(base64,maxKB=200){
+  return new Promise(resolve=>{
+    if(!base64||base64.length<maxKB*1024){resolve(base64);return;}
+    const img=new Image();
+    img.onload=()=>{
+      const canvas=document.createElement('canvas');
+      let w=img.width,h=img.height;
+      const max=800;
+      if(w>max||h>max){if(w>h){h=Math.round(h*max/w);w=max;}else{w=Math.round(w*max/h);h=max;}}
+      canvas.width=w;canvas.height=h;
+      canvas.getContext('2d').drawImage(img,0,0,w,h);
+      let quality=0.8;
+      let result=canvas.toDataURL('image/jpeg',quality);
+      while(result.length>maxKB*1024*1.37&&quality>0.3){quality-=0.1;result=canvas.toDataURL('image/jpeg',quality);}
+      resolve(result);
+    };
+    img.src=base64;
+  });
 }
 
 async function pushToGitHub(msg){
   setSyncStatus('loading','Sauvegarde…');
   try{
-    const json_str=JSON.stringify(data,null,2);
-    const bytes=new TextEncoder().encode(json_str);
-    let binary='';
-    bytes.forEach(b=>binary+=String.fromCharCode(b));
+    // Safety: never save empty pieces over existing data
+    if(data.pieces.length===0&&ghFileSha){
+      setSyncStatus('err','⚠️ Sauvegarde annulée — catalogue vide détecté');
+      return;
+    }
+    // Compress photos before saving
+    const dataToSave=JSON.parse(JSON.stringify(data));
+    for(const p of dataToSave.pieces){
+      if(p.photo&&p.photo.length>200*1024){
+        p.photo=await compressPhoto(p.photo,200);
+      }
+    }
+    // Check size < 900KB to stay under GitHub limit
+    const json_str=JSON.stringify(dataToSave,null,2);
+    if(json_str.length>900*1024){
+      // Strip all photos if still too big
+      for(const p of dataToSave.pieces)p.photo='';
+      setSyncStatus('err','Photos retirées — fichier trop lourd');
+    }
+    const bytes=new TextEncoder().encode(JSON.stringify(dataToSave,null,2));
+    let binary='';bytes.forEach(b=>binary+=String.fromCharCode(b));
     const content=btoa(binary);
     const body={message:msg||`Mise à jour par ${ghUser}`,content,branch:GITHUB_BRANCH};
     if(ghFileSha)body.sha=ghFileSha;
@@ -322,26 +477,36 @@ async function pushToGitHub(msg){
     if(!r.ok)throw new Error('Erreur '+r.status);
     const json=await r.json();
     ghFileSha=json.content.sha;
-    setSyncStatus('ok','Sauvegardé '+new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}));
-  }catch(e){setSyncStatus('err','Erreur sauvegarde');}
+    // Update local backup after successful save
+    localStorage.setItem('partage_backup',JSON.stringify({pieces:data.pieces,history:data.history,nextId:data.nextId,savedAt:new Date().toISOString()}));
+    lastSync=new Date();
+    setSyncStatus('ok','Sauvegardé '+lastSync.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}));
+  }catch(e){setSyncStatus('err','Erreur sauvegarde — '+e.message);}
 }
 
 function setSyncStatus(state,label){
   const dot=document.getElementById('sync-dot');
   const lbl=document.getElementById('sync-label');
-  if(dot)dot.className='sync-dot '+state;
+  if(dot){dot.className='sync-dot '+state;}
   if(lbl)lbl.textContent=label;
   const cfg=document.getElementById('config-status');
   if(cfg)cfg.textContent=label;
 }
 
 async function syncNow(){await loadFromGitHub();renderCatalogue();renderPrestaList();renderHisto();}
-async function saveAndSync(msg){await pushToGitHub(msg);}
 
+function scheduleSync(){
+  if(syncTimer)clearInterval(syncTimer);
+  syncTimer=setInterval(()=>loadFromGitHub().then(()=>{renderCatalogue();renderPrestaList();renderHisto();}),60000);
+}
+
+/* ── SETUP ── */
 async function connectGitHub(){
   const name=document.getElementById('setup-name').value.trim();
   const token=document.getElementById('setup-token').value.trim();
   if(!name||!token){showSetupError('Merci de remplir tous les champs.');return;}
+  // Test token
+  setSyncStatus('loading','Connexion…');
   try{
     const r=await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}`,{headers:{'Authorization':`token ${token}`}});
     if(!r.ok)throw new Error('Token invalide ou accès refusé');
@@ -352,24 +517,22 @@ async function connectGitHub(){
     document.getElementById('main-app').style.display='block';
     document.getElementById('config-name').textContent=name;
     await loadFromGitHub();
-    renderCatalogue();
-    scheduleSync();
+    renderCatalogue();scheduleSync();
   }catch(e){showSetupError(e.message);}
 }
 
-function showSetupError(msg){const el=document.getElementById('setup-error');el.textContent=msg;el.style.display='block';}
+function showSetupError(msg){
+  const el=document.getElementById('setup-error');
+  el.textContent=msg;el.style.display='block';
+}
 
 function disconnect(){
-  if(!confirm('Se déconnecter ?'))return;
+  if(!confirm('Se déconnecter ? Les données restent sur GitHub.'))return;
   localStorage.removeItem('gh_token');localStorage.removeItem('gh_user');
   location.reload();
 }
 
-function scheduleSync(){
-  if(syncTimer)clearInterval(syncTimer);
-  syncTimer=setInterval(()=>loadFromGitHub().then(()=>{renderCatalogue();renderPrestaList();renderHisto();}),60000);
-}
-
+/* ── INIT ── */
 function init(){
   const token=localStorage.getItem('gh_token');
   const user=localStorage.getItem('gh_user');
@@ -384,6 +547,12 @@ function init(){
   }
 }
 
+/* ── SAVE (push to GitHub after local change) ── */
+async function saveAndSync(msg){
+  await pushToGitHub(msg);
+}
+
+/* ── TABS ── */
 function showTab(t,btn){
   document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
@@ -395,12 +564,14 @@ function showTab(t,btn){
   if(t==='histo')renderHisto();
 }
 
+/* ── FILTERS ── */
 function buildFilters(containerId,current,onSelect){
   const el=document.getElementById(containerId);
   const btns=[{k:'all',l:'Tout'},...TYPE_KEYS.map(k=>({k,l:TYPES[k]}))];
   el.innerHTML=btns.map(b=>`<button class="filter-btn${current===b.k?' active':''}" onclick="(${onSelect.toString()})('${b.k}')">${b.l}</button>`).join('');
 }
 
+/* ── CATALOGUE ── */
 function setCatalogFilter(f){catalogFilter=f;renderCatalogue();}
 function renderCatalogue(){
   buildFilters('cat-filters',catalogFilter,setCatalogFilter);
@@ -418,7 +589,7 @@ function renderCatalogue(){
               ${p.photo?`<img src="${p.photo}" class="piece-photo" alt=""/>`:`<div class="piece-photo-placeholder" onclick="quickAddPhoto(${p.id})">📷</div>`}
               <div>
                 <div style="font-weight:700;font-size:13px">${escHtml(p.name)}</div>
-                <div style="font-size:11px;color:var(--text-light);margin-top:2px">Ref: ${p.ref||10} pièces · ${p.ingredients.length} ingrédient(s)</div>
+                <div style="font-size:11px;color:var(--text-light);margin-top:2px">Ref: ${p.ref||50} pers. · ${p.ingredients.length} ingrédient(s)</div>
               </div>
             </div>
             <div style="display:flex;gap:4px;flex-shrink:0">
@@ -436,7 +607,7 @@ function openAddPiece(){
   document.getElementById('form-title').textContent='Nouvelle recette';
   document.getElementById('inp-name').value='';
   document.getElementById('inp-type').value='cocktail';
-  document.getElementById('inp-ref').value=10;
+  document.getElementById('inp-ref').value=50;
   document.getElementById('ing-rows').innerHTML='';
   document.getElementById('photo-preview-wrap').innerHTML='<div style="font-size:20px">📷</div><div style="font-size:11px;color:var(--text-mid);margin-top:3px">Cliquer pour ajouter</div>';
   addIngRow();
@@ -450,7 +621,7 @@ function editPiece(id){
   document.getElementById('form-title').textContent='Modifier la recette';
   document.getElementById('inp-name').value=p.name;
   document.getElementById('inp-type').value=p.type||'cocktail';
-  document.getElementById('inp-ref').value=p.ref||10;
+  document.getElementById('inp-ref').value=p.ref||50;
   document.getElementById('ing-rows').innerHTML='';
   p.ingredients.forEach(i=>addIngRow(i));
   document.getElementById('photo-preview-wrap').innerHTML=p.photo?`<img src="${p.photo}" style="width:70px;height:55px;object-fit:cover;border-radius:6px"/>`:'<div style="font-size:20px">📷</div><div style="font-size:11px;color:var(--text-mid);margin-top:3px">Cliquer pour ajouter</div>';
@@ -460,13 +631,26 @@ function editPiece(id){
 
 function quickAddPhoto(id){
   const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
-  inp.onchange=function(){const f=this.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{data.pieces.find(x=>x.id===id).photo=e.target.result;saveAndSync('Photo ajoutée').then(()=>renderCatalogue());};r.readAsDataURL(f);};
+  inp.onchange=function(){
+    const f=this.files[0];if(!f)return;
+    const r=new FileReader();
+    r.onload=async e=>{
+      const compressed=await compressPhoto(e.target.result,200);
+      data.pieces.find(x=>x.id===id).photo=compressed;
+      saveAndSync('Photo ajoutée').then(()=>renderCatalogue());
+    };
+    r.readAsDataURL(f);
+  };
   inp.click();
 }
 
 function previewPhoto(inp){
   const f=inp.files[0];if(!f)return;
-  const r=new FileReader();r.onload=e=>{currentPhotoB64=e.target.result;document.getElementById('photo-preview-wrap').innerHTML=`<img src="${currentPhotoB64}" style="width:70px;height:55px;object-fit:cover;border-radius:6px"/>`;};
+  const r=new FileReader();
+  r.onload=async e=>{
+    currentPhotoB64=await compressPhoto(e.target.result,200);
+    document.getElementById('photo-preview-wrap').innerHTML=`<img src="${currentPhotoB64}" style="width:70px;height:55px;object-fit:cover;border-radius:6px"/>`;
+  };
   r.readAsDataURL(f);
 }
 
@@ -486,7 +670,7 @@ function savePiece(){
   const name=document.getElementById('inp-name').value.trim();
   if(!name){alert('Merci de saisir un nom.');return}
   const type=document.getElementById('inp-type').value;
-  const ref=parseFloat(document.getElementById('inp-ref').value)||10;
+  const ref=parseInt(document.getElementById('inp-ref').value)||50;
   const rows=document.getElementById('ing-rows').querySelectorAll('.ing-form-grid');
   const ingredients=[];
   rows.forEach(r=>{const n=r.querySelector('.ing-name').value.trim();if(!n)return;const qv=r.querySelector('.ing-qty').value.trim();ingredients.push({name:n,cat:r.querySelector('.ing-cat').value,qty:qv===''?'':(!isNaN(parseFloat(qv))?parseFloat(qv):qv),unit:r.querySelector('.ing-unit').value.trim()});});
@@ -498,6 +682,7 @@ function savePiece(){
 
 function cancelForm(){document.getElementById('form-piece').style.display='none';editingId=null;}
 
+/* ── PRESTA ── */
 function setPrestaFilter(f){prestaFilter=f;renderPrestaList();}
 function savePresta(){
   data.client=document.getElementById('client-name').value;
@@ -523,15 +708,16 @@ function renderPrestaList(){
     <div style="margin-bottom:.75rem">
       <div class="type-section-title">${TYPES[t]}</div>
       ${byType[t].map(p=>{
-        const sel=data.selected[p.id]||{active:false,ratio:1};
-        const totalPieces=(nb*sel.ratio).toFixed(1);
+        const sel=data.selected[p.id]||{};
+        const piecesParConvive=sel.ratio||1;
+        const totalPieces=(nb*piecesParConvive).toFixed(1);
         return`<div class="piece-row">
           <label class="toggle"><input type="checkbox" ${sel.active?'checked':''} onchange="togglePiece(${p.id},this.checked)"/><span class="tog-slider"></span></label>
           ${p.photo?`<img src="${p.photo}" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0" alt=""/>`:`<div style="width:32px;height:32px;border-radius:5px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">🍽️</div>`}
           <div style="flex:1;min-width:0">
             <div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(p.name)}</div>
             <div style="display:flex;align-items:center;gap:6px;margin-top:3px">
-              <input type="number" value="${sel.ratio}" min="0.5" step="0.5" style="width:55px;padding:2px 5px;font-size:11px" title="Pièces par convive" onchange="setRatio(${p.id},this.value)"/>
+              <input type="number" value="${piecesParConvive}" min="0.5" step="0.5" style="width:55px;padding:2px 5px;font-size:11px" title="Pièces par convive" onchange="setRatio(${p.id},this.value)"/>
               <span style="font-size:10px;color:var(--text-light)">pièce(s)/convive → <strong>${totalPieces} pièces</strong></span>
             </div>
           </div>
@@ -561,9 +747,10 @@ function saveToHistory(){
   const entry={id:Date.now(),client,date:data.prestaDate||new Date().toISOString().slice(0,10),convives:nb,selected:JSON.parse(JSON.stringify(data.selected)),pieces:JSON.parse(JSON.stringify(sel))};
   data.history.unshift(entry);
   if(data.history.length>30)data.history=data.history.slice(0,30);
-  saveAndSync(`Presta ${client}`).then(()=>alert(`✓ Presta "${client}" sauvegardée !`));
+  saveAndSync(`Presta ${client} sauvegardée`).then(()=>alert(`✓ Presta "${client}" sauvegardée !`));
 }
 
+/* ── COURSES ── */
 function buildAgg(){
   const nb=data.convives||50;
   const selected=data.pieces.filter(p=>data.selected[p.id]&&data.selected[p.id].active);
@@ -571,7 +758,7 @@ function buildAgg(){
   selected.forEach(p=>{
     const ratio=data.selected[p.id]?.ratio||1;
     const totalPieces=nb*ratio;
-    const ref=p.ref||10;
+    const ref=p.ref||50;
     p.ingredients.forEach(i=>{
       const key=i.name+'||'+i.cat;
       if(!agg[key])agg[key]={name:i.name,cat:i.cat,unit:i.unit,qty:null,hasMissing:false,pieces:[]};
@@ -597,7 +784,12 @@ function renderCourses(){
   document.getElementById('courses-title').textContent='Liste de courses'+(client?' — '+client:'');
   document.getElementById('courses-sub').textContent=selected.length+' recette(s) · '+nb+' convives · '+new Date().toLocaleDateString('fr-FR');
   const el=document.getElementById('courses-content');const shareEl=document.getElementById('share-section');
-  if(!selected.length){el.innerHTML='<div class="card empty"><div style="font-size:28px;margin-bottom:.5rem">🛒</div><div>Aucune recette sélectionnée.</div></div>';shareEl.style.display='none';return;}
+  const startBar=document.getElementById('start-shopping-bar');
+  const activeBar=document.getElementById('active-shopping-bar');
+  if(!selected.length){
+    el.innerHTML='<div class="card empty"><div style="font-size:28px;margin-bottom:.5rem">🛒</div><div>Aucune recette sélectionnée.</div></div>';
+    shareEl.style.display='none';startBar.style.display='none';activeBar.style.display='none';return;
+  }
   let html='',hasManual=false;
   ING_CATS.forEach(cat=>{
     const items=Object.values(agg).filter(x=>x.cat===cat).sort((a,b)=>a.name.localeCompare(b.name,'fr'));
@@ -606,8 +798,126 @@ function renderCourses(){
   });
   if(hasManual)html+=`<div class="alert-info">ℹ️ Certains ingrédients affichés "—" n'ont pas de quantité de référence.</div>`;
   el.innerHTML=html;shareEl.style.display='block';
+  // Show shopping button
+  const shoppingKey='shopping_'+getShoppingKey();
+  const existing=localStorage.getItem(shoppingKey);
+  if(existing){
+    const s=JSON.parse(existing);
+    const done=Object.values(s.checks).filter(Boolean).length;
+    const total=s.items.length;
+    document.getElementById('shopping-progress').textContent=done+' / '+total+' articles cochés';
+    activeBar.style.display='block';startBar.style.display='none';
+  }else{
+    startBar.style.display='block';activeBar.style.display='none';
+  }
 }
 
+/* ── SHOPPING MODE ── */
+function getShoppingKey(){
+  // Key based on current presta: client + date + convives
+  return(data.client||'sans-client')+'_'+(data.prestaDate||'no-date')+'_'+data.convives;
+}
+
+function buildShoppingItems(){
+  const{agg}=buildAgg();
+  const items=[];
+  ING_CATS.forEach(cat=>{
+    const catItems=Object.values(agg).filter(x=>x.cat===cat).sort((a,b)=>a.name.localeCompare(b.name,'fr'));
+    catItems.forEach(item=>{
+      const qStr=item.qty!==null?item.qty.toFixed(item.qty<10?1:0)+(item.hasMissing?' + ?':''):'—';
+      items.push({key:item.name+'||'+item.cat,name:item.name,cat,qty:qStr,unit:item.unit||''});
+    });
+  });
+  return items;
+}
+
+function startShopping(){
+  const items=buildShoppingItems();
+  const checks={};
+  items.forEach(i=>checks[i.key]=false);
+  const session={items,checks,startedAt:new Date().toISOString(),client:data.client,date:data.prestaDate,convives:data.convives};
+  localStorage.setItem('shopping_'+getShoppingKey(),JSON.stringify(session));
+  showShoppingMode();
+}
+
+function showShoppingMode(){
+  document.getElementById('courses-normal-view').style.display='none';
+  document.getElementById('courses-shopping-view').style.display='block';
+  renderShoppingMode();
+}
+
+function hideShoppingMode(){
+  document.getElementById('courses-shopping-view').style.display='none';
+  document.getElementById('courses-normal-view').style.display='block';
+  renderCourses();
+}
+
+function renderShoppingMode(){
+  const key='shopping_'+getShoppingKey();
+  const session=JSON.parse(localStorage.getItem(key)||'{}');
+  if(!session.items){hideShoppingMode();return;}
+  const client=session.client||'';
+  document.getElementById('shopping-title').textContent='Courses'+(client?' — '+client:'');
+  document.getElementById('shopping-sub').textContent=session.convives+' convives · '+new Date().toLocaleDateString('fr-FR');
+  const todo=session.items.filter(i=>!session.checks[i.key]);
+  const done=session.items.filter(i=>session.checks[i.key]);
+  const total=session.items.length;
+  const doneCount=done.length;
+  // Progress
+  document.getElementById('progress-label').textContent=doneCount+' / '+total+' articles';
+  document.getElementById('progress-pct').textContent=Math.round(doneCount/total*100)+'%';
+  document.getElementById('progress-bar').style.width=Math.round(doneCount/total*100)+'%';
+  // Group todo by category
+  const byCat={};
+  todo.forEach(i=>{if(!byCat[i.cat])byCat[i.cat]=[];byCat[i.cat].push(i);});
+  let todoHtml='';
+  ING_CATS.forEach(cat=>{
+    if(!byCat[cat])return;
+    todoHtml+=`<div class="card" style="margin-bottom:.6rem"><div class="cat-header" style="margin-bottom:6px">${cat}</div>`;
+    byCat[cat].forEach(item=>{
+      todoHtml+=`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--cream-dark);cursor:pointer" onclick="toggleCheck('${item.key.replace(/'/g,"\'")}')">
+        <div style="width:22px;height:22px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center"></div>
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:600">${escHtml(item.name)}</div>
+          <div style="font-size:11px;color:var(--text-mid)">${item.qty} ${item.unit}</div>
+        </div>
+      </div>`;
+    });
+    todoHtml+=`</div>`;
+  });
+  document.getElementById('shopping-todo').innerHTML=todoHtml||'<div class="card empty" style="color:var(--green);font-weight:600">🎉 Tout est dans le panier !</div>';
+  // Done section
+  const doneEl=document.getElementById('shopping-done');
+  const doneSec=document.getElementById('shopping-done-section');
+  if(done.length){
+    doneSec.style.display='block';
+    doneEl.innerHTML=done.map(item=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--cream-dark);cursor:pointer;opacity:.5" onclick="toggleCheck('${item.key.replace(/'/g,"\'")}')">
+        <div style="width:22px;height:22px;background:var(--green);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:white;font-size:12px">✓</div>
+        <div style="flex:1;text-decoration:line-through">
+          <div style="font-size:13px;font-weight:600">${escHtml(item.name)}</div>
+          <div style="font-size:11px;color:var(--text-mid)">${item.qty} ${item.unit}</div>
+        </div>
+      </div>`).join('');
+  }else{doneSec.style.display='none';}
+}
+
+function toggleCheck(itemKey){
+  const key='shopping_'+getShoppingKey();
+  const session=JSON.parse(localStorage.getItem(key)||'{}');
+  if(!session.checks)return;
+  session.checks[itemKey]=!session.checks[itemKey];
+  localStorage.setItem(key,JSON.stringify(session));
+  renderShoppingMode();
+}
+
+function finishShopping(){
+  if(!confirm('Marquer les courses comme terminées ?'))return;
+  localStorage.removeItem('shopping_'+getShoppingKey());
+  hideShoppingMode();
+}
+
+/* ── HISTORIQUE ── */
 function renderHisto(){
   const el=document.getElementById('histo-list');
   if(!data.history.length){el.innerHTML='<div class="card empty"><div style="font-size:28px;margin-bottom:.5rem">📋</div><div>Aucune presta sauvegardée.</div></div>';return;}
@@ -638,7 +948,7 @@ function restorePresta(histoId){
 function deleteHisto(id){
   if(!confirm('Supprimer ?'))return;
   data.history=data.history.filter(h=>h.id!==id);
-  saveAndSync('Historique').then(()=>renderHisto());
+  saveAndSync('Historique supprimé').then(()=>renderHisto());
 }
 
 function shareWhatsApp(){window.open('https://wa.me/?text='+encodeURIComponent(buildTextList()),'_blank');}
