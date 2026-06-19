@@ -309,6 +309,28 @@
           "qty": 20,
           "unit": "cl"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Réaliser le leche de tigre",
+          "comment": "25 cl de lait de coco, 1/2 oignon rouge, 1 gousse d’ail, 1 bâton de citronnelle, 20 g de gingembre frais, 1 botte de coriandre, jus de 2 citrons verts, 1 échalote"
+        },
+        {
+          "id": 2,
+          "text": "Tailler le poisson",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Tailler la grenade",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Réaliser les pickles oignons rouges",
+          "comment": ""
+        }
       ]
     },
     {
@@ -1121,7 +1143,15 @@
         }
       },
       "filter": "all"
+    },
+    {
+      "id": 3,
+      "client": "Test jo",
+      "date": "2026-06-23",
+      "convives": 50,
+      "selected": {},
+      "filter": "all"
     }
   ],
-  "nextPrestaId": 3
+  "nextPrestaId": 4
 }
