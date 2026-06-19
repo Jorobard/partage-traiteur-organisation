@@ -1006,11 +1006,129 @@
       "ratio": 1
     }
   },
-  "client": "Test Jules",
+  "client": "TEST JULES",
   "prestaDate": "2026-06-20",
-  "convives": 50,
+  "convives": 20,
   "nextId": 16,
   "history": [
+    {
+      "id": 1781880228310,
+      "client": "TEST JULES",
+      "date": "2026-06-20",
+      "convives": 20,
+      "prestas": [
+        {
+          "id": 1,
+          "client": "TEST JULES",
+          "date": "2026-06-20",
+          "convives": 20,
+          "selected": {
+            "1": {
+              "active": true,
+              "ratio": 1
+            }
+          },
+          "filter": "all"
+        }
+      ],
+      "pieces": [
+        {
+          "id": 1,
+          "name": "Tartelettes feuilles de bricks, tartare de betterave aux sésames",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 10,
+          "ingredients": [
+            {
+              "name": "Ciboulettes",
+              "cat": "Herbes",
+              "qty": 0.2,
+              "unit": "botte"
+            },
+            {
+              "name": "Betteraves",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Echalotes",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Citrons verts",
+              "cat": "Légumes",
+              "qty": 0.5,
+              "unit": "pcs"
+            },
+            {
+              "name": "Feuilles de bricks",
+              "cat": "Boulangerie",
+              "qty": 3,
+              "unit": "feuilles"
+            },
+            {
+              "name": "Sésames",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "Sauce soja",
+              "cat": "Économats",
+              "qty": 4,
+              "unit": "cl"
+            },
+            {
+              "name": "Huile de sésame",
+              "cat": "Économats",
+              "qty": 4,
+              "unit": "cl"
+            },
+            {
+              "name": "Gochujang",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Tartelettes feuilles de bricks",
+              "comment": ""
+            },
+            {
+              "id": 2,
+              "text": "Cuire les betteraves",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Tailler les betteraves",
+              "comment": ""
+            },
+            {
+              "id": 4,
+              "text": "Tailler les échalotes & ciboulettes",
+              "comment": ""
+            },
+            {
+              "id": 5,
+              "text": "Torréfier sésame",
+              "comment": ""
+            },
+            {
+              "id": 6,
+              "text": "Assaisonner",
+              "comment": ""
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": 1781879079013,
       "client": "Test Jules",
@@ -1133,9 +1251,9 @@
   "prestas": [
     {
       "id": 1,
-      "client": "Test Jules",
+      "client": "TEST JULES",
       "date": "2026-06-20",
-      "convives": 50,
+      "convives": 20,
       "selected": {
         "1": {
           "active": true,
@@ -1143,15 +1261,7 @@
         }
       },
       "filter": "all"
-    },
-    {
-      "id": 3,
-      "client": "Test jo",
-      "date": "2026-06-23",
-      "convives": 50,
-      "selected": {},
-      "filter": "all"
     }
   ],
-  "nextPrestaId": 4
+  "nextPrestaId": 2
 }
