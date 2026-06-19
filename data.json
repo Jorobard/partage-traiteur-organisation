@@ -61,6 +61,38 @@
           "qty": 2,
           "unit": "g"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Tartelettes feuilles de bricks",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "text": "Cuire les betteraves",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Tailler les betteraves",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Tailler les échalotes & ciboulettes",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "text": "Torréfier sésame",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "text": "Assaisonner",
+          "comment": ""
+        }
       ]
     },
     {
@@ -946,23 +978,21 @@
       ]
     }
   ],
-  "selected": {
-    "1": {
-      "active": true,
-      "ratio": 1
-    },
-    "4": {
-      "active": true,
-      "ratio": 1
-    },
-    "5": {
-      "active": true,
-      "ratio": 1
-    }
-  },
-  "client": "Test jules",
-  "prestaDate": "2026-06-20",
-  "convives": 40,
+  "selected": {},
+  "client": "",
+  "prestaDate": "",
+  "convives": 50,
   "nextId": 16,
-  "history": []
+  "history": [],
+  "prestas": [
+    {
+      "id": 1,
+      "client": "",
+      "date": "",
+      "convives": 50,
+      "selected": {},
+      "filter": "all"
+    }
+  ],
+  "nextPrestaId": 2
 }
