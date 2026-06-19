@@ -196,7 +196,7 @@
           "name": "Menthe",
           "cat": "Herbes",
           "qty": 1,
-          "unit": "bote"
+          "unit": "botte"
         },
         {
           "name": "Petits pois surgelés",
@@ -234,7 +234,8 @@
           "qty": 30,
           "unit": ""
         }
-      ]
+      ],
+      "steps": []
     },
     {
       "id": 5,
@@ -1004,6 +1005,10 @@
     "1": {
       "active": true,
       "ratio": 1
+    },
+    "4": {
+      "active": true,
+      "ratio": 1
     }
   },
   "client": "TEST JULES",
@@ -1019,6 +1024,10 @@
       "convives": 20,
       "selected": {
         "1": {
+          "active": true,
+          "ratio": 1
+        },
+        "4": {
           "active": true,
           "ratio": 1
         }
