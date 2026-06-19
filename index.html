@@ -107,11 +107,11 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
 .presta-block-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
 .presta-block-title{font-weight:700;font-size:14px}
 @media(max-width:520px){.form-grid-2{grid-template-columns:1fr}.ing-form-grid{grid-template-columns:1fr 95px 55px 28px}.share-grid{grid-template-columns:1fr 1fr}}
-@media print{body{background:white}.tabs,.top-bar button,.no-print,header{display:none!important}.page{display:block!important}#page-catalogue,#page-presta,#page-histo,#page-config{display:none!important}#page-courses{display:block!important}.card{box-shadow:none;border:1px solid #ddd}.app{max-width:100%;padding:0}}
+@media print{body{background:white}.tabs,.top-bar button,.no-print,header{display:none!important}.page{display:block!important}#page-catalogue,#page-presta,#page-histo,#page-config{display:none!important}.card{box-shadow:none;border:1px solid #ddd}.app{max-width:100%;padding:0}.mep-check{border:1px solid #ccc!important}.autocomplete-list{display:none!important}}
 </style>
 </head>
 <body>
- 
+
 <!-- SETUP SCREEN -->
 <div class="setup-screen" id="setup-screen" style="display:none">
   <div class="setup-card">
@@ -131,7 +131,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     <div id="setup-error" style="display:none;margin-top:10px" class="alert-info"></div>
   </div>
 </div>
- 
+
 <div class="app" id="main-app" style="display:none">
 <header>
   <div class="logo-circle"><div class="logo-text">Par<br>tage</div></div>
@@ -153,7 +153,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   <button class="tab" onclick="showTab('histo',this)">📋 Historique</button>
   <button class="tab" onclick="showTab('config',this)">⚙️</button>
 </div>
- 
+
 <!-- CATALOGUE -->
 <div id="page-catalogue" class="page active">
   <div class="top-bar">
@@ -205,11 +205,11 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
       </div>
       <div id="ing-rows"></div>
       <button class="btn" onclick="addIngRow()" style="width:100%;margin-top:7px">+ Ajouter un ingrédient</button>
- 
+
       <div style="font-weight:700;font-size:13px;margin:.75rem 0 .5rem">Étapes de préparation <span style="font-size:11px;font-weight:400;color:var(--text-light)">(optionnel)</span></div>
       <div id="step-rows"></div>
       <button class="btn" onclick="addStepRow()" style="width:100%;margin-top:7px">+ Ajouter une étape</button>
- 
+
       <div style="display:flex;gap:8px;margin-top:1rem">
         <button class="btn btn-primary" onclick="savePiece()">✓ Enregistrer</button>
         <button class="btn" onclick="cancelForm()">Annuler</button>
@@ -217,7 +217,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     </div>
   </div>
 </div>
- 
+
 <!-- PRESTA -->
 <div id="page-presta" class="page">
   <div class="top-bar">
@@ -230,7 +230,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     <button class="btn btn-green" onclick="saveToHistory()">💾 Sauvegarder</button>
   </div>
 </div>
- 
+
 <!-- COURSES -->
 <div id="page-courses" class="page">
   <div id="courses-normal-view">
@@ -293,16 +293,19 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     </div>
   </div>
 </div>
- 
+
 <!-- MISE EN PLACE -->
 <div id="page-mise-en-place" class="page">
-  <div class="top-bar">
-    <div style="font-weight:700;font-size:15px">Mise en place</div>
-    <div id="mep-progress-bar-wrap" style="font-size:11px;color:var(--text-mid)"></div>
+  <div class="top-bar no-print">
+    <div>
+      <div style="font-weight:700;font-size:15px">Mise en place</div>
+      <div id="mep-progress-bar-wrap" style="font-size:11px;color:var(--text-mid);margin-top:2px"></div>
+    </div>
+    <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer</button>
   </div>
   <div id="mep-content"></div>
 </div>
- 
+
 <!-- HISTORIQUE -->
 <div id="page-histo" class="page">
   <div class="top-bar">
@@ -310,7 +313,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   </div>
   <div id="histo-list"></div>
 </div>
- 
+
 <!-- CONFIG -->
 <div id="page-config" class="page">
   <div class="card">
@@ -333,19 +336,19 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     <p style="font-size:12px;color:var(--text-mid);line-height:1.6">Les données sont stockées dans le repo GitHub <strong>partage-traiteur-organisation</strong>. Chaque modification est automatiquement synchronisée. Ton frère doit se connecter avec son propre token GitHub (accès au même repo) pour voir les mêmes données.</p>
   </div>
 </div>
- 
+
 </div><!-- end .app -->
- 
+
 <script>
 const GITHUB_OWNER='Jorobard';
 const GITHUB_REPO='partage-traiteur-organisation';
 const GITHUB_FILE='data.json';
 const GITHUB_BRANCH='main';
- 
+
 const TYPES={cocktail:'🍢 Pièces cocktails',entree:'🥗 Entrées',plat:'🍽️ Plats',dessert:'🍰 Desserts'};
 const TYPE_KEYS=['cocktail','entree','plat','dessert'];
 const ING_CATS=['Herbes','Légumes','Fruits','Viandes','Poissons','Boulangerie','Ovoproduits','Économats','Hygiène','Ustensiles'];
- 
+
 let ghToken='',ghUser='',ghFileSha='';
 let data={pieces:[
   {id:1,name:"Tartelettes feuilles de bricks, tartare de betterave aux sésames",type:'cocktail',photo:'',ref:50,ingredients:[
@@ -376,20 +379,20 @@ let data={pieces:[
     {name:"Lait",cat:"Ovoproduits",qty:"",unit:"cl"}
   ]}
 ],selected:{},client:"",prestaDate:"",convives:50,nextId:4,history:[]};
- 
+
 let editingId=null,currentPhotoB64="";
 let catalogFilter='all',prestaFilter='all';
 let lastSync=null,syncTimer=null;
- 
+
 /* ── GITHUB SYNC ── */
 function getApiUrl(){return`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;}
- 
+
 async function ghFetch(method,body=null){
   const opts={method,headers:{'Authorization':`token ${ghToken}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'}};
   if(body)opts.body=JSON.stringify(body);
   return fetch(getApiUrl(),opts);
 }
- 
+
 async function loadFromGitHub(){
   setSyncStatus('loading','Synchronisation…');
   try{
@@ -440,7 +443,7 @@ async function loadFromGitHub(){
     }catch(e2){}
   }
 }
- 
+
 async function compressPhoto(base64,maxKB=200){
   return new Promise(resolve=>{
     if(!base64||base64.length<maxKB*1024){resolve(base64);return;}
@@ -460,7 +463,7 @@ async function compressPhoto(base64,maxKB=200){
     img.src=base64;
   });
 }
- 
+
 async function pushToGitHub(msg){
   setSyncStatus('loading','Sauvegarde…');
   try{
@@ -498,7 +501,7 @@ async function pushToGitHub(msg){
     setSyncStatus('ok','Sauvegardé '+lastSync.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}));
   }catch(e){setSyncStatus('err','Erreur sauvegarde — '+e.message);}
 }
- 
+
 function setSyncStatus(state,label){
   const dot=document.getElementById('sync-dot');
   const lbl=document.getElementById('sync-label');
@@ -507,14 +510,14 @@ function setSyncStatus(state,label){
   const cfg=document.getElementById('config-status');
   if(cfg)cfg.textContent=label;
 }
- 
+
 async function syncNow(){await loadFromGitHub();renderCatalogue();renderPrestaList();renderHisto();}
- 
+
 function scheduleSync(){
   if(syncTimer)clearInterval(syncTimer);
   syncTimer=setInterval(()=>loadFromGitHub().then(()=>{renderCatalogue();renderPrestaList();renderHisto();}),60000);
 }
- 
+
 /* ── SETUP ── */
 async function connectGitHub(){
   const name=document.getElementById('setup-name').value.trim();
@@ -535,18 +538,18 @@ async function connectGitHub(){
     renderCatalogue();scheduleSync();
   }catch(e){showSetupError(e.message);}
 }
- 
+
 function showSetupError(msg){
   const el=document.getElementById('setup-error');
   el.textContent=msg;el.style.display='block';
 }
- 
+
 function disconnect(){
   if(!confirm('Se déconnecter ? Les données restent sur GitHub.'))return;
   localStorage.removeItem('gh_token');localStorage.removeItem('gh_user');
   location.reload();
 }
- 
+
 /* ── INIT ── */
 function init(){
   const token=localStorage.getItem('gh_token');
@@ -567,12 +570,12 @@ function init(){
     document.getElementById('setup-screen').style.display='flex';
   }
 }
- 
+
 /* ── SAVE (push to GitHub after local change) ── */
 async function saveAndSync(msg){
   await pushToGitHub(msg);
 }
- 
+
 /* ── TABS ── */
 function showTab(t,btn){
   document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
@@ -587,14 +590,14 @@ function showTab(t,btn){
   if(t==='mise-en-place')renderMiseEnPlace();
   if(t==='histo')renderHisto();
 }
- 
+
 /* ── FILTERS ── */
 function buildFilters(containerId,current,onSelect){
   const el=document.getElementById(containerId);
   const btns=[{k:'all',l:'Tout'},...TYPE_KEYS.map(k=>({k,l:TYPES[k]}))];
   el.innerHTML=btns.map(b=>`<button class="filter-btn${current===b.k?' active':''}" onclick="(${onSelect.toString()})('${b.k}')">${b.l}</button>`).join('');
 }
- 
+
 /* ── CATALOGUE ── */
 function setCatalogFilter(f){catalogFilter=f;renderCatalogue();}
 function renderCatalogue(){
@@ -625,7 +628,7 @@ function renderCatalogue(){
         </div>`).join('')}
     </div>`).join('');
 }
- 
+
 function openAddPiece(){
   editingId=null;currentPhotoB64="";
   document.getElementById('form-title').textContent='Nouvelle recette';
@@ -639,7 +642,7 @@ function openAddPiece(){
   document.getElementById('form-piece').style.display='block';
   setTimeout(()=>document.getElementById('form-piece').scrollIntoView({behavior:'smooth'}),50);
 }
- 
+
 function editPiece(id){
   editingId=id;const p=data.pieces.find(x=>x.id===id);
   currentPhotoB64=p.photo||'';
@@ -655,7 +658,7 @@ function editPiece(id){
   document.getElementById('form-piece').style.display='block';
   setTimeout(()=>document.getElementById('form-piece').scrollIntoView({behavior:'smooth'}),50);
 }
- 
+
 function quickAddPhoto(id){
   const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
   inp.onchange=function(){
@@ -670,7 +673,7 @@ function quickAddPhoto(id){
   };
   inp.click();
 }
- 
+
 function previewPhoto(inp){
   const f=inp.files[0];if(!f)return;
   const r=new FileReader();
@@ -680,20 +683,20 @@ function previewPhoto(inp){
   };
   r.readAsDataURL(f);
 }
- 
+
 function deletePiece(id){
   if(!confirm('Supprimer cette recette ?'))return;
   data.pieces=data.pieces.filter(p=>p.id!==id);delete data.selected[id];
   saveAndSync('Recette supprimée').then(()=>renderCatalogue());
 }
- 
+
 function addIngRow(ing=null){
   const d=document.createElement('div');d.className='ing-form-grid autocomplete-wrap';
   d.innerHTML=`<input type="text" placeholder="Ingrédient" value="${ing?escHtml(ing.name):''}" class="ing-name"/><select class="ing-cat">${ING_CATS.map(c=>`<option${ing&&ing.cat===c?' selected':''}>${c}</option>`).join('')}</select><input type="text" placeholder="Qté" value="${ing&&ing.qty!==''?ing.qty:''}" class="ing-qty"/><input type="text" placeholder="Unité" value="${ing?escHtml(ing.unit||''):''}" class="ing-unit"/><button class="btn btn-sm btn-danger" onclick="this.parentNode.remove()" style="padding:4px 6px">✕</button>`;
   document.getElementById('ing-rows').appendChild(d);
   setupAutocomplete(d.querySelector('.ing-name'));
 }
- 
+
 function savePiece(){
   const name=document.getElementById('inp-name').value.trim();
   if(!name){alert('Merci de saisir un nom.');return}
@@ -717,9 +720,9 @@ function savePiece(){
   cancelForm();
   saveAndSync(editingId?'Recette modifiée':'Nouvelle recette').then(()=>renderCatalogue());
 }
- 
+
 function cancelForm(){document.getElementById('form-piece').style.display='none';editingId=null;}
- 
+
 /* ── PRESTA ── */
 function setPrestaFilter(f){prestaFilter=f;renderPrestaList();}
 function savePresta(){
@@ -727,14 +730,14 @@ function savePresta(){
   data.prestaDate=document.getElementById('presta-date').value;
   data.convives=parseFloat(document.getElementById('nb-convives').value)||50;
 }
- 
+
 function renderPresta(){
   document.getElementById('client-name').value=data.client||'';
   document.getElementById('presta-date').value=data.prestaDate||'';
   document.getElementById('nb-convives').value=data.convives||50;
   renderPrestaList();
 }
- 
+
 function renderPrestaList(){
   buildFilters('presta-filters',prestaFilter,setPrestaFilter);
   const nb=data.convives||50;
@@ -764,19 +767,19 @@ function renderPrestaList(){
       }).join('')}
     </div>`).join('');
 }
- 
+
 function togglePiece(id,val){
   if(!data.selected[id])data.selected[id]={active:false,ratio:1};
   data.selected[id].active=val;
   renderPrestaList();
 }
- 
+
 function setRatio(id,val){
   if(!data.selected[id])data.selected[id]={active:false,ratio:1};
   data.selected[id].ratio=parseFloat(val)||1;
   renderPrestaList();
 }
- 
+
 function saveToHistory(){
   const prestas=data.prestas&&data.prestas.length?data.prestas:[{client:data.client,date:data.prestaDate,convives:data.convives,selected:data.selected}];
   const clients=prestas.map(p=>p.client||'Sans nom').join(' + ');
@@ -787,8 +790,13 @@ function saveToHistory(){
   if(data.history.length>30)data.history=data.history.slice(0,30);
   saveAndSync(`Presta ${clients} sauvegardée`).then(()=>alert(`✓ Presta "${clients}" sauvegardée !`));
 }
- 
+
 /* ── COURSES ── */
+function normalizeName(name){
+  // Lowercase, trim, remove trailing s for plural matching
+  return name.trim().toLowerCase().replace(/s$/, '');
+}
+
 function buildAgg(){
   const agg={};
   const allSelected=[];
@@ -803,19 +811,22 @@ function buildAgg(){
       const totalPieces=nb*ratio;
       const ref=p.ref||50;
       p.ingredients.forEach(i=>{
-        const key=i.name+'||'+i.cat;
-        if(!agg[key])agg[key]={name:i.name,cat:i.cat,unit:i.unit,qty:null,hasMissing:false,pieces:[]};
-        if(!agg[key].pieces.includes(p.name))agg[key].pieces.push(p.name);
+        // Normalize key to merge duplicates (citron = citrons, Echalote = Echalotes)
+        const normalKey=normalizeName(i.name)+'||'+i.cat;
+        if(!agg[normalKey]){
+          agg[normalKey]={name:i.name,cat:i.cat,unit:i.unit,qty:null,hasMissing:false,pieces:[]};
+        }
+        if(!agg[normalKey].pieces.includes(p.name))agg[normalKey].pieces.push(p.name);
         if(i.qty!==''&&i.qty!==null&&!isNaN(parseFloat(i.qty))&&ref>0){
-          agg[key].qty=(agg[key].qty||0)+parseFloat(i.qty)*(totalPieces/ref);
-        }else{agg[key].hasMissing=true;}
+          agg[normalKey].qty=(agg[normalKey].qty||0)+parseFloat(i.qty)*(totalPieces/ref);
+        }else{agg[normalKey].hasMissing=true;}
       });
     });
   });
   const nb=(prestas[0]?.convives)||50;
   return{agg,selected:allSelected,nb};
 }
- 
+
 function buildTextList(){
   const{agg,selected,nb}=buildAgg();const client=data.client||'';
   let txt=`PARTAGE — Liste de courses\n`;if(client)txt+=`Client : ${client}\n`;
@@ -823,7 +834,7 @@ function buildTextList(){
   ING_CATS.forEach(cat=>{const items=Object.values(agg).filter(x=>x.cat===cat).sort((a,b)=>a.name.localeCompare(b.name,'fr'));if(!items.length)return;txt+=`── ${cat.toUpperCase()} ──\n`;items.forEach(item=>{const qStr=item.qty!==null?item.qty.toFixed(item.qty<10?1:0)+(item.hasMissing?' + ?':''):'—';txt+=`• ${item.name} : ${qStr} ${item.unit||''}\n`;});txt+='\n';});
   return txt;
 }
- 
+
 function renderCourses(){
   const{agg,selected,nb}=buildAgg();const client=data.client||'';
   document.getElementById('courses-title').textContent='Liste de courses'+(client?' — '+client:'');
@@ -856,13 +867,13 @@ function renderCourses(){
     startBar.style.display='block';activeBar.style.display='none';
   }
 }
- 
+
 /* ── SHOPPING MODE ── */
 function getShoppingKey(){
   // Key based on current presta: client + date + convives
   return(data.client||'sans-client')+'_'+(data.prestaDate||'no-date')+'_'+data.convives;
 }
- 
+
 function buildShoppingItems(){
   const{agg}=buildAgg();
   const items=[];
@@ -875,7 +886,7 @@ function buildShoppingItems(){
   });
   return items;
 }
- 
+
 function startShopping(){
   const items=buildShoppingItems();
   const checks={};
@@ -884,19 +895,19 @@ function startShopping(){
   localStorage.setItem('shopping_'+getShoppingKey(),JSON.stringify(session));
   showShoppingMode();
 }
- 
+
 function showShoppingMode(){
   document.getElementById('courses-normal-view').style.display='none';
   document.getElementById('courses-shopping-view').style.display='block';
   renderShoppingMode();
 }
- 
+
 function hideShoppingMode(){
   document.getElementById('courses-shopping-view').style.display='none';
   document.getElementById('courses-normal-view').style.display='block';
   renderCourses();
 }
- 
+
 function renderShoppingMode(){
   const key='shopping_'+getShoppingKey();
   const session=JSON.parse(localStorage.getItem(key)||'{}');
@@ -946,7 +957,7 @@ function renderShoppingMode(){
       </div>`).join('');
   }else{doneSec.style.display='none';}
 }
- 
+
 function toggleCheck(itemKey){
   const key='shopping_'+getShoppingKey();
   const session=JSON.parse(localStorage.getItem(key)||'{}');
@@ -955,13 +966,13 @@ function toggleCheck(itemKey){
   localStorage.setItem(key,JSON.stringify(session));
   renderShoppingMode();
 }
- 
+
 function finishShopping(){
   if(!confirm('Marquer les courses comme terminées ?'))return;
   localStorage.removeItem('shopping_'+getShoppingKey());
   hideShoppingMode();
 }
- 
+
 /* ── HISTORIQUE ── */
 function renderHisto(){
   const el=document.getElementById('histo-list');
@@ -981,7 +992,7 @@ function renderHisto(){
       </div>
     </div>`).join('');
 }
- 
+
 function restorePresta(histoId){
   const h=data.history.find(x=>x.id===histoId);if(!h)return;
   if(!confirm(`Rouvrir la presta "${h.client}" ?`))return;
@@ -989,41 +1000,41 @@ function restorePresta(histoId){
   data.selected=JSON.parse(JSON.stringify(h.selected));
   showTab('presta',document.querySelectorAll('.tab')[1]);
 }
- 
+
 function deleteHisto(id){
   if(!confirm('Supprimer ?'))return;
   data.history=data.history.filter(h=>h.id!==id);
   saveAndSync('Historique supprimé').then(()=>renderHisto());
 }
- 
+
 function shareWhatsApp(){window.open('https://wa.me/?text='+encodeURIComponent(buildTextList()),'_blank');}
 function shareSMS(){window.open('sms:?body='+encodeURIComponent(buildTextList()),'_blank');}
 function copyText(){navigator.clipboard.writeText(buildTextList()).then(()=>{const el=document.getElementById('copy-confirm');el.style.display='block';setTimeout(()=>el.style.display='none',2500);});}
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
- 
- 
+
+
 /* ── MULTI-PRESTA ── */
 // data.prestas = [{id, client, date, convives, selected, filter}, ...]
 if(!data.prestas){data.prestas=[{id:1,client:data.client||'',date:data.prestaDate||'',convives:data.convives||50,selected:data.selected||{},filter:'all'}];data.nextPrestaId=2;}
- 
+
 function addPrestaBlock(){
   if(!data.prestas)data.prestas=[];
   data.prestas.push({id:data.nextPrestaId++,client:'',date:'',convives:50,selected:{},filter:'all'});
   renderPrestaBlocks();
 }
- 
+
 function removePrestaBlock(id){
   if(data.prestas.length<=1){alert('Il faut au moins une prestation.');return;}
   if(!confirm('Supprimer cette prestation ?'))return;
   data.prestas=data.prestas.filter(p=>p.id!==id);
   renderPrestaBlocks();
 }
- 
+
 function renderPrestaBlocks(){
   const el=document.getElementById('presta-blocks');
   el.innerHTML=data.prestas.map(presta=>renderOnePrestaBlock(presta)).join('');
 }
- 
+
 function renderOnePrestaBlock(presta){
   const nb=presta.convives||50;
   const typeFilters=['all','cocktail','entree','plat','dessert'];
@@ -1075,33 +1086,33 @@ function renderOnePrestaBlock(presta){
     <div>${piecesHtml||'<div class="empty" style="padding:1rem">Aucune recette dans cette catégorie.</div>'}</div>
   </div>`;
 }
- 
+
 function updatePrestaField(id,field,val){
   const p=data.prestas.find(x=>x.id===id);if(!p)return;
   p[field]=val;
   // keep legacy data.client/date/convives in sync with first presta
   if(id===data.prestas[0].id){data.client=data.prestas[0].client;data.prestaDate=data.prestas[0].date;data.convives=data.prestas[0].convives;}
 }
- 
+
 function setPrestaBlockFilter(id,f){
   const p=data.prestas.find(x=>x.id===id);if(!p)return;
   p.filter=f;renderPrestaBlocks();
 }
- 
+
 function togglePrestaBlockPiece(prestaId,pieceId,val){
   const p=data.prestas.find(x=>x.id===prestaId);if(!p)return;
   if(!p.selected[pieceId])p.selected[pieceId]={active:false,ratio:1};
   p.selected[pieceId].active=val;
   renderPrestaBlocks();
 }
- 
+
 function setPrestaBlockRatio(prestaId,pieceId,val){
   const p=data.prestas.find(x=>x.id===prestaId);if(!p)return;
   if(!p.selected[pieceId])p.selected[pieceId]={active:false,ratio:1};
   p.selected[pieceId].ratio=parseFloat(val)||1;
   renderPrestaBlocks();
 }
- 
+
 /* ── MISE EN PLACE ── */
 function renderMiseEnPlace(){
   const el=document.getElementById('mep-content');
@@ -1144,12 +1155,12 @@ function renderMiseEnPlace(){
       }).join('')}
     </div>`).join('');
 }
- 
+
 function getMepKey(){
   const clients=(data.prestas||[]).map(p=>p.client||'x').join('-');
   return clients+'_'+(data.prestas?.[0]?.date||'nodate');
 }
- 
+
 function toggleMepStep(key){
   const mepKey='mep_'+getMepKey();
   let session=JSON.parse(localStorage.getItem(mepKey)||'{}');
@@ -1158,7 +1169,7 @@ function toggleMepStep(key){
   localStorage.setItem(mepKey,JSON.stringify(session));
   renderMiseEnPlace();
 }
- 
+
 /* ── STEP ROWS in form ── */
 function addStepRow(step=null){
   const d=document.createElement('div');
@@ -1167,21 +1178,22 @@ function addStepRow(step=null){
   d.innerHTML=`<input type="text" placeholder="Ex: Mariner le poisson 2h" class="step-text" value="${step?escHtml(step.text):''}"/><input type="text" placeholder="Commentaire (optionnel)" class="step-comment" value="${step?escHtml(step.comment||''):''}"/><button class="btn btn-sm btn-danger" onclick="this.parentNode.remove()" style="padding:4px 6px">✕</button>`;
   document.getElementById('step-rows').appendChild(d);
 }
- 
+
 /* ── AUTOCOMPLETE ── */
 function getAllIngredientNames(){
   const names=new Set();
   data.pieces.forEach(p=>p.ingredients.forEach(i=>{if(i.name)names.add(i.name);}));
   return[...names].sort();
 }
- 
+
 function setupAutocomplete(input){
   const allNames=getAllIngredientNames();
   input.addEventListener('input',function(){
     closeAllAutocomplete();
     const val=this.value.trim().toLowerCase();
     if(val.length<2)return;
-    const matches=allNames.filter(n=>n.toLowerCase().includes(val)||levenshtein(n.toLowerCase(),val)<=2);
+    const normalVal=normalizeName(val);
+    const matches=allNames.filter(n=>n.toLowerCase().includes(val)||normalizeName(n)===normalVal||levenshtein(normalizeName(n),normalVal)<=1);
     if(!matches.length)return;
     const wrap=this.closest('.autocomplete-wrap')||this.parentNode;
     const list=document.createElement('div');
@@ -1196,25 +1208,25 @@ function setupAutocomplete(input){
   });
   input.addEventListener('blur',()=>setTimeout(closeAllAutocomplete,200));
 }
- 
+
 function selectAutocomplete(el,val){
   const wrap=el.closest('.autocomplete-list').parentNode;
   const input=wrap.querySelector('.ing-name');
   if(input)input.value=val;
   closeAllAutocomplete();
 }
- 
+
 function closeAllAutocomplete(){
   document.querySelectorAll('.autocomplete-list').forEach(el=>el.remove());
 }
- 
+
 function levenshtein(a,b){
   const m=a.length,n=b.length;
   const dp=Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i===0?j:j===0?i:0));
   for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
   return dp[m][n];
 }
- 
+
 init();
 </script>
 </body>
