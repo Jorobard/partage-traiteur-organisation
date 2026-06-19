@@ -89,12 +89,29 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
 .setup-screen{position:fixed;inset:0;background:var(--cream);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem}
 .setup-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem;max-width:420px;width:100%}
 .setup-logo{width:56px;height:56px;border-radius:50%;background:var(--cream);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;text-align:center;line-height:1.1}
+.autocomplete-wrap{position:relative}
+.autocomplete-list{position:absolute;top:100%;left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:7px;z-index:50;max-height:160px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.autocomplete-item{padding:7px 10px;font-size:12px;cursor:pointer;border-bottom:1px solid var(--cream-dark)}
+.autocomplete-item:last-child{border:none}
+.autocomplete-item:hover{background:var(--cream)}
+.autocomplete-item strong{color:var(--brand)}
+.mep-step{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--cream-dark);align-items:flex-start}
+.mep-step:last-child{border:none}
+.mep-check{width:22px;height:22px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.mep-check.done{background:var(--green);border-color:var(--green);color:white}
+.mep-step-content{flex:1}
+.mep-step-text{font-size:13px;font-weight:500}
+.mep-step-text.done{text-decoration:line-through;opacity:.5}
+.mep-comment{font-size:11px;color:var(--text-mid);margin-top:3px;font-style:italic}
+.presta-block{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem}
+.presta-block-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
+.presta-block-title{font-weight:700;font-size:14px}
 @media(max-width:520px){.form-grid-2{grid-template-columns:1fr}.ing-form-grid{grid-template-columns:1fr 95px 55px 28px}.share-grid{grid-template-columns:1fr 1fr}}
 @media print{body{background:white}.tabs,.top-bar button,.no-print,header{display:none!important}.page{display:block!important}#page-catalogue,#page-presta,#page-histo,#page-config{display:none!important}#page-courses{display:block!important}.card{box-shadow:none;border:1px solid #ddd}.app{max-width:100%;padding:0}}
 </style>
 </head>
 <body>
-
+ 
 <!-- SETUP SCREEN -->
 <div class="setup-screen" id="setup-screen" style="display:none">
   <div class="setup-card">
@@ -114,7 +131,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     <div id="setup-error" style="display:none;margin-top:10px" class="alert-info"></div>
   </div>
 </div>
-
+ 
 <div class="app" id="main-app" style="display:none">
 <header>
   <div class="logo-circle"><div class="logo-text">Par<br>tage</div></div>
@@ -132,10 +149,11 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   <button class="tab active" onclick="showTab('catalogue',this)">📖 Catalogue</button>
   <button class="tab" onclick="showTab('presta',this)">🎯 Presta</button>
   <button class="tab" onclick="showTab('courses',this)">🛒 Courses</button>
+  <button class="tab" onclick="showTab('mise-en-place',this)">👨‍🍳 Mise en place</button>
   <button class="tab" onclick="showTab('histo',this)">📋 Historique</button>
   <button class="tab" onclick="showTab('config',this)">⚙️</button>
 </div>
-
+ 
 <!-- CATALOGUE -->
 <div id="page-catalogue" class="page active">
   <div class="top-bar">
@@ -187,6 +205,11 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
       </div>
       <div id="ing-rows"></div>
       <button class="btn" onclick="addIngRow()" style="width:100%;margin-top:7px">+ Ajouter un ingrédient</button>
+ 
+      <div style="font-weight:700;font-size:13px;margin:.75rem 0 .5rem">Étapes de préparation <span style="font-size:11px;font-weight:400;color:var(--text-light)">(optionnel)</span></div>
+      <div id="step-rows"></div>
+      <button class="btn" onclick="addStepRow()" style="width:100%;margin-top:7px">+ Ajouter une étape</button>
+ 
       <div style="display:flex;gap:8px;margin-top:1rem">
         <button class="btn btn-primary" onclick="savePiece()">✓ Enregistrer</button>
         <button class="btn" onclick="cancelForm()">Annuler</button>
@@ -194,37 +217,20 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     </div>
   </div>
 </div>
-
+ 
 <!-- PRESTA -->
 <div id="page-presta" class="page">
-  <div class="card">
-    <div class="card-title">Informations de la prestation</div>
-    <div class="form-grid-2">
-      <div>
-        <label class="label">Nom du client</label>
-        <input type="text" id="client-name" placeholder="Ex : Dupont — Mariage" oninput="savePresta()"/>
-      </div>
-      <div>
-        <label class="label">Date de la presta</label>
-        <input type="date" id="presta-date" oninput="savePresta()"/>
-      </div>
-    </div>
-    <div>
-      <label class="label">Nombre de convives</label>
-      <input type="number" id="nb-convives" value="50" min="1" style="width:120px" oninput="savePresta();renderPrestaList()"/>
-    </div>
+  <div class="top-bar">
+    <div style="font-weight:700;font-size:15px">Mes prestations</div>
+    <button class="btn btn-primary" onclick="addPrestaBlock()">+ Ajouter une presta</button>
   </div>
-  <div class="card">
-    <div class="card-title">Sélection des recettes</div>
-    <div class="filter-bar" id="presta-filters"></div>
-    <div id="presta-pieces"></div>
-  </div>
-  <div style="display:flex;gap:8px;flex-wrap:wrap">
-    <button class="btn btn-primary" onclick="showTab('courses',document.querySelectorAll('.tab')[2])">Voir la liste de courses →</button>
-    <button class="btn btn-green" onclick="saveToHistory()">💾 Sauvegarder cette presta</button>
+  <div id="presta-blocks"></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:.5rem">
+    <button class="btn btn-primary" onclick="showTab('courses',document.querySelectorAll('.tab')[2])">🛒 Voir la liste de courses combinée →</button>
+    <button class="btn btn-green" onclick="saveToHistory()">💾 Sauvegarder</button>
   </div>
 </div>
-
+ 
 <!-- COURSES -->
 <div id="page-courses" class="page">
   <div id="courses-normal-view">
@@ -287,7 +293,16 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     </div>
   </div>
 </div>
-
+ 
+<!-- MISE EN PLACE -->
+<div id="page-mise-en-place" class="page">
+  <div class="top-bar">
+    <div style="font-weight:700;font-size:15px">Mise en place</div>
+    <div id="mep-progress-bar-wrap" style="font-size:11px;color:var(--text-mid)"></div>
+  </div>
+  <div id="mep-content"></div>
+</div>
+ 
 <!-- HISTORIQUE -->
 <div id="page-histo" class="page">
   <div class="top-bar">
@@ -295,7 +310,7 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
   </div>
   <div id="histo-list"></div>
 </div>
-
+ 
 <!-- CONFIG -->
 <div id="page-config" class="page">
   <div class="card">
@@ -318,19 +333,19 @@ input:checked+.tog-slider:before{transform:translateX(16px)}
     <p style="font-size:12px;color:var(--text-mid);line-height:1.6">Les données sont stockées dans le repo GitHub <strong>partage-traiteur-organisation</strong>. Chaque modification est automatiquement synchronisée. Ton frère doit se connecter avec son propre token GitHub (accès au même repo) pour voir les mêmes données.</p>
   </div>
 </div>
-
+ 
 </div><!-- end .app -->
-
+ 
 <script>
 const GITHUB_OWNER='Jorobard';
 const GITHUB_REPO='partage-traiteur-organisation';
 const GITHUB_FILE='data.json';
 const GITHUB_BRANCH='main';
-
+ 
 const TYPES={cocktail:'🍢 Pièces cocktails',entree:'🥗 Entrées',plat:'🍽️ Plats',dessert:'🍰 Desserts'};
 const TYPE_KEYS=['cocktail','entree','plat','dessert'];
 const ING_CATS=['Herbes','Légumes','Fruits','Viandes','Poissons','Boulangerie','Ovoproduits','Économats','Hygiène','Ustensiles'];
-
+ 
 let ghToken='',ghUser='',ghFileSha='';
 let data={pieces:[
   {id:1,name:"Tartelettes feuilles de bricks, tartare de betterave aux sésames",type:'cocktail',photo:'',ref:50,ingredients:[
@@ -361,20 +376,20 @@ let data={pieces:[
     {name:"Lait",cat:"Ovoproduits",qty:"",unit:"cl"}
   ]}
 ],selected:{},client:"",prestaDate:"",convives:50,nextId:4,history:[]};
-
+ 
 let editingId=null,currentPhotoB64="";
 let catalogFilter='all',prestaFilter='all';
 let lastSync=null,syncTimer=null;
-
+ 
 /* ── GITHUB SYNC ── */
 function getApiUrl(){return`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;}
-
+ 
 async function ghFetch(method,body=null){
   const opts={method,headers:{'Authorization':`token ${ghToken}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'}};
   if(body)opts.body=JSON.stringify(body);
   return fetch(getApiUrl(),opts);
 }
-
+ 
 async function loadFromGitHub(){
   setSyncStatus('loading','Synchronisation…');
   try{
@@ -425,7 +440,7 @@ async function loadFromGitHub(){
     }catch(e2){}
   }
 }
-
+ 
 async function compressPhoto(base64,maxKB=200){
   return new Promise(resolve=>{
     if(!base64||base64.length<maxKB*1024){resolve(base64);return;}
@@ -445,7 +460,7 @@ async function compressPhoto(base64,maxKB=200){
     img.src=base64;
   });
 }
-
+ 
 async function pushToGitHub(msg){
   setSyncStatus('loading','Sauvegarde…');
   try{
@@ -483,7 +498,7 @@ async function pushToGitHub(msg){
     setSyncStatus('ok','Sauvegardé '+lastSync.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}));
   }catch(e){setSyncStatus('err','Erreur sauvegarde — '+e.message);}
 }
-
+ 
 function setSyncStatus(state,label){
   const dot=document.getElementById('sync-dot');
   const lbl=document.getElementById('sync-label');
@@ -492,14 +507,14 @@ function setSyncStatus(state,label){
   const cfg=document.getElementById('config-status');
   if(cfg)cfg.textContent=label;
 }
-
+ 
 async function syncNow(){await loadFromGitHub();renderCatalogue();renderPrestaList();renderHisto();}
-
+ 
 function scheduleSync(){
   if(syncTimer)clearInterval(syncTimer);
   syncTimer=setInterval(()=>loadFromGitHub().then(()=>{renderCatalogue();renderPrestaList();renderHisto();}),60000);
 }
-
+ 
 /* ── SETUP ── */
 async function connectGitHub(){
   const name=document.getElementById('setup-name').value.trim();
@@ -520,18 +535,18 @@ async function connectGitHub(){
     renderCatalogue();scheduleSync();
   }catch(e){showSetupError(e.message);}
 }
-
+ 
 function showSetupError(msg){
   const el=document.getElementById('setup-error');
   el.textContent=msg;el.style.display='block';
 }
-
+ 
 function disconnect(){
   if(!confirm('Se déconnecter ? Les données restent sur GitHub.'))return;
   localStorage.removeItem('gh_token');localStorage.removeItem('gh_user');
   location.reload();
 }
-
+ 
 /* ── INIT ── */
 function init(){
   const token=localStorage.getItem('gh_token');
@@ -540,37 +555,46 @@ function init(){
     ghToken=token;ghUser=user;
     document.getElementById('main-app').style.display='block';
     document.getElementById('config-name').textContent=user;
-    loadFromGitHub().then(()=>{renderCatalogue();renderPrestaList();renderHisto();});
+    loadFromGitHub().then(()=>{
+      if(!data.prestas||!data.prestas.length){
+        data.prestas=[{id:1,client:data.client||'',date:data.prestaDate||'',convives:data.convives||50,selected:data.selected||{},filter:'all'}];
+        data.nextPrestaId=2;
+      }
+      renderCatalogue();renderPrestaBlocks();renderHisto();
+    });
     scheduleSync();
   }else{
     document.getElementById('setup-screen').style.display='flex';
   }
 }
-
+ 
 /* ── SAVE (push to GitHub after local change) ── */
 async function saveAndSync(msg){
   await pushToGitHub(msg);
 }
-
+ 
 /* ── TABS ── */
 function showTab(t,btn){
   document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
   if(btn)btn.classList.add('active');
-  document.getElementById('page-'+t).classList.add('active');
+  const pageId='page-'+t;
+  const pageEl=document.getElementById(pageId);
+  if(pageEl)pageEl.classList.add('active');
   if(t==='catalogue')renderCatalogue();
-  if(t==='presta')renderPresta();
+  if(t==='presta'){if(!data.prestas||!data.prestas.length){data.prestas=[{id:1,client:data.client||'',date:data.prestaDate||'',convives:data.convives||50,selected:data.selected||{},filter:'all'}];data.nextPrestaId=2;}renderPrestaBlocks();}
   if(t==='courses')renderCourses();
+  if(t==='mise-en-place')renderMiseEnPlace();
   if(t==='histo')renderHisto();
 }
-
+ 
 /* ── FILTERS ── */
 function buildFilters(containerId,current,onSelect){
   const el=document.getElementById(containerId);
   const btns=[{k:'all',l:'Tout'},...TYPE_KEYS.map(k=>({k,l:TYPES[k]}))];
   el.innerHTML=btns.map(b=>`<button class="filter-btn${current===b.k?' active':''}" onclick="(${onSelect.toString()})('${b.k}')">${b.l}</button>`).join('');
 }
-
+ 
 /* ── CATALOGUE ── */
 function setCatalogFilter(f){catalogFilter=f;renderCatalogue();}
 function renderCatalogue(){
@@ -601,7 +625,7 @@ function renderCatalogue(){
         </div>`).join('')}
     </div>`).join('');
 }
-
+ 
 function openAddPiece(){
   editingId=null;currentPhotoB64="";
   document.getElementById('form-title').textContent='Nouvelle recette';
@@ -609,12 +633,13 @@ function openAddPiece(){
   document.getElementById('inp-type').value='cocktail';
   document.getElementById('inp-ref').value=50;
   document.getElementById('ing-rows').innerHTML='';
+  document.getElementById('step-rows').innerHTML='';
   document.getElementById('photo-preview-wrap').innerHTML='<div style="font-size:20px">📷</div><div style="font-size:11px;color:var(--text-mid);margin-top:3px">Cliquer pour ajouter</div>';
   addIngRow();
   document.getElementById('form-piece').style.display='block';
   setTimeout(()=>document.getElementById('form-piece').scrollIntoView({behavior:'smooth'}),50);
 }
-
+ 
 function editPiece(id){
   editingId=id;const p=data.pieces.find(x=>x.id===id);
   currentPhotoB64=p.photo||'';
@@ -625,10 +650,12 @@ function editPiece(id){
   document.getElementById('ing-rows').innerHTML='';
   p.ingredients.forEach(i=>addIngRow(i));
   document.getElementById('photo-preview-wrap').innerHTML=p.photo?`<img src="${p.photo}" style="width:70px;height:55px;object-fit:cover;border-radius:6px"/>`:'<div style="font-size:20px">📷</div><div style="font-size:11px;color:var(--text-mid);margin-top:3px">Cliquer pour ajouter</div>';
+  document.getElementById('step-rows').innerHTML='';
+  (p.steps||[]).forEach(s=>addStepRow(s));
   document.getElementById('form-piece').style.display='block';
   setTimeout(()=>document.getElementById('form-piece').scrollIntoView({behavior:'smooth'}),50);
 }
-
+ 
 function quickAddPhoto(id){
   const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
   inp.onchange=function(){
@@ -643,7 +670,7 @@ function quickAddPhoto(id){
   };
   inp.click();
 }
-
+ 
 function previewPhoto(inp){
   const f=inp.files[0];if(!f)return;
   const r=new FileReader();
@@ -653,19 +680,20 @@ function previewPhoto(inp){
   };
   r.readAsDataURL(f);
 }
-
+ 
 function deletePiece(id){
   if(!confirm('Supprimer cette recette ?'))return;
   data.pieces=data.pieces.filter(p=>p.id!==id);delete data.selected[id];
   saveAndSync('Recette supprimée').then(()=>renderCatalogue());
 }
-
+ 
 function addIngRow(ing=null){
-  const d=document.createElement('div');d.className='ing-form-grid';
+  const d=document.createElement('div');d.className='ing-form-grid autocomplete-wrap';
   d.innerHTML=`<input type="text" placeholder="Ingrédient" value="${ing?escHtml(ing.name):''}" class="ing-name"/><select class="ing-cat">${ING_CATS.map(c=>`<option${ing&&ing.cat===c?' selected':''}>${c}</option>`).join('')}</select><input type="text" placeholder="Qté" value="${ing&&ing.qty!==''?ing.qty:''}" class="ing-qty"/><input type="text" placeholder="Unité" value="${ing?escHtml(ing.unit||''):''}" class="ing-unit"/><button class="btn btn-sm btn-danger" onclick="this.parentNode.remove()" style="padding:4px 6px">✕</button>`;
   document.getElementById('ing-rows').appendChild(d);
+  setupAutocomplete(d.querySelector('.ing-name'));
 }
-
+ 
 function savePiece(){
   const name=document.getElementById('inp-name').value.trim();
   if(!name){alert('Merci de saisir un nom.');return}
@@ -676,12 +704,22 @@ function savePiece(){
   rows.forEach(r=>{const n=r.querySelector('.ing-name').value.trim();if(!n)return;const qv=r.querySelector('.ing-qty').value.trim();ingredients.push({name:n,cat:r.querySelector('.ing-cat').value,qty:qv===''?'':(!isNaN(parseFloat(qv))?parseFloat(qv):qv),unit:r.querySelector('.ing-unit').value.trim()});});
   if(editingId){const p=data.pieces.find(x=>x.id===editingId);Object.assign(p,{name,type,ref,photo:currentPhotoB64,ingredients});}
   else{data.pieces.push({id:data.nextId++,name,type,ref,photo:currentPhotoB64,ingredients});}
+  // Save steps
+  const stepRows=document.getElementById('step-rows').querySelectorAll('.step-form-row');
+  const steps=[];
+  stepRows.forEach((r,idx)=>{
+    const text=r.querySelector('.step-text').value.trim();
+    const comment=r.querySelector('.step-comment').value.trim();
+    if(text)steps.push({id:idx+1,text,comment});
+  });
+  if(editingId){const p=data.pieces.find(x=>x.id===editingId);Object.assign(p,{name,type,ref,photo:currentPhotoB64,ingredients,steps});}
+  else{data.pieces.push({id:data.nextId++,name,type,ref,photo:currentPhotoB64,ingredients,steps});}
   cancelForm();
   saveAndSync(editingId?'Recette modifiée':'Nouvelle recette').then(()=>renderCatalogue());
 }
-
+ 
 function cancelForm(){document.getElementById('form-piece').style.display='none';editingId=null;}
-
+ 
 /* ── PRESTA ── */
 function setPrestaFilter(f){prestaFilter=f;renderPrestaList();}
 function savePresta(){
@@ -689,14 +727,14 @@ function savePresta(){
   data.prestaDate=document.getElementById('presta-date').value;
   data.convives=parseFloat(document.getElementById('nb-convives').value)||50;
 }
-
+ 
 function renderPresta(){
   document.getElementById('client-name').value=data.client||'';
   document.getElementById('presta-date').value=data.prestaDate||'';
   document.getElementById('nb-convives').value=data.convives||50;
   renderPrestaList();
 }
-
+ 
 function renderPrestaList(){
   buildFilters('presta-filters',prestaFilter,setPrestaFilter);
   const nb=data.convives||50;
@@ -726,51 +764,58 @@ function renderPrestaList(){
       }).join('')}
     </div>`).join('');
 }
-
+ 
 function togglePiece(id,val){
   if(!data.selected[id])data.selected[id]={active:false,ratio:1};
   data.selected[id].active=val;
   renderPrestaList();
 }
-
+ 
 function setRatio(id,val){
   if(!data.selected[id])data.selected[id]={active:false,ratio:1};
   data.selected[id].ratio=parseFloat(val)||1;
   renderPrestaList();
 }
-
+ 
 function saveToHistory(){
-  const client=data.client||'Sans nom';
-  const nb=data.convives||50;
-  const sel=data.pieces.filter(p=>data.selected[p.id]&&data.selected[p.id].active);
-  if(!sel.length){alert('Sélectionnez au moins une recette avant de sauvegarder.');return;}
-  const entry={id:Date.now(),client,date:data.prestaDate||new Date().toISOString().slice(0,10),convives:nb,selected:JSON.parse(JSON.stringify(data.selected)),pieces:JSON.parse(JSON.stringify(sel))};
+  const prestas=data.prestas&&data.prestas.length?data.prestas:[{client:data.client,date:data.prestaDate,convives:data.convives,selected:data.selected}];
+  const clients=prestas.map(p=>p.client||'Sans nom').join(' + ');
+  const {selected}=buildAgg();
+  if(!selected.length){alert('Sélectionnez au moins une recette avant de sauvegarder.');return;}
+  const entry={id:Date.now(),client:clients,date:prestas[0]?.date||new Date().toISOString().slice(0,10),convives:prestas[0]?.convives||50,prestas:JSON.parse(JSON.stringify(prestas)),pieces:JSON.parse(JSON.stringify(selected))};
   data.history.unshift(entry);
   if(data.history.length>30)data.history=data.history.slice(0,30);
-  saveAndSync(`Presta ${client} sauvegardée`).then(()=>alert(`✓ Presta "${client}" sauvegardée !`));
+  saveAndSync(`Presta ${clients} sauvegardée`).then(()=>alert(`✓ Presta "${clients}" sauvegardée !`));
 }
-
+ 
 /* ── COURSES ── */
 function buildAgg(){
-  const nb=data.convives||50;
-  const selected=data.pieces.filter(p=>data.selected[p.id]&&data.selected[p.id].active);
   const agg={};
-  selected.forEach(p=>{
-    const ratio=data.selected[p.id]?.ratio||1;
-    const totalPieces=nb*ratio;
-    const ref=p.ref||50;
-    p.ingredients.forEach(i=>{
-      const key=i.name+'||'+i.cat;
-      if(!agg[key])agg[key]={name:i.name,cat:i.cat,unit:i.unit,qty:null,hasMissing:false,pieces:[]};
-      if(!agg[key].pieces.includes(p.name))agg[key].pieces.push(p.name);
-      if(i.qty!==''&&i.qty!==null&&!isNaN(parseFloat(i.qty))&&ref>0){
-        agg[key].qty=(agg[key].qty||0)+parseFloat(i.qty)*(totalPieces/ref);
-      }else{agg[key].hasMissing=true;}
+  const allSelected=[];
+  const prestas=data.prestas&&data.prestas.length?data.prestas:[{client:data.client,convives:data.convives||50,selected:data.selected||{}}];
+  prestas.forEach(presta=>{
+    const nb=presta.convives||50;
+    data.pieces.forEach(p=>{
+      const sel=presta.selected[p.id];
+      if(!sel||!sel.active)return;
+      if(!allSelected.find(x=>x.id===p.id))allSelected.push(p);
+      const ratio=sel.ratio||1;
+      const totalPieces=nb*ratio;
+      const ref=p.ref||50;
+      p.ingredients.forEach(i=>{
+        const key=i.name+'||'+i.cat;
+        if(!agg[key])agg[key]={name:i.name,cat:i.cat,unit:i.unit,qty:null,hasMissing:false,pieces:[]};
+        if(!agg[key].pieces.includes(p.name))agg[key].pieces.push(p.name);
+        if(i.qty!==''&&i.qty!==null&&!isNaN(parseFloat(i.qty))&&ref>0){
+          agg[key].qty=(agg[key].qty||0)+parseFloat(i.qty)*(totalPieces/ref);
+        }else{agg[key].hasMissing=true;}
+      });
     });
   });
-  return{agg,selected,nb};
+  const nb=(prestas[0]?.convives)||50;
+  return{agg,selected:allSelected,nb};
 }
-
+ 
 function buildTextList(){
   const{agg,selected,nb}=buildAgg();const client=data.client||'';
   let txt=`PARTAGE — Liste de courses\n`;if(client)txt+=`Client : ${client}\n`;
@@ -778,7 +823,7 @@ function buildTextList(){
   ING_CATS.forEach(cat=>{const items=Object.values(agg).filter(x=>x.cat===cat).sort((a,b)=>a.name.localeCompare(b.name,'fr'));if(!items.length)return;txt+=`── ${cat.toUpperCase()} ──\n`;items.forEach(item=>{const qStr=item.qty!==null?item.qty.toFixed(item.qty<10?1:0)+(item.hasMissing?' + ?':''):'—';txt+=`• ${item.name} : ${qStr} ${item.unit||''}\n`;});txt+='\n';});
   return txt;
 }
-
+ 
 function renderCourses(){
   const{agg,selected,nb}=buildAgg();const client=data.client||'';
   document.getElementById('courses-title').textContent='Liste de courses'+(client?' — '+client:'');
@@ -811,13 +856,13 @@ function renderCourses(){
     startBar.style.display='block';activeBar.style.display='none';
   }
 }
-
+ 
 /* ── SHOPPING MODE ── */
 function getShoppingKey(){
   // Key based on current presta: client + date + convives
   return(data.client||'sans-client')+'_'+(data.prestaDate||'no-date')+'_'+data.convives;
 }
-
+ 
 function buildShoppingItems(){
   const{agg}=buildAgg();
   const items=[];
@@ -830,7 +875,7 @@ function buildShoppingItems(){
   });
   return items;
 }
-
+ 
 function startShopping(){
   const items=buildShoppingItems();
   const checks={};
@@ -839,19 +884,19 @@ function startShopping(){
   localStorage.setItem('shopping_'+getShoppingKey(),JSON.stringify(session));
   showShoppingMode();
 }
-
+ 
 function showShoppingMode(){
   document.getElementById('courses-normal-view').style.display='none';
   document.getElementById('courses-shopping-view').style.display='block';
   renderShoppingMode();
 }
-
+ 
 function hideShoppingMode(){
   document.getElementById('courses-shopping-view').style.display='none';
   document.getElementById('courses-normal-view').style.display='block';
   renderCourses();
 }
-
+ 
 function renderShoppingMode(){
   const key='shopping_'+getShoppingKey();
   const session=JSON.parse(localStorage.getItem(key)||'{}');
@@ -901,7 +946,7 @@ function renderShoppingMode(){
       </div>`).join('');
   }else{doneSec.style.display='none';}
 }
-
+ 
 function toggleCheck(itemKey){
   const key='shopping_'+getShoppingKey();
   const session=JSON.parse(localStorage.getItem(key)||'{}');
@@ -910,13 +955,13 @@ function toggleCheck(itemKey){
   localStorage.setItem(key,JSON.stringify(session));
   renderShoppingMode();
 }
-
+ 
 function finishShopping(){
   if(!confirm('Marquer les courses comme terminées ?'))return;
   localStorage.removeItem('shopping_'+getShoppingKey());
   hideShoppingMode();
 }
-
+ 
 /* ── HISTORIQUE ── */
 function renderHisto(){
   const el=document.getElementById('histo-list');
@@ -936,7 +981,7 @@ function renderHisto(){
       </div>
     </div>`).join('');
 }
-
+ 
 function restorePresta(histoId){
   const h=data.history.find(x=>x.id===histoId);if(!h)return;
   if(!confirm(`Rouvrir la presta "${h.client}" ?`))return;
@@ -944,18 +989,232 @@ function restorePresta(histoId){
   data.selected=JSON.parse(JSON.stringify(h.selected));
   showTab('presta',document.querySelectorAll('.tab')[1]);
 }
-
+ 
 function deleteHisto(id){
   if(!confirm('Supprimer ?'))return;
   data.history=data.history.filter(h=>h.id!==id);
   saveAndSync('Historique supprimé').then(()=>renderHisto());
 }
-
+ 
 function shareWhatsApp(){window.open('https://wa.me/?text='+encodeURIComponent(buildTextList()),'_blank');}
 function shareSMS(){window.open('sms:?body='+encodeURIComponent(buildTextList()),'_blank');}
 function copyText(){navigator.clipboard.writeText(buildTextList()).then(()=>{const el=document.getElementById('copy-confirm');el.style.display='block';setTimeout(()=>el.style.display='none',2500);});}
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-
+ 
+ 
+/* ── MULTI-PRESTA ── */
+// data.prestas = [{id, client, date, convives, selected, filter}, ...]
+if(!data.prestas){data.prestas=[{id:1,client:data.client||'',date:data.prestaDate||'',convives:data.convives||50,selected:data.selected||{},filter:'all'}];data.nextPrestaId=2;}
+ 
+function addPrestaBlock(){
+  if(!data.prestas)data.prestas=[];
+  data.prestas.push({id:data.nextPrestaId++,client:'',date:'',convives:50,selected:{},filter:'all'});
+  renderPrestaBlocks();
+}
+ 
+function removePrestaBlock(id){
+  if(data.prestas.length<=1){alert('Il faut au moins une prestation.');return;}
+  if(!confirm('Supprimer cette prestation ?'))return;
+  data.prestas=data.prestas.filter(p=>p.id!==id);
+  renderPrestaBlocks();
+}
+ 
+function renderPrestaBlocks(){
+  const el=document.getElementById('presta-blocks');
+  el.innerHTML=data.prestas.map(presta=>renderOnePrestaBlock(presta)).join('');
+}
+ 
+function renderOnePrestaBlock(presta){
+  const nb=presta.convives||50;
+  const typeFilters=['all','cocktail','entree','plat','dessert'];
+  const typeLabels={all:'Tout',cocktail:'🍢 Cocktails',entree:'🥗 Entrées',plat:'🍽️ Plats',dessert:'🍰 Desserts'};
+  const filterBtns=typeFilters.map(k=>`<button class="filter-btn${(presta.filter||'all')===k?' active':''}" onclick="setPrestaBlockFilter(${presta.id},'${k}')">${typeLabels[k]}</button>`).join('');
+  const filtered=data.pieces.filter(p=>(presta.filter||'all')==='all'||p.type===(presta.filter||'all'));
+  const byType={};filtered.forEach(p=>{if(!byType[p.type])byType[p.type]=[];byType[p.type].push(p);});
+  const TYPE_KEYS=['cocktail','entree','plat','dessert'];
+  const TYPES={cocktail:'🍢 Pièces cocktails',entree:'🥗 Entrées',plat:'🍽️ Plats',dessert:'🍰 Desserts'};
+  const piecesHtml=TYPE_KEYS.filter(t=>byType[t]).map(t=>`
+    <div style="margin-bottom:.5rem">
+      <div class="type-section-title" style="font-size:12px">${TYPES[t]}</div>
+      ${byType[t].map(p=>{
+        const sel=presta.selected[p.id]||{active:false,ratio:1};
+        const totalPieces=(nb*sel.ratio).toFixed(1);
+        return`<div class="piece-row" style="padding:6px 0">
+          <label class="toggle"><input type="checkbox" ${sel.active?'checked':''} onchange="togglePrestaBlockPiece(${presta.id},${p.id},this.checked)"/><span class="tog-slider"></span></label>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(p.name)}</div>
+            <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
+              <input type="number" value="${sel.ratio}" min="0.5" step="0.5" style="width:50px;padding:2px 5px;font-size:11px" onchange="setPrestaBlockRatio(${presta.id},${p.id},this.value)"/>
+              <span style="font-size:10px;color:var(--text-light)">p/conv. → <strong>${totalPieces} pcs</strong></span>
+            </div>
+          </div>
+          <span class="badge ${sel.active?'badge-green':'badge-gray'}">${sel.active?'✓':'—'}</span>
+        </div>`;
+      }).join('')}
+    </div>`).join('');
+  return`<div class="presta-block">
+    <div class="presta-block-header">
+      <div class="presta-block-title">Prestation ${data.prestas.indexOf(data.prestas.find(p=>p.id===presta.id))+1}</div>
+      ${data.prestas.length>1?`<button class="btn btn-sm btn-danger" onclick="removePrestaBlock(${presta.id})">🗑️</button>`:''}
+    </div>
+    <div class="form-grid-2" style="margin-bottom:.75rem">
+      <div>
+        <label class="label">Nom du client</label>
+        <input type="text" value="${escHtml(presta.client||'')}" placeholder="Ex : Dupont — Mariage" oninput="updatePrestaField(${presta.id},'client',this.value)"/>
+      </div>
+      <div>
+        <label class="label">Date</label>
+        <input type="date" value="${presta.date||''}" oninput="updatePrestaField(${presta.id},'date',this.value)"/>
+      </div>
+    </div>
+    <div style="margin-bottom:.75rem">
+      <label class="label">Nombre de convives</label>
+      <input type="number" value="${nb}" min="1" style="width:110px" oninput="updatePrestaField(${presta.id},'convives',parseFloat(this.value)||50);renderPrestaBlocks()"/>
+    </div>
+    <div class="filter-bar" style="margin-bottom:.5rem">${filterBtns}</div>
+    <div>${piecesHtml||'<div class="empty" style="padding:1rem">Aucune recette dans cette catégorie.</div>'}</div>
+  </div>`;
+}
+ 
+function updatePrestaField(id,field,val){
+  const p=data.prestas.find(x=>x.id===id);if(!p)return;
+  p[field]=val;
+  // keep legacy data.client/date/convives in sync with first presta
+  if(id===data.prestas[0].id){data.client=data.prestas[0].client;data.prestaDate=data.prestas[0].date;data.convives=data.prestas[0].convives;}
+}
+ 
+function setPrestaBlockFilter(id,f){
+  const p=data.prestas.find(x=>x.id===id);if(!p)return;
+  p.filter=f;renderPrestaBlocks();
+}
+ 
+function togglePrestaBlockPiece(prestaId,pieceId,val){
+  const p=data.prestas.find(x=>x.id===prestaId);if(!p)return;
+  if(!p.selected[pieceId])p.selected[pieceId]={active:false,ratio:1};
+  p.selected[pieceId].active=val;
+  renderPrestaBlocks();
+}
+ 
+function setPrestaBlockRatio(prestaId,pieceId,val){
+  const p=data.prestas.find(x=>x.id===prestaId);if(!p)return;
+  if(!p.selected[pieceId])p.selected[pieceId]={active:false,ratio:1};
+  p.selected[pieceId].ratio=parseFloat(val)||1;
+  renderPrestaBlocks();
+}
+ 
+/* ── MISE EN PLACE ── */
+function renderMiseEnPlace(){
+  const el=document.getElementById('mep-content');
+  // Gather all active pieces across all prestas
+  const activePieces=[];
+  (data.prestas||[]).forEach(presta=>{
+    data.pieces.forEach(p=>{
+      if(presta.selected[p.id]&&presta.selected[p.id].active&&p.steps&&p.steps.length){
+        if(!activePieces.find(x=>x.id===p.id))activePieces.push(p);
+      }
+    });
+  });
+  if(!activePieces.length){
+    el.innerHTML='<div class="card empty"><div style="font-size:28px;margin-bottom:.5rem">👨‍🍳</div><div>Aucune recette sélectionnée avec des étapes.<br><span style="font-size:11px">Ajoutez des étapes dans le catalogue et sélectionnez des recettes dans Presta.</span></div></div>';
+    const wrap=document.getElementById('mep-progress-bar-wrap');if(wrap)wrap.textContent='';
+    return;
+  }
+  const mepKey='mep_'+getMepKey();
+  let session=JSON.parse(localStorage.getItem(mepKey)||'{}');
+  if(!session.checks)session={checks:{}};
+  let totalSteps=0,doneSteps=0;
+  activePieces.forEach(p=>(p.steps||[]).forEach(s=>{totalSteps++;if(session.checks[p.id+'_'+s.id])doneSteps++;}));
+  const wrap=document.getElementById('mep-progress-bar-wrap');
+  if(wrap)wrap.textContent=doneSteps+' / '+totalSteps+' étapes';
+  el.innerHTML=activePieces.map(p=>`
+    <div class="card" style="margin-bottom:.75rem">
+      <div style="font-weight:700;font-size:14px;margin-bottom:.75rem;color:var(--brand)">${escHtml(p.name)}</div>
+      ${(p.steps||[]).map((s,idx)=>{
+        const key=p.id+'_'+s.id;
+        const done=session.checks[key]||false;
+        return`<div class="mep-step">
+          <div class="mep-check${done?' done':''}" onclick="toggleMepStep('${key}')">
+            ${done?'✓':''}
+          </div>
+          <div class="mep-step-content">
+            <div class="mep-step-text${done?' done':''}">${idx+1}. ${escHtml(s.text)}</div>
+            ${s.comment?`<div class="mep-comment">💬 ${escHtml(s.comment)}</div>`:''}
+          </div>
+        </div>`;
+      }).join('')}
+    </div>`).join('');
+}
+ 
+function getMepKey(){
+  const clients=(data.prestas||[]).map(p=>p.client||'x').join('-');
+  return clients+'_'+(data.prestas?.[0]?.date||'nodate');
+}
+ 
+function toggleMepStep(key){
+  const mepKey='mep_'+getMepKey();
+  let session=JSON.parse(localStorage.getItem(mepKey)||'{}');
+  if(!session.checks)session={checks:{}};
+  session.checks[key]=!session.checks[key];
+  localStorage.setItem(mepKey,JSON.stringify(session));
+  renderMiseEnPlace();
+}
+ 
+/* ── STEP ROWS in form ── */
+function addStepRow(step=null){
+  const d=document.createElement('div');
+  d.className='step-form-row';
+  d.style.cssText='display:grid;grid-template-columns:1fr 1fr 28px;gap:4px;margin-bottom:4px;align-items:center';
+  d.innerHTML=`<input type="text" placeholder="Ex: Mariner le poisson 2h" class="step-text" value="${step?escHtml(step.text):''}"/><input type="text" placeholder="Commentaire (optionnel)" class="step-comment" value="${step?escHtml(step.comment||''):''}"/><button class="btn btn-sm btn-danger" onclick="this.parentNode.remove()" style="padding:4px 6px">✕</button>`;
+  document.getElementById('step-rows').appendChild(d);
+}
+ 
+/* ── AUTOCOMPLETE ── */
+function getAllIngredientNames(){
+  const names=new Set();
+  data.pieces.forEach(p=>p.ingredients.forEach(i=>{if(i.name)names.add(i.name);}));
+  return[...names].sort();
+}
+ 
+function setupAutocomplete(input){
+  const allNames=getAllIngredientNames();
+  input.addEventListener('input',function(){
+    closeAllAutocomplete();
+    const val=this.value.trim().toLowerCase();
+    if(val.length<2)return;
+    const matches=allNames.filter(n=>n.toLowerCase().includes(val)||levenshtein(n.toLowerCase(),val)<=2);
+    if(!matches.length)return;
+    const wrap=this.closest('.autocomplete-wrap')||this.parentNode;
+    const list=document.createElement('div');
+    list.className='autocomplete-list';
+    list.innerHTML=matches.slice(0,6).map(m=>{
+      const idx=m.toLowerCase().indexOf(val);
+      const hi=idx>=0?m.slice(0,idx)+'<strong>'+m.slice(idx,idx+val.length)+'</strong>'+m.slice(idx+val.length):m;
+      return`<div class="autocomplete-item" onclick="selectAutocomplete(this,'${escHtml(m)}')">${hi}</div>`;
+    }).join('');
+    wrap.style.position='relative';
+    wrap.appendChild(list);
+  });
+  input.addEventListener('blur',()=>setTimeout(closeAllAutocomplete,200));
+}
+ 
+function selectAutocomplete(el,val){
+  const wrap=el.closest('.autocomplete-list').parentNode;
+  const input=wrap.querySelector('.ing-name');
+  if(input)input.value=val;
+  closeAllAutocomplete();
+}
+ 
+function closeAllAutocomplete(){
+  document.querySelectorAll('.autocomplete-list').forEach(el=>el.remove());
+}
+ 
+function levenshtein(a,b){
+  const m=a.length,n=b.length;
+  const dp=Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i===0?j:j===0?i:0));
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
+  return dp[m][n];
+}
+ 
 init();
 </script>
 </body>
