@@ -1001,63 +1001,6 @@
       ]
     },
     {
-      "id": 16,
-      "name": "Burrata, pêches rôties, huile de basilic, amande torréfiées, jambon serrano",
-      "type": "entree",
-      "ref": 1,
-      "photo": "",
-      "ingredients": [
-        {
-          "name": "Burrata de buffle",
-          "cat": "Ovoproduits",
-          "qty": 1,
-          "unit": "pcs"
-        },
-        {
-          "name": "Huile d'olive",
-          "cat": "Économats",
-          "qty": 3,
-          "unit": "cl"
-        },
-        {
-          "name": "Basilic",
-          "cat": "Herbes",
-          "qty": 0.3,
-          "unit": "pcs"
-        },
-        {
-          "name": "Basilic nain",
-          "cat": "Herbes",
-          "qty": 0,
-          "unit": "pcs"
-        },
-        {
-          "name": "Amandes blanches",
-          "cat": "Économats",
-          "qty": 10,
-          "unit": "g"
-        },
-        {
-          "name": "Jambon serrano",
-          "cat": "Viandes",
-          "qty": 30,
-          "unit": "g"
-        },
-        {
-          "name": "Pêches rôties",
-          "cat": "Fruits",
-          "qty": 0,
-          "unit": "pcs"
-        },
-        {
-          "name": "Tomates coeurs de boeufs",
-          "cat": "Légumes",
-          "qty": 0,
-          "unit": "pcs"
-        }
-      ]
-    },
-    {
       "id": 17,
       "name": "Burrata, pêches rôties, huile de basilic, amande torréfiées, jambon serrano",
       "type": "entree",
