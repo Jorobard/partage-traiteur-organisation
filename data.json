@@ -771,6 +771,28 @@
           "qty": 3,
           "unit": "g"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Tailler la viande",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "text": "Tailler condiments",
+          "comment": "échalotes, ciboulettes, persil, câpres, cornichons"
+        },
+        {
+          "id": 3,
+          "text": "Tailler et snacker les pains",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Réaliser la mayo tartare",
+          "comment": "Base mayo + ketchup + tabasco + worchester"
+        }
       ]
     },
     {
