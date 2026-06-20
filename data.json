@@ -999,6 +999,142 @@
           "unit": "pcs"
         }
       ]
+    },
+    {
+      "id": 16,
+      "name": "Burrata, pêches rôties, huile de basilic, amande torréfiées, jambon serrano",
+      "type": "entree",
+      "ref": 1,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Burrata de buffle",
+          "cat": "Ovoproduits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Huile d'olive",
+          "cat": "Économats",
+          "qty": 3,
+          "unit": "cl"
+        },
+        {
+          "name": "Basilic",
+          "cat": "Herbes",
+          "qty": 0.3,
+          "unit": "pcs"
+        },
+        {
+          "name": "Basilic nain",
+          "cat": "Herbes",
+          "qty": 0,
+          "unit": "pcs"
+        },
+        {
+          "name": "Amandes blanches",
+          "cat": "Économats",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Jambon serrano",
+          "cat": "Viandes",
+          "qty": 30,
+          "unit": "g"
+        },
+        {
+          "name": "Pêches rôties",
+          "cat": "Fruits",
+          "qty": 0,
+          "unit": "pcs"
+        },
+        {
+          "name": "Tomates coeurs de boeufs",
+          "cat": "Légumes",
+          "qty": 0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Burrata, pêches rôties, huile de basilic, amande torréfiées, jambon serrano",
+      "type": "entree",
+      "ref": 1,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Burrata de buffle",
+          "cat": "Ovoproduits",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Huile d'olive",
+          "cat": "Économats",
+          "qty": 3,
+          "unit": "cl"
+        },
+        {
+          "name": "Basilic",
+          "cat": "Herbes",
+          "qty": 0.3,
+          "unit": "pcs"
+        },
+        {
+          "name": "Basilic nain",
+          "cat": "Herbes",
+          "qty": 0,
+          "unit": "pcs"
+        },
+        {
+          "name": "Amandes blanches",
+          "cat": "Économats",
+          "qty": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Jambon serrano",
+          "cat": "Viandes",
+          "qty": 30,
+          "unit": "g"
+        },
+        {
+          "name": "Pêches rôties",
+          "cat": "Fruits",
+          "qty": 0,
+          "unit": "pcs"
+        },
+        {
+          "name": "Tomates coeurs de boeufs",
+          "cat": "Légumes",
+          "qty": 0,
+          "unit": "pcs"
+        }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Egoutter les burrata",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "text": "Huile de basilic",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Tailler les pêches + tomates",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Rôtir les pêches",
+          "comment": ""
+        }
+      ]
     }
   ],
   "selected": {
@@ -1006,28 +1142,60 @@
       "active": true,
       "ratio": 1
     },
-    "4": {
+    "7": {
+      "active": true,
+      "ratio": 1
+    },
+    "8": {
+      "active": true,
+      "ratio": 1
+    },
+    "9": {
+      "active": true,
+      "ratio": 1
+    },
+    "10": {
+      "active": true,
+      "ratio": 1
+    },
+    "12": {
       "active": true,
       "ratio": 1
     }
   },
-  "client": "TEST JULES",
-  "prestaDate": "2026-06-20",
-  "convives": 20,
-  "nextId": 16,
+  "client": "WeAre22.06.26",
+  "prestaDate": "2026-06-22",
+  "convives": 10,
+  "nextId": 18,
   "history": [],
   "prestas": [
     {
       "id": 1,
-      "client": "TEST JULES",
-      "date": "2026-06-20",
-      "convives": 20,
+      "client": "WeAre22.06.26",
+      "date": "2026-06-22",
+      "convives": 10,
       "selected": {
         "1": {
           "active": true,
           "ratio": 1
         },
-        "4": {
+        "7": {
+          "active": true,
+          "ratio": 1
+        },
+        "8": {
+          "active": true,
+          "ratio": 1
+        },
+        "9": {
+          "active": true,
+          "ratio": 1
+        },
+        "10": {
+          "active": true,
+          "ratio": 1
+        },
+        "12": {
           "active": true,
           "ratio": 1
         }
