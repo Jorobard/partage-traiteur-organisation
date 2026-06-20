@@ -32,9 +32,9 @@
           "unit": "pcs"
         },
         {
-          "name": "Feuilles de bricks",
-          "cat": "Boulangerie",
-          "qty": 3,
+          "name": "Feuille de brick",
+          "cat": "Économats",
+          "qty": 6,
           "unit": "feuilles"
         },
         {
