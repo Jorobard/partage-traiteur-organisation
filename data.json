@@ -686,6 +686,28 @@
           "qty": 10,
           "unit": "g"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Réaliser la polenta",
+          "comment": "1l lait, 250g de polenta, 200g parmesan"
+        },
+        {
+          "id": 2,
+          "text": "Tailler les cubes de polenta et paner",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Réaliser la sauce tartare",
+          "comment": "Base mayo + (ciboulette, citron vert jus + zeste, échalote, ail)"
+        },
+        {
+          "id": 4,
+          "text": "Réaliser gochujang",
+          "comment": "Base mayo + pate de gochujang"
+        }
       ]
     },
     {
