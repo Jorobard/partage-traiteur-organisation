@@ -1104,13 +1104,554 @@
     "12": {
       "active": true,
       "ratio": 1
+    },
+    "17": {
+      "active": true,
+      "ratio": 1
     }
   },
   "client": "WeAre22.06.26",
   "prestaDate": "2026-06-22",
   "convives": 10,
   "nextId": 18,
-  "history": [],
+  "history": [
+    {
+      "id": 1781968836035,
+      "client": "WeAre22.06.26",
+      "date": "2026-06-22",
+      "convives": 10,
+      "prestas": [
+        {
+          "id": 1,
+          "client": "WeAre22.06.26",
+          "date": "2026-06-22",
+          "convives": 10,
+          "selected": {
+            "1": {
+              "active": true,
+              "ratio": 1
+            },
+            "7": {
+              "active": true,
+              "ratio": 1
+            },
+            "8": {
+              "active": true,
+              "ratio": 1
+            },
+            "9": {
+              "active": true,
+              "ratio": 1
+            },
+            "10": {
+              "active": true,
+              "ratio": 1
+            },
+            "12": {
+              "active": true,
+              "ratio": 1
+            },
+            "17": {
+              "active": true,
+              "ratio": 1
+            }
+          },
+          "filter": "all"
+        }
+      ],
+      "pieces": [
+        {
+          "id": 1,
+          "name": "Tartelettes feuilles de bricks, tartare de betterave aux sésames",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 10,
+          "ingredients": [
+            {
+              "name": "Ciboulettes",
+              "cat": "Herbes",
+              "qty": 0.2,
+              "unit": "botte"
+            },
+            {
+              "name": "Betteraves",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Echalotes",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Citrons verts",
+              "cat": "Légumes",
+              "qty": 0.5,
+              "unit": "pcs"
+            },
+            {
+              "name": "Feuilles de bricks",
+              "cat": "Boulangerie",
+              "qty": 3,
+              "unit": "feuilles"
+            },
+            {
+              "name": "Sésames",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "Sauce soja",
+              "cat": "Économats",
+              "qty": 4,
+              "unit": "cl"
+            },
+            {
+              "name": "Huile de sésame",
+              "cat": "Économats",
+              "qty": 4,
+              "unit": "cl"
+            },
+            {
+              "name": "Gochujang",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Tartelettes feuilles de bricks",
+              "comment": ""
+            },
+            {
+              "id": 2,
+              "text": "Cuire les betteraves",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Tailler les betteraves",
+              "comment": ""
+            },
+            {
+              "id": 4,
+              "text": "Tailler les échalotes & ciboulettes",
+              "comment": ""
+            },
+            {
+              "id": 5,
+              "text": "Torréfier sésame",
+              "comment": ""
+            },
+            {
+              "id": 6,
+              "text": "Assaisonner",
+              "comment": ""
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Lettuces cup, salade césar, sarrasin",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 5,
+          "ingredients": [
+            {
+              "name": "Romaine",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Ail",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Blanc de poulet",
+              "cat": "Viandes",
+              "qty": 100,
+              "unit": "g"
+            },
+            {
+              "name": "Anchois",
+              "cat": "Poissons",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Jaune oeuf",
+              "cat": "Ovoproduits",
+              "qty": 1,
+              "unit": "p"
+            },
+            {
+              "name": "Parmesan",
+              "cat": "Ovoproduits",
+              "qty": 50,
+              "unit": "g"
+            },
+            {
+              "name": "Creme",
+              "cat": "Ovoproduits",
+              "qty": 5,
+              "unit": "cl"
+            },
+            {
+              "name": "Sarrasin",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "H.O",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "cl"
+            },
+            {
+              "name": "Moutarde",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Pont Neuf de polenta frites, sauce creamy",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 15,
+          "ingredients": [
+            {
+              "name": "Ciboulette",
+              "cat": "Herbes",
+              "qty": 0.5,
+              "unit": "botte"
+            },
+            {
+              "name": "Ail",
+              "cat": "Herbes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Huile pépin raisin",
+              "cat": "Herbes",
+              "qty": 20,
+              "unit": "cl"
+            },
+            {
+              "name": "Philadelphia",
+              "cat": "Herbes",
+              "qty": 150,
+              "unit": "g"
+            },
+            {
+              "name": "Echalote",
+              "cat": "Légumes",
+              "qty": 2,
+              "unit": "pcs"
+            },
+            {
+              "name": "Citron vert",
+              "cat": "Fruits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Lait entier",
+              "cat": "Ovoproduits",
+              "qty": 100,
+              "unit": "cl"
+            },
+            {
+              "name": "Parmesan",
+              "cat": "Ovoproduits",
+              "qty": 100,
+              "unit": "g"
+            },
+            {
+              "name": "Jaune",
+              "cat": "Ovoproduits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Polenta extra fine",
+              "cat": "Économats",
+              "qty": 200,
+              "unit": "g"
+            },
+            {
+              "name": "Moutarde à l'ancienne",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "Rolls tartare de boeuf",
+          "type": "cocktail",
+          "ref": 1,
+          "photo": "",
+          "ingredients": [
+            {
+              "name": "Filet boeuf",
+              "cat": "Viandes",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "name": "Buns",
+              "cat": "Boulangerie",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Ciboulette",
+              "cat": "Herbes",
+              "qty": 0.05,
+              "unit": "pcs"
+            },
+            {
+              "name": "Persil",
+              "cat": "Herbes",
+              "qty": 0.05,
+              "unit": "pcs"
+            },
+            {
+              "name": "Echalote",
+              "cat": "Légumes",
+              "qty": 0.2,
+              "unit": "pcs"
+            },
+            {
+              "name": "Capres",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "name": "Cornichon",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "name": "Ketchup",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "name": "Mayonnaise",
+              "cat": "Herbes",
+              "qty": 3,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Cylindre de bricks mimosa truffé",
+          "type": "cocktail",
+          "ref": 3,
+          "photo": "",
+          "ingredients": [
+            {
+              "name": "Oeuf",
+              "cat": "Ovoproduits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Feuille de brick",
+              "cat": "Économats",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Mayonnaise",
+              "cat": "Ovoproduits",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "Huile de truffe",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "cl"
+            },
+            {
+              "name": "Ciboulette",
+              "cat": "Herbes",
+              "qty": 0.1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Echalote",
+              "cat": "Herbes",
+              "qty": 0.5,
+              "unit": "pcs"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Tartare de rhubarbe à la cardamome, glace au yaourt, sablé breton",
+          "type": "dessert",
+          "ref": 3,
+          "photo": "",
+          "ingredients": [
+            {
+              "name": "Rhubarbe",
+              "cat": "Fruits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Sucre",
+              "cat": "Économats",
+              "qty": 50,
+              "unit": "g"
+            },
+            {
+              "name": "Cardamome",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "name": "Glace yaourt",
+              "cat": "Ovoproduits",
+              "qty": 135,
+              "unit": "ml"
+            },
+            {
+              "name": "Jaune oeuf",
+              "cat": "Ovoproduits",
+              "qty": 1.5,
+              "unit": "pcs"
+            },
+            {
+              "name": "Sucre",
+              "cat": "Économats",
+              "qty": 60,
+              "unit": "g"
+            },
+            {
+              "name": "Beurre demi sel",
+              "cat": "Ovoproduits",
+              "qty": 67,
+              "unit": "g"
+            },
+            {
+              "name": "Farine T55",
+              "cat": "Économats",
+              "qty": 95,
+              "unit": "g"
+            },
+            {
+              "name": "Levure chimique",
+              "cat": "Économats",
+              "qty": 3.5,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Burrata, pêches rôties, huile de basilic, amande torréfiées, jambon serrano",
+          "type": "entree",
+          "ref": 1,
+          "photo": "",
+          "ingredients": [
+            {
+              "name": "Burrata de buffle",
+              "cat": "Ovoproduits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Huile d'olive",
+              "cat": "Économats",
+              "qty": 3,
+              "unit": "cl"
+            },
+            {
+              "name": "Basilic",
+              "cat": "Herbes",
+              "qty": 0.3,
+              "unit": "pcs"
+            },
+            {
+              "name": "Basilic nain",
+              "cat": "Herbes",
+              "qty": 0.01,
+              "unit": "pcs"
+            },
+            {
+              "name": "Amandes blanches",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "Jambon serrano",
+              "cat": "Viandes",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "name": "Pêches rôties",
+              "cat": "Fruits",
+              "qty": 0.5,
+              "unit": "pcs"
+            },
+            {
+              "name": "Tomates coeurs de boeufs",
+              "cat": "Légumes",
+              "qty": 0.3,
+              "unit": "pcs"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Egoutter les burrata",
+              "comment": ""
+            },
+            {
+              "id": 2,
+              "text": "Huile de basilic",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Tailler les pêches + tomates",
+              "comment": ""
+            },
+            {
+              "id": 4,
+              "text": "Rôtir les pêches",
+              "comment": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "prestas": [
     {
       "id": 1,
@@ -1139,6 +1680,10 @@
           "ratio": 1
         },
         "12": {
+          "active": true,
+          "ratio": 1
+        },
+        "17": {
           "active": true,
           "ratio": 1
         }
