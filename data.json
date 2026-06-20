@@ -838,6 +838,23 @@
           "qty": 0.5,
           "unit": "pcs"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Réaliser les cylindres de bricks",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "text": "Cuire les oeufs durs",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Préparer l'appareil à mimosa",
+          "comment": "Oeufs durs hachés couteaux + Echalote + ciboulette + H.truffe + sel + poivre +"
+        }
       ]
     },
     {
