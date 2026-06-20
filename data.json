@@ -150,6 +150,33 @@
           "qty": 5,
           "unit": "g"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Tailler concombre en lamelle",
+          "comment": "1 à 2 min"
+        },
+        {
+          "id": 2,
+          "text": "Réaliser la marinade",
+          "comment": "Sel (60%), Sucre (40%), H.O, Baie rose, Aneth, Jus de citron + zeste"
+        },
+        {
+          "id": 3,
+          "text": "Réaliser le cream cheese",
+          "comment": "Philadelphia, Aneth, H.O, zeste citron, sel, piment espelette"
+        },
+        {
+          "id": 4,
+          "text": "Monter focaccia",
+          "comment": "Presser 1H min"
+        },
+        {
+          "id": 5,
+          "text": "Tailler",
+          "comment": "7cm sur 2cm"
+        }
       ]
     },
     {
