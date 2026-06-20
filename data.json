@@ -281,10 +281,32 @@
           "name": "Tartelette prêt à garnir 4cm",
           "cat": "Économats",
           "qty": 30,
-          "unit": ""
+          "unit": "pcs"
+        },
+        {
+          "name": "Pousse petits pois",
+          "cat": "Herbes",
+          "qty": 0.8,
+          "unit": "pcs"
         }
       ],
-      "steps": []
+      "steps": [
+        {
+          "id": 1,
+          "text": "Torréfier les tartelettes",
+          "comment": "7min 170°"
+        },
+        {
+          "id": 2,
+          "text": "Réaliser la creme de petits pois / menthe",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Tailler et torréfier lard fumé",
+          "comment": ""
+        }
+      ]
     },
     {
       "id": 5,
