@@ -1080,57 +1080,6 @@
       ]
     },
     {
-      "id": 18,
-      "name": "Pièces cocktails",
-      "type": "cocktail",
-      "ref": 1,
-      "photo": "",
-      "ingredients": [
-        {
-          "name": "Pâte feuilletée",
-          "cat": "Boulangerie",
-          "qty": 20,
-          "unit": "g"
-        },
-        {
-          "name": "Cognac / Armagnac",
-          "cat": "Économats",
-          "qty": 1,
-          "unit": "cl"
-        },
-        {
-          "name": "Persil",
-          "cat": "Herbes",
-          "qty": 0.1,
-          "unit": "pcs"
-        },
-        {
-          "name": "Champignons de Paris",
-          "cat": "Légumes",
-          "qty": 2,
-          "unit": "pcs"
-        },
-        {
-          "name": "Cerfeuil",
-          "cat": "Herbes",
-          "qty": 0.1,
-          "unit": "pcs"
-        },
-        {
-          "name": "Echalotes",
-          "cat": "Légumes",
-          "qty": 0.2,
-          "unit": "pcs"
-        },
-        {
-          "name": "Creme",
-          "cat": "Herbes",
-          "qty": 1,
-          "unit": "cl"
-        }
-      ]
-    },
-    {
       "id": 19,
       "name": "Pièces cocktails",
       "type": "cocktail",
