@@ -1398,57 +1398,6 @@
       ]
     },
     {
-      "id": 20,
-      "name": "Glace yaourt",
-      "type": "cocktail",
-      "ref": 10,
-      "photo": "",
-      "ingredients": [
-        {
-          "name": "Yaourt",
-          "cat": "Ovoproduits",
-          "qty": 400,
-          "unit": "g"
-        },
-        {
-          "name": "Creme 35%",
-          "cat": "Ovoproduits",
-          "qty": 200,
-          "unit": "g"
-        },
-        {
-          "name": "Sucre",
-          "cat": "Économats",
-          "qty": 110,
-          "unit": "g"
-        },
-        {
-          "name": "Glucose",
-          "cat": "Économats",
-          "qty": 50,
-          "unit": "g"
-        },
-        {
-          "name": "Lait en poudre",
-          "cat": "Économats",
-          "qty": 20,
-          "unit": "g"
-        },
-        {
-          "name": "Jaune oeuf",
-          "cat": "Ovoproduits",
-          "qty": 2,
-          "unit": "pcs"
-        },
-        {
-          "name": "Citron",
-          "cat": "Fruits",
-          "qty": 0.5,
-          "unit": "pcs"
-        }
-      ]
-    },
-    {
       "id": 21,
       "name": "Glace yaourt",
       "type": "cocktail",
@@ -2138,7 +2087,7 @@
           "ratio": 1
         }
       },
-      "filter": "all"
+      "filter": "cocktail"
     }
   ],
   "nextPrestaId": 2
