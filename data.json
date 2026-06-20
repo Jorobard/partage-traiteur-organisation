@@ -478,6 +478,33 @@
           "qty": 2,
           "unit": "g"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Cuire l'agneau avec G.A, B.G, Tomates et bouillon",
+          "comment": "7h basse température"
+        },
+        {
+          "id": 2,
+          "text": "Réaliser la sauce tomate",
+          "comment": "Réduire -> dégraisser -> Ajouter sauce tomate -> cuire"
+        },
+        {
+          "id": 3,
+          "text": "Tailler la ciboulette",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Tailler et snacker les buns",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "text": "Penser à prendre (citron, oignon crispy, parmesan)",
+          "comment": ""
+        }
       ]
     },
     {
