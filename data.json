@@ -1078,6 +1078,135 @@
           "comment": ""
         }
       ]
+    },
+    {
+      "id": 18,
+      "name": "Pièces cocktails",
+      "type": "cocktail",
+      "ref": 1,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Pâte feuilletée",
+          "cat": "Boulangerie",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Cognac / Armagnac",
+          "cat": "Économats",
+          "qty": 1,
+          "unit": "cl"
+        },
+        {
+          "name": "Persil",
+          "cat": "Herbes",
+          "qty": 0.1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Champignons de Paris",
+          "cat": "Légumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Cerfeuil",
+          "cat": "Herbes",
+          "qty": 0.1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Echalotes",
+          "cat": "Légumes",
+          "qty": 0.2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Creme",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "cl"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Pièces cocktails",
+      "type": "cocktail",
+      "ref": 1,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Pâte feuilletée",
+          "cat": "Boulangerie",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Cognac / Armagnac",
+          "cat": "Économats",
+          "qty": 1,
+          "unit": "cl"
+        },
+        {
+          "name": "Persil",
+          "cat": "Herbes",
+          "qty": 0.1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Champignons de Paris",
+          "cat": "Légumes",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Cerfeuil",
+          "cat": "Herbes",
+          "qty": 0.1,
+          "unit": "pcs"
+        },
+        {
+          "name": "Echalotes",
+          "cat": "Légumes",
+          "qty": 0.2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Creme",
+          "cat": "Herbes",
+          "qty": 1,
+          "unit": "cl"
+        }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Cuire les pâtes feuilletées",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "text": "Tailler les champignons / Herbes / Ail / Echalotes",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Cuire les champignons",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Mettre en poche",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "text": "Equeuter cerfeuil",
+          "comment": ""
+        }
+      ]
     }
   ],
   "selected": {
@@ -1113,7 +1242,7 @@
   "client": "WeAre22.06.26",
   "prestaDate": "2026-06-22",
   "convives": 10,
-  "nextId": 18,
+  "nextId": 20,
   "history": [
     {
       "id": 1781968836035,
