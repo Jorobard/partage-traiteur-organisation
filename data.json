@@ -1396,6 +1396,130 @@
           "comment": ""
         }
       ]
+    },
+    {
+      "id": 20,
+      "name": "Glace yaourt",
+      "type": "cocktail",
+      "ref": 10,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Yaourt",
+          "cat": "Ovoproduits",
+          "qty": 400,
+          "unit": "g"
+        },
+        {
+          "name": "Creme 35%",
+          "cat": "Ovoproduits",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 110,
+          "unit": "g"
+        },
+        {
+          "name": "Glucose",
+          "cat": "Économats",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Lait en poudre",
+          "cat": "Économats",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Jaune oeuf",
+          "cat": "Ovoproduits",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron",
+          "cat": "Fruits",
+          "qty": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Glace yaourt",
+      "type": "cocktail",
+      "ref": 10,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Yaourt",
+          "cat": "Ovoproduits",
+          "qty": 400,
+          "unit": "g"
+        },
+        {
+          "name": "Creme 35%",
+          "cat": "Ovoproduits",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 110,
+          "unit": "g"
+        },
+        {
+          "name": "Glucose",
+          "cat": "Économats",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Lait en poudre",
+          "cat": "Économats",
+          "qty": 20,
+          "unit": "g"
+        },
+        {
+          "name": "Jaune oeuf",
+          "cat": "Ovoproduits",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron",
+          "cat": "Fruits",
+          "qty": 0.5,
+          "unit": "pcs"
+        }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Réaliser la crême anglaise",
+          "comment": "chauffer la crême en ajoutant le glucose, le lait en poudre. Blanchir les jaunes. Verser progressivement. Cuire jusqu'a 82°."
+        },
+        {
+          "id": 2,
+          "text": "Ajouter le yaourt et le citron",
+          "comment": "A froid et mixer (texture homogène)"
+        },
+        {
+          "id": 3,
+          "text": "Congeler au moins 12h",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Turbiner",
+          "comment": ""
+        }
+      ]
     }
   ],
   "selected": {
@@ -1435,7 +1559,7 @@
   "client": "WeAre22.06.26",
   "prestaDate": "2026-06-22",
   "convives": 10,
-  "nextId": 20,
+  "nextId": 22,
   "history": [
     {
       "id": 1781968836035,
