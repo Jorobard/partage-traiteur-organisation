@@ -628,19 +628,19 @@
         },
         {
           "name": "Ail",
-          "cat": "Herbes",
+          "cat": "Légumes",
           "qty": 1,
           "unit": "pcs"
         },
         {
           "name": "Huile pépin raisin",
-          "cat": "Herbes",
+          "cat": "Économats",
           "qty": 20,
           "unit": "cl"
         },
         {
           "name": "Philadelphia",
-          "cat": "Herbes",
+          "cat": "Ovoproduits",
           "qty": 150,
           "unit": "g"
         },
