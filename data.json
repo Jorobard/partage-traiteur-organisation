@@ -574,6 +574,43 @@
           "qty": 10,
           "unit": "g"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "mettre volailles sous vide",
+          "comment": "Beurre+Thym+Ail"
+        },
+        {
+          "id": 2,
+          "text": "Cuire volailles thermoplongeur",
+          "comment": "63° 1h"
+        },
+        {
+          "id": 3,
+          "text": "Réaliser la sauce césar",
+          "comment": "Anchois, jaune d'oeuf, moutarde, H.O, parmesan, Ail"
+        },
+        {
+          "id": 4,
+          "text": "Tailler cup de salade",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "text": "Copeaux de parmesan",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "text": "Torréfier sésame",
+          "comment": ""
+        },
+        {
+          "id": 7,
+          "text": "Baton de ciboulette",
+          "comment": ""
+        }
       ]
     },
     {
