@@ -1337,7 +1337,7 @@
         },
         {
           "name": "Creme",
-          "cat": "Herbes",
+          "cat": "Ovoproduits",
           "qty": 1,
           "unit": "cl"
         }
@@ -1397,6 +1397,10 @@
       "ratio": 1
     },
     "17": {
+      "active": true,
+      "ratio": 1
+    },
+    "19": {
       "active": true,
       "ratio": 1
     }
@@ -1975,6 +1979,10 @@
           "ratio": 1
         },
         "17": {
+          "active": true,
+          "ratio": 1
+        },
+        "19": {
           "active": true,
           "ratio": 1
         }
