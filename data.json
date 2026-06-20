@@ -1119,6 +1119,23 @@
           "qty": 0.1,
           "unit": "pcs"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Réaliser les palets de pommes de terres",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "text": "Tailler le hareng en brunoise",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Réaliser la sauce",
+          "comment": "Ciboulette, échalote, brunoise pomme, zeste citron + jus"
+        }
       ]
     },
     {
