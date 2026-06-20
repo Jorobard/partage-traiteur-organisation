@@ -1028,7 +1028,7 @@
         {
           "name": "Basilic nain",
           "cat": "Herbes",
-          "qty": 0,
+          "qty": 0.01,
           "unit": "pcs"
         },
         {
@@ -1046,13 +1046,13 @@
         {
           "name": "Pêches rôties",
           "cat": "Fruits",
-          "qty": 0,
+          "qty": 0.5,
           "unit": "pcs"
         },
         {
           "name": "Tomates coeurs de boeufs",
           "cat": "Légumes",
-          "qty": 0,
+          "qty": 0.3,
           "unit": "pcs"
         }
       ],
