@@ -987,6 +987,33 @@
           "qty": 3.5,
           "unit": "g"
         }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Sucre à la cardamome",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "text": "Tailler les rhubarbes et mariner",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Réaliser la glace yahourt",
+          "comment": "Vr recette glace yahourt"
+        },
+        {
+          "id": 4,
+          "text": "Réaliser le sablé breton",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "text": "Équeuter la menthe",
+          "comment": ""
+        }
       ]
     },
     {
