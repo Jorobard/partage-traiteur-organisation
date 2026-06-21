@@ -996,8 +996,17 @@ function renderHisto(){
 function restorePresta(histoId){
   const h=data.history.find(x=>x.id===histoId);if(!h)return;
   if(!confirm(`Rouvrir la presta "${h.client}" ?`))return;
-  data.client=h.client;data.prestaDate=h.date;data.convives=h.convives;
-  data.selected=JSON.parse(JSON.stringify(h.selected));
+  if(h.prestas&&h.prestas.length){
+    data.prestas=JSON.parse(JSON.stringify(h.prestas));
+    data.nextPrestaId=Math.max(...h.prestas.map(p=>p.id))+1;
+  }else{
+    data.prestas=[{id:1,client:h.client,date:h.date,convives:h.convives,selected:JSON.parse(JSON.stringify(h.selected||{})),filter:'all'}];
+    data.nextPrestaId=2;
+  }
+  data.client=data.prestas[0].client;
+  data.prestaDate=data.prestas[0].date;
+  data.convives=data.prestas[0].convives;
+  data.selected=data.prestas[0].selected;
   showTab('presta',document.querySelectorAll('.tab')[1]);
 }
 
