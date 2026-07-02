@@ -255,7 +255,7 @@
         },
         {
           "name": "Citron vert",
-          "cat": "Légumes",
+          "cat": "Fruits",
           "qty": 3,
           "unit": "pcs"
         },
@@ -1620,6 +1620,10 @@
       "ratio": 1.5
     },
     "15": {
+      "active": true,
+      "ratio": 1.2
+    },
+    "23": {
       "active": true,
       "ratio": 1.2
     }
@@ -3022,6 +3026,10 @@
           "ratio": 1.5
         },
         "15": {
+          "active": true,
+          "ratio": 1.2
+        },
+        "23": {
           "active": true,
           "ratio": 1.2
         }
