@@ -1469,50 +1469,165 @@
           "comment": ""
         }
       ]
+    },
+    {
+      "id": 22,
+      "name": "Cake citron",
+      "type": "dessert",
+      "ref": 20,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Farine T55",
+          "cat": "Économats",
+          "qty": 180,
+          "unit": "g"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 180,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre",
+          "cat": "Ovoproduits",
+          "qty": 150,
+          "unit": "g"
+        },
+        {
+          "name": "Oeufs",
+          "cat": "Ovoproduits",
+          "qty": 4,
+          "unit": "pcs"
+        },
+        {
+          "name": "Levure chimique",
+          "cat": "Économats",
+          "qty": 0,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron",
+          "cat": "Fruits",
+          "qty": 4,
+          "unit": "pcs"
+        },
+        {
+          "name": "Sucre glace",
+          "cat": "Économats",
+          "qty": 100,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Cake citron",
+      "type": "dessert",
+      "ref": 20,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Farine T55",
+          "cat": "Économats",
+          "qty": 180,
+          "unit": "g"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 180,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre",
+          "cat": "Ovoproduits",
+          "qty": 150,
+          "unit": "g"
+        },
+        {
+          "name": "Oeufs",
+          "cat": "Ovoproduits",
+          "qty": 4,
+          "unit": "pcs"
+        },
+        {
+          "name": "Levure chimique",
+          "cat": "Économats",
+          "qty": 0,
+          "unit": "pcs"
+        },
+        {
+          "name": "Citron",
+          "cat": "Fruits",
+          "qty": 4,
+          "unit": "pcs"
+        },
+        {
+          "name": "Sucre glace",
+          "cat": "Économats",
+          "qty": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Réaliser l'appareil",
+          "comment": "Beurre mou/Sucre->oeufs->Farine/levure/zeste"
+        },
+        {
+          "id": 2,
+          "text": "Cuire à 170° (50min)",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "text": "Sirop à froid (jus+sucre glace)",
+          "comment": ""
+        }
+      ]
     }
   ],
   "selected": {
-    "1": {
+    "3": {
       "active": true,
-      "ratio": 1
+      "ratio": 1.5
+    },
+    "4": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "5": {
+      "active": false,
+      "ratio": 1.5
     },
     "7": {
       "active": true,
-      "ratio": 1
+      "ratio": 1.5
     },
     "8": {
       "active": true,
-      "ratio": 1
+      "ratio": 1.5
     },
     "9": {
       "active": true,
-      "ratio": 1
+      "ratio": 1.5
     },
     "10": {
       "active": true,
-      "ratio": 1
+      "ratio": 1.5
     },
-    "12": {
+    "15": {
       "active": true,
-      "ratio": 1
-    },
-    "17": {
-      "active": true,
-      "ratio": 1
-    },
-    "19": {
-      "active": true,
-      "ratio": 1
-    },
-    "21": {
-      "active": true,
-      "ratio": 1
+      "ratio": 1.2
     }
   },
-  "client": "WeAre22.06.26",
-  "prestaDate": "2026-06-22",
-  "convives": 10,
-  "nextId": 22,
+  "client": "Squareness",
+  "prestaDate": "2026-07-23",
+  "convives": 50,
+  "nextId": 24,
   "history": [
     {
       "id": 1781972963673,
@@ -2874,48 +2989,44 @@
   "prestas": [
     {
       "id": 1,
-      "client": "WeAre22.06.26",
-      "date": "2026-06-22",
-      "convives": 10,
+      "client": "Squareness",
+      "date": "2026-07-23",
+      "convives": 50,
       "selected": {
-        "1": {
+        "3": {
           "active": true,
-          "ratio": 1
+          "ratio": 1.5
+        },
+        "4": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "5": {
+          "active": false,
+          "ratio": 1.5
         },
         "7": {
           "active": true,
-          "ratio": 1
+          "ratio": 1.5
         },
         "8": {
           "active": true,
-          "ratio": 1
+          "ratio": 1.5
         },
         "9": {
           "active": true,
-          "ratio": 1
+          "ratio": 1.5
         },
         "10": {
           "active": true,
-          "ratio": 1
+          "ratio": 1.5
         },
-        "12": {
+        "15": {
           "active": true,
-          "ratio": 1
-        },
-        "17": {
-          "active": true,
-          "ratio": 1
-        },
-        "19": {
-          "active": true,
-          "ratio": 1
-        },
-        "21": {
-          "active": true,
-          "ratio": 1
+          "ratio": 1.2
         }
       },
-      "filter": "dessert"
+      "filter": "all"
     }
   ],
   "nextPrestaId": 2
