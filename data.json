@@ -1755,9 +1755,54 @@
       ]
     }
   ],
-  "selected": {},
-  "client": "",
-  "prestaDate": "",
+  "selected": {
+    "3": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "4": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "5": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "7": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "8": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "9": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "10": {
+      "active": true,
+      "ratio": 1.5
+    },
+    "12": {
+      "active": false,
+      "ratio": 1.2
+    },
+    "15": {
+      "active": true,
+      "ratio": 1.2
+    },
+    "22": {
+      "active": true,
+      "ratio": 1.2
+    },
+    "25": {
+      "active": false,
+      "ratio": 1
+    }
+  },
+  "client": "Squareness ",
+  "prestaDate": "2026-07-23",
   "convives": 50,
   "nextId": 26,
   "history": [
@@ -3831,10 +3876,55 @@
   "prestas": [
     {
       "id": 1,
-      "client": "",
-      "date": "",
+      "client": "Squareness ",
+      "date": "2026-07-23",
       "convives": 50,
-      "selected": {},
+      "selected": {
+        "3": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "4": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "5": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "7": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "8": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "9": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "10": {
+          "active": true,
+          "ratio": 1.5
+        },
+        "12": {
+          "active": false,
+          "ratio": 1.2
+        },
+        "15": {
+          "active": true,
+          "ratio": 1.2
+        },
+        "22": {
+          "active": true,
+          "ratio": 1.2
+        },
+        "25": {
+          "active": false,
+          "ratio": 1
+        }
+      },
       "filter": "all"
     }
   ],
