@@ -1471,57 +1471,6 @@
       ]
     },
     {
-      "id": 22,
-      "name": "Cake citron",
-      "type": "dessert",
-      "ref": 20,
-      "photo": "",
-      "ingredients": [
-        {
-          "name": "Farine T55",
-          "cat": "Économats",
-          "qty": 180,
-          "unit": "g"
-        },
-        {
-          "name": "Sucre",
-          "cat": "Économats",
-          "qty": 180,
-          "unit": "g"
-        },
-        {
-          "name": "Beurre",
-          "cat": "Ovoproduits",
-          "qty": 150,
-          "unit": "g"
-        },
-        {
-          "name": "Oeufs",
-          "cat": "Ovoproduits",
-          "qty": 4,
-          "unit": "pcs"
-        },
-        {
-          "name": "Levure chimique",
-          "cat": "Économats",
-          "qty": 0,
-          "unit": "pcs"
-        },
-        {
-          "name": "Citron",
-          "cat": "Fruits",
-          "qty": 4,
-          "unit": "pcs"
-        },
-        {
-          "name": "Sucre glace",
-          "cat": "Économats",
-          "qty": 100,
-          "unit": "g"
-        }
-      ]
-    },
-    {
       "id": 23,
       "name": "Cake citron",
       "type": "dessert",
@@ -1720,10 +1669,6 @@
       "ratio": 1.2
     },
     "15": {
-      "active": true,
-      "ratio": 1.2
-    },
-    "22": {
       "active": true,
       "ratio": 1.2
     },
@@ -3844,10 +3789,6 @@
           "ratio": 1.2
         },
         "15": {
-          "active": true,
-          "ratio": 1.2
-        },
-        "22": {
           "active": true,
           "ratio": 1.2
         },
