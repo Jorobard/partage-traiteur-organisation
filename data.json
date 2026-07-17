@@ -1588,54 +1588,178 @@
           "comment": ""
         }
       ]
+    },
+    {
+      "id": 24,
+      "name": "Sablé breton, yaourt grec, abricots rôtis, pistache",
+      "type": "dessert",
+      "ref": 15,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Jaune oeuf",
+          "cat": "Ovoproduits",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 120,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre demi sel",
+          "cat": "Ovoproduits",
+          "qty": 135,
+          "unit": "g"
+        },
+        {
+          "name": "Farine T55",
+          "cat": "Économats",
+          "qty": 190,
+          "unit": "g"
+        },
+        {
+          "name": "Levure chimique",
+          "cat": "Économats",
+          "qty": 7,
+          "unit": "g"
+        },
+        {
+          "name": "Yaourt",
+          "cat": "Ovoproduits",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Abricots",
+          "cat": "Fruits",
+          "qty": 6,
+          "unit": "pcs"
+        },
+        {
+          "name": "Pistaches",
+          "cat": "Économats",
+          "qty": 40,
+          "unit": "g"
+        },
+        {
+          "name": "Miel",
+          "cat": "Économats",
+          "qty": 10,
+          "unit": "cl"
+        },
+        {
+          "name": "Thym frais",
+          "cat": "Herbes",
+          "qty": 0,
+          "unit": "botte"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Sablé breton, yaourt grec, abricots rôtis, pistache",
+      "type": "dessert",
+      "ref": 15,
+      "photo": "",
+      "ingredients": [
+        {
+          "name": "Jaune oeuf",
+          "cat": "Ovoproduits",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "name": "Sucre",
+          "cat": "Économats",
+          "qty": 120,
+          "unit": "g"
+        },
+        {
+          "name": "Beurre demi sel",
+          "cat": "Ovoproduits",
+          "qty": 135,
+          "unit": "g"
+        },
+        {
+          "name": "Farine T55",
+          "cat": "Économats",
+          "qty": 190,
+          "unit": "g"
+        },
+        {
+          "name": "Levure chimique",
+          "cat": "Économats",
+          "qty": 7,
+          "unit": "g"
+        },
+        {
+          "name": "Yaourt",
+          "cat": "Ovoproduits",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Abricots",
+          "cat": "Fruits",
+          "qty": 6,
+          "unit": "pcs"
+        },
+        {
+          "name": "Pistaches",
+          "cat": "Économats",
+          "qty": 40,
+          "unit": "g"
+        },
+        {
+          "name": "Miel",
+          "cat": "Économats",
+          "qty": 10,
+          "unit": "cl"
+        },
+        {
+          "name": "Thym frais",
+          "cat": "Herbes",
+          "qty": 0,
+          "unit": "botte"
+        }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "text": "Réaliser l'appareil à sablé breton",
+          "comment": "vr recette puis repos 2h au frais"
+        },
+        {
+          "id": 2,
+          "text": "cuire l'appareil à sablé breton",
+          "comment": "environ 20min à 170°"
+        },
+        {
+          "id": 3,
+          "text": "Tailler les abricots",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "text": "Concasser les pistaches",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "text": "rôtir les abricots, miel, thym",
+          "comment": ""
+        }
+      ]
     }
   ],
-  "selected": {
-    "3": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "4": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "5": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "7": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "8": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "9": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "10": {
-      "active": true,
-      "ratio": 1.5
-    },
-    "12": {
-      "active": false,
-      "ratio": 1.2
-    },
-    "15": {
-      "active": true,
-      "ratio": 1.2
-    },
-    "22": {
-      "active": false,
-      "ratio": 1.2
-    }
-  },
-  "client": "Squareness ",
-  "prestaDate": "2026-07-23",
+  "selected": {},
+  "client": "",
+  "prestaDate": "",
   "convives": 50,
-  "nextId": 24,
+  "nextId": 26,
   "history": [
     {
       "id": 1784287660465,
@@ -3707,51 +3831,10 @@
   "prestas": [
     {
       "id": 1,
-      "client": "Squareness ",
-      "date": "2026-07-23",
+      "client": "",
+      "date": "",
       "convives": 50,
-      "selected": {
-        "3": {
-          "active": true,
-          "ratio": 1.5
-        },
-        "4": {
-          "active": true,
-          "ratio": 1.5
-        },
-        "5": {
-          "active": true,
-          "ratio": 1.5
-        },
-        "7": {
-          "active": true,
-          "ratio": 1.5
-        },
-        "8": {
-          "active": true,
-          "ratio": 1.5
-        },
-        "9": {
-          "active": true,
-          "ratio": 1.5
-        },
-        "10": {
-          "active": true,
-          "ratio": 1.5
-        },
-        "12": {
-          "active": false,
-          "ratio": 1.2
-        },
-        "15": {
-          "active": true,
-          "ratio": 1.2
-        },
-        "22": {
-          "active": false,
-          "ratio": 1.2
-        }
-      },
+      "selected": {},
       "filter": "all"
     }
   ],
