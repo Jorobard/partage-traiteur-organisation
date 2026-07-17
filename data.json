@@ -1600,7 +1600,7 @@
       "ratio": 1.5
     },
     "5": {
-      "active": false,
+      "active": true,
       "ratio": 1.5
     },
     "7": {
@@ -1619,20 +1619,734 @@
       "active": true,
       "ratio": 1.5
     },
+    "12": {
+      "active": false,
+      "ratio": 1.2
+    },
     "15": {
       "active": true,
       "ratio": 1.2
     },
-    "23": {
-      "active": true,
+    "22": {
+      "active": false,
       "ratio": 1.2
     }
   },
-  "client": "Squareness",
+  "client": "Squareness ",
   "prestaDate": "2026-07-23",
   "convives": 50,
   "nextId": 24,
   "history": [
+    {
+      "id": 1784287660465,
+      "client": "Squareness ",
+      "date": "2026-07-23",
+      "convives": 50,
+      "prestas": [
+        {
+          "id": 1,
+          "client": "Squareness ",
+          "date": "2026-07-23",
+          "convives": 50,
+          "selected": {
+            "3": {
+              "active": true,
+              "ratio": 1.5
+            },
+            "4": {
+              "active": true,
+              "ratio": 1.5
+            },
+            "5": {
+              "active": true,
+              "ratio": 1.5
+            },
+            "7": {
+              "active": true,
+              "ratio": 1.5
+            },
+            "8": {
+              "active": true,
+              "ratio": 1.5
+            },
+            "9": {
+              "active": true,
+              "ratio": 1.5
+            },
+            "10": {
+              "active": true,
+              "ratio": 1.5
+            },
+            "12": {
+              "active": false,
+              "ratio": 1.2
+            },
+            "15": {
+              "active": true,
+              "ratio": 1.2
+            },
+            "22": {
+              "active": false,
+              "ratio": 1.2
+            }
+          },
+          "filter": "all"
+        }
+      ],
+      "pieces": [
+        {
+          "id": 3,
+          "name": "Croque monsieur",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 4,
+          "ingredients": [
+            {
+              "name": "Jambon blanc",
+              "cat": "Viandes",
+              "qty": 1,
+              "unit": "tranches"
+            },
+            {
+              "name": "Pain blanc",
+              "cat": "Boulangerie",
+              "qty": 2,
+              "unit": "tranches"
+            },
+            {
+              "name": "Comté",
+              "cat": "Ovoproduits",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "name": "Lait",
+              "cat": "Ovoproduits",
+              "qty": 20,
+              "unit": "cl"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Réaliser un béchamel au comté",
+              "comment": "ajouter une pointe de moutarde de dijon"
+            },
+            {
+              "id": 2,
+              "text": "Tailler comté",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Monter les croques",
+              "comment": ""
+            },
+            {
+              "id": 4,
+              "text": "Tailler les croques",
+              "comment": ""
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Tartelettes petits pois menthe",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 30,
+          "ingredients": [
+            {
+              "name": "Menthe",
+              "cat": "Herbes",
+              "qty": 1,
+              "unit": "botte"
+            },
+            {
+              "name": "Petits pois surgelés",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Citron vert",
+              "cat": "Fruits",
+              "qty": 3,
+              "unit": "pcs"
+            },
+            {
+              "name": "Oignon blanc",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Lard fumé",
+              "cat": "Viandes",
+              "qty": 2,
+              "unit": "tranches"
+            },
+            {
+              "name": "Lait entier",
+              "cat": "Ovoproduits",
+              "qty": 1000,
+              "unit": "cl"
+            },
+            {
+              "name": "Tartelette prêt à garnir 4cm",
+              "cat": "Économats",
+              "qty": 30,
+              "unit": "pcs"
+            },
+            {
+              "name": "Pousse petits pois",
+              "cat": "Herbes",
+              "qty": 0.8,
+              "unit": "pcs"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Torréfier les tartelettes",
+              "comment": "7min 170°"
+            },
+            {
+              "id": 2,
+              "text": "Réaliser la creme de petits pois / menthe",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Tailler et torréfier lard fumé",
+              "comment": ""
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Cassolettes, poisson blanc, sauce lèche de tigre, grenade, oignons rouges",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 20,
+          "ingredients": [
+            {
+              "name": "Coriandre",
+              "cat": "Herbes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Citronnelle",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Piment",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Oignon rouge",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Ail",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Echalote",
+              "cat": "Légumes",
+              "qty": 2,
+              "unit": "pcs"
+            },
+            {
+              "name": "Gingembre",
+              "cat": "Légumes",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "name": "Grenade",
+              "cat": "Fruits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Citron vert",
+              "cat": "Fruits",
+              "qty": 4,
+              "unit": "pcs"
+            },
+            {
+              "name": "Poisson blanc (daurade)",
+              "cat": "Poissons",
+              "qty": 400,
+              "unit": "g"
+            },
+            {
+              "name": "Lait de coco",
+              "cat": "Économats",
+              "qty": 20,
+              "unit": "cl"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Réaliser le leche de tigre",
+              "comment": "25 cl de lait de coco, 1/2 oignon rouge, 1 gousse d’ail, 1 bâton de citronnelle, 20 g de gingembre frais, 1 botte de coriandre, jus de 2 citrons verts, 1 échalote"
+            },
+            {
+              "id": 2,
+              "text": "Tailler le poisson",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Tailler la grenade",
+              "comment": ""
+            },
+            {
+              "id": 4,
+              "text": "Réaliser les pickles oignons rouges",
+              "comment": ""
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Lettuces cup, salade césar, sarrasin",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 5,
+          "ingredients": [
+            {
+              "name": "Romaine",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Ail",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Blanc de poulet",
+              "cat": "Viandes",
+              "qty": 100,
+              "unit": "g"
+            },
+            {
+              "name": "Anchois",
+              "cat": "Poissons",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Jaune oeuf",
+              "cat": "Ovoproduits",
+              "qty": 1,
+              "unit": "p"
+            },
+            {
+              "name": "Parmesan",
+              "cat": "Ovoproduits",
+              "qty": 50,
+              "unit": "g"
+            },
+            {
+              "name": "Creme",
+              "cat": "Ovoproduits",
+              "qty": 5,
+              "unit": "cl"
+            },
+            {
+              "name": "Sarrasin",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "H.O",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "cl"
+            },
+            {
+              "name": "Moutarde",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "mettre volailles sous vide",
+              "comment": "Beurre+Thym+Ail"
+            },
+            {
+              "id": 2,
+              "text": "Cuire volailles thermoplongeur",
+              "comment": "63° 1h"
+            },
+            {
+              "id": 3,
+              "text": "Réaliser la sauce césar",
+              "comment": "Anchois, jaune d'oeuf, moutarde, H.O, parmesan, Ail"
+            },
+            {
+              "id": 4,
+              "text": "Tailler cup de salade",
+              "comment": ""
+            },
+            {
+              "id": 5,
+              "text": "Copeaux de parmesan",
+              "comment": ""
+            },
+            {
+              "id": 6,
+              "text": "Torréfier sésame",
+              "comment": ""
+            },
+            {
+              "id": 7,
+              "text": "Baton de ciboulette",
+              "comment": ""
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Pont Neuf de polenta frites, sauce creamy",
+          "type": "cocktail",
+          "photo": "",
+          "ref": 15,
+          "ingredients": [
+            {
+              "name": "Ciboulette",
+              "cat": "Herbes",
+              "qty": 0.5,
+              "unit": "botte"
+            },
+            {
+              "name": "Ail",
+              "cat": "Légumes",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Huile pépin raisin",
+              "cat": "Économats",
+              "qty": 20,
+              "unit": "cl"
+            },
+            {
+              "name": "Philadelphia",
+              "cat": "Ovoproduits",
+              "qty": 150,
+              "unit": "g"
+            },
+            {
+              "name": "Echalote",
+              "cat": "Légumes",
+              "qty": 2,
+              "unit": "pcs"
+            },
+            {
+              "name": "Citron vert",
+              "cat": "Fruits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Lait entier",
+              "cat": "Ovoproduits",
+              "qty": 100,
+              "unit": "cl"
+            },
+            {
+              "name": "Parmesan",
+              "cat": "Ovoproduits",
+              "qty": 100,
+              "unit": "g"
+            },
+            {
+              "name": "Jaune oeuf",
+              "cat": "Ovoproduits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Polenta extra fine",
+              "cat": "Économats",
+              "qty": 200,
+              "unit": "g"
+            },
+            {
+              "name": "Moutarde à l'ancienne",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Réaliser la polenta",
+              "comment": "1l lait, 250g de polenta, 200g parmesan"
+            },
+            {
+              "id": 2,
+              "text": "Tailler les cubes de polenta et paner",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Réaliser la sauce tartare",
+              "comment": "Base mayo + (ciboulette, citron vert jus + zeste, échalote, ail)"
+            },
+            {
+              "id": 4,
+              "text": "Réaliser gochujang",
+              "comment": "Base mayo + pate de gochujang"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "Rolls tartare de boeuf",
+          "type": "cocktail",
+          "ref": 1,
+          "photo": "",
+          "ingredients": [
+            {
+              "name": "Filet boeuf",
+              "cat": "Viandes",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "name": "Buns",
+              "cat": "Boulangerie",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Ciboulette",
+              "cat": "Herbes",
+              "qty": 0.05,
+              "unit": "pcs"
+            },
+            {
+              "name": "Persil",
+              "cat": "Herbes",
+              "qty": 0.05,
+              "unit": "pcs"
+            },
+            {
+              "name": "Echalote",
+              "cat": "Légumes",
+              "qty": 0.2,
+              "unit": "pcs"
+            },
+            {
+              "name": "Capres",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "name": "Cornichon",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "name": "Ketchup",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "name": "Mayonnaise",
+              "cat": "Ovoproduits",
+              "qty": 3,
+              "unit": "g"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Tailler la viande",
+              "comment": ""
+            },
+            {
+              "id": 2,
+              "text": "Tailler condiments",
+              "comment": "échalotes, ciboulettes, persil, câpres, cornichons"
+            },
+            {
+              "id": 3,
+              "text": "Tailler et snacker les pains",
+              "comment": ""
+            },
+            {
+              "id": 4,
+              "text": "Réaliser la mayo tartare",
+              "comment": "Base mayo + ketchup + tabasco + worchester"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Cylindre de bricks mimosa truffé",
+          "type": "cocktail",
+          "ref": 3,
+          "photo": "",
+          "ingredients": [
+            {
+              "name": "Oeuf",
+              "cat": "Ovoproduits",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Feuille de brick",
+              "cat": "Économats",
+              "qty": 1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Mayonnaise",
+              "cat": "Ovoproduits",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "Huile de truffe",
+              "cat": "Économats",
+              "qty": 2,
+              "unit": "cl"
+            },
+            {
+              "name": "Ciboulette",
+              "cat": "Herbes",
+              "qty": 0.1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Echalotes",
+              "cat": "Légumes",
+              "qty": 0.5,
+              "unit": "pcs"
+            }
+          ],
+          "steps": [
+            {
+              "id": 1,
+              "text": "Réaliser les cylindres de bricks",
+              "comment": ""
+            },
+            {
+              "id": 2,
+              "text": "Cuire les oeufs durs",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "text": "Préparer l'appareil à mimosa",
+              "comment": "Oeufs durs hachés couteaux + Echalote + ciboulette + H.truffe + sel + poivre +"
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Tarte aux fraises",
+          "type": "dessert",
+          "ref": 1,
+          "photo": "",
+          "ingredients": [
+            {
+              "name": "Fraises",
+              "cat": "Herbes",
+              "qty": 50,
+              "unit": "g"
+            },
+            {
+              "name": "Beurre",
+              "cat": "Herbes",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "name": "Poudre amande",
+              "cat": "Économats",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "name": "Sucre",
+              "cat": "Économats",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "name": "Mascarpone",
+              "cat": "Ovoproduits",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "name": "Vanille",
+              "cat": "Économats",
+              "qty": 0.1,
+              "unit": "pcs"
+            },
+            {
+              "name": "Sucre glace",
+              "cat": "Économats",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "Farine T55",
+              "cat": "Économats",
+              "qty": 100,
+              "unit": "g"
+            },
+            {
+              "name": "Sucre glace",
+              "cat": "Économats",
+              "qty": 40,
+              "unit": "g"
+            },
+            {
+              "name": "Beurre",
+              "cat": "Ovoproduits",
+              "qty": 50,
+              "unit": "g"
+            },
+            {
+              "name": "Oeufs",
+              "cat": "Herbes",
+              "qty": 0.5,
+              "unit": "pcs"
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": 1781972963673,
       "client": "WeAre22.06.26",
@@ -2993,7 +3707,7 @@
   "prestas": [
     {
       "id": 1,
-      "client": "Squareness",
+      "client": "Squareness ",
       "date": "2026-07-23",
       "convives": 50,
       "selected": {
@@ -3006,7 +3720,7 @@
           "ratio": 1.5
         },
         "5": {
-          "active": false,
+          "active": true,
           "ratio": 1.5
         },
         "7": {
@@ -3025,12 +3739,16 @@
           "active": true,
           "ratio": 1.5
         },
+        "12": {
+          "active": false,
+          "ratio": 1.2
+        },
         "15": {
           "active": true,
           "ratio": 1.2
         },
-        "23": {
-          "active": true,
+        "22": {
+          "active": false,
           "ratio": 1.2
         }
       },
